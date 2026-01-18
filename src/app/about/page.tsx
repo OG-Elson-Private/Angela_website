@@ -252,7 +252,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
               <a
-                href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
               >

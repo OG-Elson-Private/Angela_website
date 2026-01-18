@@ -77,7 +77,7 @@ export default function StayPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="gradient" size="lg" asChild>
                 <a
-                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
+                  href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -195,7 +195,7 @@ export default function StayPage() {
 
               <Button variant="gradient" size="lg" className="w-full" asChild>
                 <a
-                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
+                  href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -204,7 +204,7 @@ export default function StayPage() {
               </Button>
 
               <p className="text-center text-sm text-gray-warm mt-4">
-                Or call: <a href="tel:+254706310918" className="text-teal hover:underline">+254 706 310 918</a>
+                Or call: <a href="tel:+254719635944" className="text-teal hover:underline">+254 719 635 944</a>
               </p>
             </div>
           </div>
@@ -304,7 +304,7 @@ export default function StayPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
               <a
-                href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
+                href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -312,7 +312,7 @@ export default function StayPage() {
               </a>
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
-              <a href="tel:+254706310918">Call +254 706 310 918</a>
+              <a href="tel:+254719635944">Call +254 719 635 944</a>
             </Button>
           </div>
         </div>

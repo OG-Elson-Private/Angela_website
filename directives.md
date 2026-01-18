@@ -12,6 +12,13 @@ Ce fichier contient les directives et bonnes pratiques pour le developpement du 
 
 **Repository distant :** git@github.com:OG-Elson-Private/Angela_website.git
 
+**Cle SSH :** `~/.ssh/id_ed25519_Angela`
+
+Pour push avec cette cle specifique :
+```bash
+GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_Angela" git push origin main
+```
+
 ### Workflow Git
 
 **Apres CHAQUE modification :**
@@ -320,7 +327,7 @@ public/images/
 
 ### Contact
 
-- **Telephone:** +254 706310918
+- **Telephone:** +254 719635944
 - **Instagram:** @chef.angie002
 - **Email:** A confirmer (chef@angie.co.ke suggere)
 
@@ -368,7 +375,7 @@ const jsonLd = {
     addressLocality: 'Diani Beach',
     addressCountry: 'KE',
   },
-  telephone: '+254706310918',
+  telephone: '+254719635944',
   servesCuisine: 'Kenyan',
 }
 ```

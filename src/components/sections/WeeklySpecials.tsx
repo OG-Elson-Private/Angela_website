@@ -23,7 +23,7 @@ function DishCard({
   imageAlt,
   orderMessage,
 }: DishCardProps) {
-  const whatsappUrl = `https://wa.me/254706310918?text=${encodeURIComponent(orderMessage)}`
+  const whatsappUrl = `https://wa.me/254719635944?text=${encodeURIComponent(orderMessage)}`
 
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300">
