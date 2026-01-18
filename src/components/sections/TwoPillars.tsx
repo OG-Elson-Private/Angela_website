@@ -36,12 +36,13 @@ function PillarCard({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ocean-dark/60 to-transparent" />
-
+        
         {/* Price Badge */}
-        <div className="absolute top-4 right-4 bg-coral text-white px-4 py-2 rounded-full font-ui text-sm font-semibold shadow-lg">
-          {price}
-        </div>
+        {price && (
+          <div className="absolute top-4 right-4 bg-coral text-white px-4 py-2 rounded-full font-ui text-sm font-semibold shadow-lg">
+            {price}
+          </div>
+        )}
       </div>
 
       {/* Content */}
@@ -50,8 +51,8 @@ function PillarCard({
         <h3 className="font-heading text-2xl md:text-3xl font-semibold text-ocean-dark mb-3">
           {title}
         </h3>
-        <p className="font-body text-gray-warm mb-2">{description}</p>
-        <p className="font-body text-sm text-gray-warm mb-6">{priceLabel}</p>
+        <p className={`font-body text-gray-warm ${priceLabel ? 'mb-2' : 'mb-6'}`}>{description}</p>
+        {priceLabel && <p className="font-body text-sm text-gray-warm mb-6">{priceLabel}</p>}
 
         <Button variant="primary" size="md" className="w-full" asChild>
           <Link href={href}>{ctaText}</Link>
@@ -80,12 +81,12 @@ export function TwoPillars() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <PillarCard
             title="Taste"
-            subtitle="Cuisine Services"
+            subtitle="Cooking Services"
             description="Experience the rich flavors of Kenya with our weekly food delivery, private chef services, and event catering."
-            price="From 450 KES"
-            priceLabel="Weekly delivery starting price"
-            image="/images/dishes/chicken-biryani.jpg"
-            imageAlt="Delicious Chicken Biryani prepared by Chef Angie"
+            price=""
+            priceLabel=""
+            image="/images/dishes/cooking-services.jpg"
+            imageAlt="Chef Angie with cooking utensils"
             href="/cuisine"
             ctaText="Explore Menu"
           />

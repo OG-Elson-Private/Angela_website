@@ -8,3 +8,5 @@ export { Input, Textarea, Select } from './Input'
 export type { InputProps, TextareaProps, SelectProps } from './Input'
 
 export { StarRatingDisplay, StarRatingInput } from './StarRating'
+
+export { ImageCarousel } from './ImageCarousel'

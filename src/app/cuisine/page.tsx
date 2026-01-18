@@ -34,7 +34,7 @@ const services = [
     title: 'Private Chef',
     subtitle: 'In-Home Dining Experience',
     description: 'Have Chef Angie cook in your villa or apartment. Perfect for romantic dinners, family gatherings, or special celebrations.',
-    price: 'Custom pricing',
+    price: 'From 3,500 KES/day',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -42,7 +42,7 @@ const services = [
     ),
     href: '#chef-prive',
     cta: 'Learn More',
-    features: ['Personalized menu', 'Any occasion', 'Full service'],
+    features: ['1-33 guests', 'Personalized menu', 'Full service'],
   },
   {
     id: 'catering',
@@ -230,35 +230,68 @@ export default function CuisinePage() {
       {/* Private Chef Section */}
       <section id="chef-prive" className="section-padding bg-seafoam">
         <div className="container-standard">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="font-script text-2xl text-coral mb-2">Private Chef Service</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-6">
               Your Personal Chef Experience
             </h2>
-            <p className="font-body text-lg text-gray-warm mb-8">
+            <p className="font-body text-lg text-gray-warm">
               Transform your villa or apartment into a private restaurant.
               Chef Angie will prepare a customized menu just for you and your guests,
               handling everything from shopping to cooking to cleanup.
             </p>
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="text-3xl mb-2">🍽️</div>
-                <h3 className="font-ui font-semibold text-ocean-dark mb-1">Romantic Dinners</h3>
-                <p className="text-sm text-gray-warm">Intimate meals for two</p>
+          {/* Pricing Table */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="bg-teal text-white p-6 text-center">
+                <h3 className="font-heading text-2xl font-semibold">Daily Rates</h3>
+                <p className="text-white/80 text-sm mt-1">Price per day based on number of guests</p>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="text-3xl mb-2">👨‍👩‍👧‍👦</div>
-                <h3 className="font-ui font-semibold text-ocean-dark mb-1">Family Gatherings</h3>
-                <p className="text-sm text-gray-warm">Meals for the whole family</p>
+              <div className="divide-y divide-gray-light">
+                {[
+                  { guests: '1-9 guests', price: '3,500 KES' },
+                  { guests: '10-15 guests', price: '5,000 KES' },
+                  { guests: '16-21 guests', price: '6,000 KES' },
+                  { guests: '22-27 guests', price: '7,000 KES' },
+                  { guests: '28-33 guests', price: '8,000 KES' },
+                  { guests: '35+ guests', price: 'Contact us' },
+                ].map((tier) => (
+                  <div key={tier.guests} className="flex justify-between items-center p-4 hover:bg-sand-light transition-colors">
+                    <span className="font-ui text-ocean-dark">{tier.guests}</span>
+                    <span className="font-ui font-semibold text-coral">{tier.price}</span>
+                  </div>
+                ))}
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="text-3xl mb-2">🎉</div>
-                <h3 className="font-ui font-semibold text-ocean-dark mb-1">Special Events</h3>
-                <p className="text-sm text-gray-warm">Birthdays, anniversaries</p>
+              <div className="bg-sand-light p-4 text-center">
+                <p className="text-sm text-gray-warm">
+                  Prices include shopping, cooking, and cleanup. Food ingredients not included.
+                </p>
               </div>
             </div>
+          </div>
 
+          {/* Occasions */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
+            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
+              <div className="text-3xl mb-2">🍽️</div>
+              <h3 className="font-ui font-semibold text-ocean-dark mb-1">Romantic Dinners</h3>
+              <p className="text-sm text-gray-warm">Intimate meals for two</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
+              <div className="text-3xl mb-2">👨‍👩‍👧‍👦</div>
+              <h3 className="font-ui font-semibold text-ocean-dark mb-1">Family Gatherings</h3>
+              <p className="text-sm text-gray-warm">Meals for the whole family</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
+              <div className="text-3xl mb-2">🎉</div>
+              <h3 className="font-ui font-semibold text-ocean-dark mb-1">Special Events</h3>
+              <p className="text-sm text-gray-warm">Birthdays, anniversaries</p>
+            </div>
+          </div>
+
+          <div className="text-center">
             <Button variant="gradient" size="lg" asChild>
               <a href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20your%20private%20chef%20service.%20Date:%20____%20Number%20of%20guests:%20____%20Occasion:%20____" target="_blank" rel="noopener noreferrer">
                 Book Private Chef

@@ -39,6 +39,7 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://chefangie.co.ke'),
   title: {
     default: 'Chef Angie | Authentic Kenyan Cuisine in Diani Beach',
     template: '%s | Chef Angie',

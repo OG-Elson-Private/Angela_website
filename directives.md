@@ -10,32 +10,31 @@ Ce fichier contient les directives et bonnes pratiques pour le developpement du 
 
 ### Configuration du Depot
 
-**Repository distant :** https://github.com/OG-Elson-Private/Angela_flyer_promotion.git
+**Repository distant :** git@github.com:OG-Elson-Private/Angela_website.git
 
 ### Workflow Git
 
-**Apres chaque modification significative :**
+**Apres CHAQUE modification :**
 
 ```bash
-# Verifier la branche courante
-git branch --show-current
-
-# Commit atomique
+# Commit atomique apres chaque changement
 git add .
 git commit -m "type: description"
 
 # Push vers le depot distant
-git push origin [BRANCH_NAME]
+git push origin main
 ```
 
 **IMPORTANT - Format des messages de commit :**
 - Messages en anglais uniquement
 - Format : `type: description concise`
-- NE PAS inclure de lignes d'attribution (Claude Code, Co-Authored-By, etc.)
-- Le message doit etre simple et direct
+- **JAMAIS** inclure de lignes d'attribution ou signature (Co-Authored-By, Generated with Claude, etc.)
+- **JAMAIS** mentionner l'implication de Claude ou d'une IA dans le commit
+- Le message doit etre simple, direct et uniquement descriptif du changement
 
 ### Quand commiter
 
+- **Apres CHAQUE modification** (meme mineure)
 - Apres implementation d'une section complete (hero, pricing, contact)
 - Apres fix de bug visuel/fonctionnel
 - Apres optimisation de performance

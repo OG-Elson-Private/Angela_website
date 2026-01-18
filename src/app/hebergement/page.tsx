@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui'
+import { GallerySection } from '@/components/features/hebergement/GallerySection'
 
 export const metadata: Metadata = {
   title: 'Vacation Apartment in Diani Beach | Chef Angie',
@@ -110,46 +111,8 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Video Tour */}
-      <section id="gallery" className="section-padding bg-sand-light">
-        <div className="container-standard">
-          <div className="text-center mb-12">
-            <p className="font-script text-2xl text-coral mb-2">See It Yourself</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              Take a Virtual Tour
-            </h2>
-          </div>
-
-          {/* Video Player */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-                poster="/images/apartment/pool.jpg"
-              >
-                <source src="/videos/apartment-tour.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          {/* Photo Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="relative aspect-square rounded-xl overflow-hidden shadow-md">
-                <Image
-                  src="/images/apartment/pool.jpg"
-                  alt={`Apartment view ${i}`}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Photo Gallery */}
+      <GallerySection />
 
       {/* Amenities */}
       <section className="section-padding bg-white">
