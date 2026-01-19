@@ -12,11 +12,11 @@ Ce fichier contient les directives et bonnes pratiques pour le developpement du 
 
 **Repository distant :** git@github.com:OG-Elson-Private/Angela_website.git
 
-**Cle SSH :** `~/.ssh/id_ed25519_Angela`
+**Cle SSH :** `~/.ssh/id_ed25519_angela`
 
 Pour push avec cette cle specifique :
 ```bash
-GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_Angela" git push origin main
+GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_angela" git push origin main
 ```
 
 ### Workflow Git
