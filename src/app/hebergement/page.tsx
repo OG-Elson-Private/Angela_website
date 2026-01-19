@@ -410,8 +410,8 @@ export default function StayPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { label: 'Check-in', value: 'From 2:00 PM' },
-                  { label: 'Check-out', value: 'By 11:00 AM' },
+                  { label: 'Check-in', value: 'From 12:00 PM' },
+                  { label: 'Check-out', value: 'By 9:00 AM' },
                   { label: 'Smoking', value: 'Not allowed indoors' },
                   { label: 'Pets', value: 'Not allowed' },
                   { label: 'Parties', value: 'Not allowed' },
