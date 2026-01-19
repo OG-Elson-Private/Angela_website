@@ -49,8 +49,8 @@ const journey = [
   },
   {
     year: 'Training',
-    title: 'Certified in Baking & Pastry',
-    description: 'I completed professional baking training, adding delicious pastries, cakes, and sweet treats to my culinary repertoire.',
+    title: 'Baking & Pastry Skills',
+    description: 'I completed baking training, adding delicious pastries, cakes, and sweet treats to my culinary repertoire.',
   },
   {
     year: 'Today',
@@ -73,7 +73,7 @@ export default function AboutPage() {
               </h1>
               <p className="font-body text-lg text-white/80 mb-8">
                 Welcome! I&apos;m Angela, but everyone calls me Chef Angie. I&apos;m a passionate cook
-                and certified baker, a proud Kenyan, and your host here in beautiful Diani Beach.
+                trained in baking, a proud Kenyan, and your host here in beautiful Diani Beach.
                 From savory traditional dishes to delicious pastries, I&apos;m here to make your
                 culinary experience unforgettable.
               </p>
