@@ -19,6 +19,13 @@ Pour push avec cette cle specifique :
 GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_angela" git push origin main
 ```
 
+### Serveur de Developpement
+
+**Un serveur de developpement tourne en permanence** dans un terminal separe.
+- Pas besoin de lancer `npm run build` manuellement pour verifier les changements
+- Le hot-reload est actif : les modifications sont visibles instantanement
+- Le build automatique detecte les erreurs TypeScript/ESLint en temps reel
+
 ### Workflow Git
 
 **Apres CHAQUE modification :**

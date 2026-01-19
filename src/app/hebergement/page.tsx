@@ -247,20 +247,144 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Chef Service Add-on */}
-      <section className="py-16 bg-gradient-to-r from-coral to-coral-dark text-white">
-        <div className="container-standard text-center px-4">
-          <p className="font-script text-2xl text-white/90 mb-2">Exclusive Add-On</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
-            Add Private Chef Service
-          </h2>
-          <p className="font-body text-lg text-white/80 max-w-2xl mx-auto mb-8">
-            Make your stay extra special! Have Chef Angie prepare authentic Kenyan meals
-            right in your apartment. Perfect for a welcome dinner or daily meals.
-          </p>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-coral" asChild>
-            <Link href="/cuisine#chef-prive">Learn About Chef Service</Link>
-          </Button>
+      {/* Chef Service Add-on - Premium Offer */}
+      <section id="chef-service" className="py-16 md:py-20 bg-gradient-to-br from-ocean-dark via-ocean-dark to-teal-dark relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-coral/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/10 rounded-full blur-3xl" />
+
+        <div className="container-standard px-4 relative">
+          {/* Exclusive Badge */}
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center gap-2 bg-coral px-4 py-2 rounded-full animate-pulse">
+              <span className="text-white text-sm font-ui font-bold uppercase tracking-wider">
+                ✨ Exclusive Offer
+              </span>
+            </div>
+          </div>
+
+          <div className="text-center mb-12">
+            <p className="font-script text-2xl md:text-3xl text-coral mb-3">Upgrade Your Stay</p>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Private Chef at Your Door
+            </h2>
+            <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
+              Why worry about meals when you&apos;re on vacation? Enjoy a 5-star dining experience
+              without leaving your apartment. Your personal chef, your schedule, your menu.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left - Benefits */}
+            <div className="space-y-6">
+              {/* 3 Meals Visual */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <h3 className="font-ui font-semibold text-white mb-4 text-center">3 Meals Delivered Daily</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { icon: '🌅', meal: 'Breakfast', time: 'Morning' },
+                    { icon: '☀️', meal: 'Lunch', time: 'Midday' },
+                    { icon: '🌙', meal: 'Dinner', time: 'Evening' },
+                  ].map((item) => (
+                    <div key={item.meal} className="text-center">
+                      <div className="text-4xl mb-2">{item.icon}</div>
+                      <p className="font-ui font-semibold text-white text-sm">{item.meal}</p>
+                      <p className="text-white/60 text-xs">{item.time}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Benefits */}
+              <div className="space-y-4">
+                {[
+                  { icon: '👨‍🍳', title: 'Personal Chef Service', desc: 'Your own private chef at your disposal' },
+                  { icon: '🚪', title: 'Delivered to Your Door', desc: 'Fresh meals at the time you choose' },
+                  { icon: '📝', title: 'Custom Menu', desc: 'You decide what you want to eat' },
+                  { icon: '🏖️', title: 'Stress-Free Vacation', desc: 'No cooking, no dishes, just relax' },
+                ].map((benefit) => (
+                  <div key={benefit.title} className="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                    <span className="text-2xl">{benefit.icon}</span>
+                    <div>
+                      <h4 className="font-ui font-semibold text-white">{benefit.title}</h4>
+                      <p className="text-white/70 text-sm">{benefit.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right - Pricing Card */}
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              {/* Header */}
+              <div className="bg-coral p-6 text-center">
+                <p className="text-white/80 text-sm font-ui uppercase tracking-wide mb-1">Daily Chef Service</p>
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="font-heading text-5xl font-bold text-white">3,000</span>
+                  <span className="text-white/80 font-ui">KES/day</span>
+                </div>
+                <p className="text-white/70 text-sm mt-2">For 3 complete meals</p>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* What's Included */}
+                <div className="mb-6">
+                  <h4 className="font-ui font-semibold text-ocean-dark mb-3 flex items-center gap-2">
+                    <span className="text-teal">✓</span> What&apos;s Included
+                  </h4>
+                  <ul className="space-y-2">
+                    {[
+                      'Professional chef service',
+                      'Menu planning with you',
+                      'Shopping for ingredients',
+                      'Meal preparation',
+                      'Delivery to your apartment',
+                      'Flexible timing',
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-gray-warm">
+                        <svg className="w-4 h-4 text-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* What's Not Included */}
+                <div className="mb-6 bg-sand-light rounded-xl p-4">
+                  <h4 className="font-ui font-semibold text-ocean-dark mb-2 text-sm">Note</h4>
+                  <p className="text-sm text-gray-warm">
+                    Food ingredients are at your charge. You choose the menu, we provide
+                    the shopping list, and you cover the ingredients cost.
+                  </p>
+                </div>
+
+                {/* Value Comparison */}
+                <div className="bg-teal/10 rounded-xl p-4 mb-6">
+                  <p className="text-sm text-teal-dark font-ui">
+                    <span className="font-semibold">💡 Great Value:</span> 3 restaurant meals = ~2,000+ KES.
+                    Add our chef service for just 1,000 KES more and enjoy personalized home-cooked meals!
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <Button variant="gradient" size="lg" className="w-full" asChild>
+                  <a
+                    href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20your%20apartment%20WITH%20the%20Chef%20Service%20package.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ADietary%20preferences:%20____"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book Apartment + Chef Service
+                  </a>
+                </Button>
+                <p className="text-center text-xs text-gray-warm mt-3">
+                  Or add it anytime during your stay
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
