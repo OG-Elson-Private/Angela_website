@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 const amenities = [
   { icon: '🏊', name: 'Swimming Pool', description: 'Private pool access' },
   { icon: '🛏️', name: '1 Bedroom', description: 'Comfortable double bed' },
-  { icon: '🍳', name: 'Full Kitchen', description: 'Cook your own meals' },
+  { icon: '🍳', name: 'Kitchenette', description: 'Basic cooking essentials' },
   { icon: '📶', name: 'Free WiFi', description: 'Stay connected' },
-  { icon: '❄️', name: 'Air Conditioning', description: 'Stay cool' },
+  { icon: '🌀', name: 'Ceiling Fan', description: 'Stay cool' },
   { icon: '🚗', name: 'Free Parking', description: 'Safe parking space' },
   { icon: '🏖️', name: 'Beach Access', description: '5 min walk to beach' },
   { icon: '🔒', name: '24/7 Security', description: 'Gated compound' },
