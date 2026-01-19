@@ -206,7 +206,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-ui font-semibold text-ocean-dark">Delivery Areas</p>
-                    <p className="font-body text-gray-warm">Diani, Ukunda, Galu, Tiwi</p>
+                    <p className="font-body text-gray-warm">Diani, Ukunda</p>
                   </div>
                 </div>
               </div>

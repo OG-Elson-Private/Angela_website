@@ -4,7 +4,7 @@ import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
   title: 'Weekly Delivery - Biryani Friday & Pilau Tuesday | Chef Angie',
-  description: 'Order authentic Biryani every Friday and Pilau every Tuesday. Fresh, home-cooked Kenyan cuisine delivered to Diani, Ukunda, Galu, and Tiwi.',
+  description: 'Order authentic Biryani every Friday and Pilau every Tuesday. Fresh, home-cooked Kenyan cuisine delivered to Diani and Ukunda.',
   openGraph: {
     title: 'Weekly Food Delivery | Chef Angie',
     description: 'Biryani Friday (550 KES) & Pilau Tuesday (450 KES) - Order now!',
@@ -39,7 +39,7 @@ const pilauDish = {
   image: '/images/dishes/beef-pilau.jpg',
 }
 
-const deliveryAreas = ['Diani Beach', 'Ukunda', 'Galu', 'Tiwi']
+const deliveryAreas = ['Diani Beach', 'Ukunda']
 
 const orderSteps = [
   { step: 1, title: 'Choose Your Dish', description: 'Select Biryani or Pilau and quantity' },

@@ -27,7 +27,7 @@ const services = [
     ),
     href: '/cuisine/livraisons',
     cta: 'View Menu',
-    features: ['Fresh ingredients', 'Home delivery', 'Diani, Ukunda, Galu, Tiwi'],
+    features: ['Fresh ingredients', 'Home delivery', 'Diani, Ukunda'],
   },
   {
     id: 'private-chef',

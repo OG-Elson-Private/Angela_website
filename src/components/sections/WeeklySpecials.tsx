@@ -120,7 +120,7 @@ export function WeeklySpecials() {
           </h2>
           <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
             Order before Thursday for Friday delivery. Order before Monday for Tuesday delivery.
-            Delivery available in Diani, Ukunda, Galu, and Tiwi.
+            Delivery available in Diani and Ukunda.
           </p>
         </div>
 
