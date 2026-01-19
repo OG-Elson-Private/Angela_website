@@ -222,17 +222,29 @@ export default function StayPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-gray-light rounded-2xl aspect-video flex items-center justify-center">
-              <p className="text-gray-warm">Map - Diani Beach, Kenya</p>
+            <div className="rounded-2xl overflow-hidden aspect-video">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.7!2d39.59!3d-4.31!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMTgnMzYuMCJTIDM5wrAzNScyNC4wIkU!5e0!3m2!1sen!2ske!4v1705000000000!5m2!1sen!2ske&q=PH7G%2B76+Diani+Beach"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Apartment location near Kenya Power office, Diani Beach"
+              />
             </div>
 
             <div>
               <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-4">Nearby Attractions</h3>
+              <p className="font-body text-gray-warm mb-4">
+                Located near Kenya Power office, Diani Beach.
+              </p>
               <ul className="space-y-3">
                 {[
                   { name: 'Diani Beach', distance: '5 min walk' },
                   { name: 'Restaurants & Bars', distance: '5-10 min walk' },
-                  { name: 'Supermarkets', distance: '10 min drive' },
+                  { name: 'Carrefour Supermarket', distance: '5 min walk' },
                   { name: 'Ukunda Airstrip', distance: '15 min drive' },
                   { name: 'Mombasa Airport', distance: '45 min drive' },
                 ].map((place) => (
