@@ -364,8 +364,8 @@ export default function StayPage() {
                 {/* Value Comparison */}
                 <div className="bg-teal/10 rounded-xl p-4 mb-6">
                   <p className="text-sm text-teal-dark font-ui">
-                    <span className="font-semibold">💡 Great Value:</span> 3 restaurant meals = ~2,000+ KES.
-                    Add our chef service for just 1,000 KES more and enjoy personalized home-cooked meals!
+                    <span className="font-semibold">💡 Same Price, Better Experience:</span> 3 restaurant meals = ~3,000 KES.
+                    For the same price, enjoy personalized home-cooked meals delivered to your door!
                   </p>
                 </div>
 
