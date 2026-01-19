@@ -39,7 +39,7 @@ const pilauDish = {
   image: '/images/dishes/beef-pilau.jpg',
 }
 
-const deliveryAreas = ['Diani Beach', 'Ukunda', 'Galu', 'Tiwi', 'Chale Island']
+const deliveryAreas = ['Diani Beach', 'Ukunda', 'Galu', 'Tiwi']
 
 const orderSteps = [
   { step: 1, title: 'Choose Your Dish', description: 'Select Biryani or Pilau and quantity' },
