@@ -320,7 +320,7 @@ export default function StayPage() {
               <div className="bg-coral p-6 text-center">
                 <p className="text-white/80 text-sm font-ui uppercase tracking-wide mb-1">Daily Chef Service</p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="font-heading text-5xl font-bold text-white">3,000</span>
+                  <span className="font-heading text-5xl font-bold text-white">3,500</span>
                   <span className="text-white/80 font-ui">KES/day</span>
                 </div>
                 <p className="text-white/70 text-sm mt-2">For 3 complete meals</p>
@@ -364,8 +364,8 @@ export default function StayPage() {
                 {/* Value Comparison */}
                 <div className="bg-teal/10 rounded-xl p-4 mb-6">
                   <p className="text-sm text-teal-dark font-ui">
-                    <span className="font-semibold">💡 Same Price, Better Experience:</span> 3 restaurant meals = ~3,000 KES.
-                    For the same price, enjoy personalized home-cooked meals delivered to your door!
+                    <span className="font-semibold">💡 Great Value:</span> For just 500 KES more than restaurant meals,
+                    enjoy personalized home-cooked dishes delivered to your door by your private chef!
                   </p>
                 </div>
 
