@@ -33,8 +33,8 @@ const whyBookDirect = [
 ]
 
 const pricing = {
-  lowSeason: { price: 5000, period: 'April - June' },
-  highSeason: { price: 8000, period: 'July - March' },
+  lowSeason: { price: 5000, period: 'Mid-January - October' },
+  highSeason: { price: 8000, period: 'November - Mid-January' },
 }
 
 export default function StayPage() {
