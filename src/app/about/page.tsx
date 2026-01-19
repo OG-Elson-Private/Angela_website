@@ -48,9 +48,14 @@ const journey = [
     description: 'What started as cooking for family and friends grew into a passion for sharing authentic flavors with visitors from around the world.',
   },
   {
+    year: 'Training',
+    title: 'Certified in Baking & Pastry',
+    description: 'I completed professional baking training, adding delicious pastries, cakes, and sweet treats to my culinary repertoire.',
+  },
+  {
     year: 'Today',
     title: 'Chef Angie\'s Kitchen',
-    description: 'Now I combine my love for cooking with hospitality, offering both delicious meals and a beautiful apartment for guests to experience Diani Beach.',
+    description: 'Now I combine my love for cooking with hospitality, offering savory dishes, fresh pastries, and a beautiful apartment for guests to experience Diani Beach.',
   },
 ]
 
@@ -67,10 +72,10 @@ export default function AboutPage() {
                 I&apos;m Chef Angie
               </h1>
               <p className="font-body text-lg text-white/80 mb-8">
-                Welcome! I&apos;m Angela, but everyone calls me Chef Angie. I&apos;m a passionate cook,
-                a proud Kenyan, and your host here in beautiful Diani Beach. Whether you&apos;re here
-                for the food or looking for the perfect coastal getaway, I&apos;m here to make your
-                experience unforgettable.
+                Welcome! I&apos;m Angela, but everyone calls me Chef Angie. I&apos;m a passionate cook
+                and certified baker, a proud Kenyan, and your host here in beautiful Diani Beach.
+                From savory traditional dishes to delicious pastries, I&apos;m here to make your
+                culinary experience unforgettable.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>
