@@ -266,11 +266,11 @@ export default function StayPage() {
           <div className="text-center mb-12">
             <p className="font-script text-2xl md:text-3xl text-coral mb-3">Upgrade Your Stay</p>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Private Chef at Your Door
+              Chef-Made Meals at Your Door
             </h2>
             <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
-              Why worry about meals when you&apos;re on vacation? Enjoy a 5-star dining experience
-              without leaving your apartment. Your personal chef, your schedule, your menu.
+              Why worry about meals when you&apos;re on vacation? Enjoy home-cooked meals
+              without lifting a finger. Your menu, your schedule, delivered fresh.
             </p>
           </div>
 
@@ -298,7 +298,7 @@ export default function StayPage() {
               {/* Key Benefits */}
               <div className="space-y-4">
                 {[
-                  { icon: '👨‍🍳', title: 'Personal Chef Service', desc: 'Your own private chef at your disposal' },
+                  { icon: '👨‍🍳', title: 'Personal Chef Service', desc: 'Professional chef prepares your meals' },
                   { icon: '🚪', title: 'Delivered to Your Door', desc: 'Fresh meals at the time you choose' },
                   { icon: '📝', title: 'Custom Menu', desc: 'You decide what you want to eat' },
                   { icon: '🏖️', title: 'Stress-Free Vacation', desc: 'No cooking, no dishes, just relax' },
@@ -365,7 +365,7 @@ export default function StayPage() {
                 <div className="bg-teal/10 rounded-xl p-4 mb-6">
                   <p className="text-sm text-teal-dark font-ui">
                     <span className="font-semibold">💡 Great Value:</span> For just 500 KES more than restaurant meals,
-                    enjoy personalized home-cooked dishes delivered to your door by your private chef!
+                    enjoy personalized home-cooked dishes delivered straight to your door!
                   </p>
                 </div>
 
