@@ -6,7 +6,6 @@ const galleryImages = [
   { src: '/images/apartment/gallery/img1_pool.jpg', alt: 'Swimming pool view' },
   { src: '/images/apartment/gallery/img2_pool.jpg', alt: 'Pool area' },
   { src: '/images/apartment/gallery/img3_pool.jpg', alt: 'Pool and garden' },
-  { src: '/images/apartment/gallery/IMG-20260117-WA0003.jpg', alt: 'Apartment interior' },
   { src: '/images/apartment/gallery/IMG-20260117-WA0006.jpg', alt: 'Living space' },
   { src: '/images/apartment/gallery/IMG-20260117-WA0007.jpg', alt: 'Bedroom' },
   { src: '/images/apartment/gallery/IMG-20260117-WA0008.jpg', alt: 'Kitchen area' },
