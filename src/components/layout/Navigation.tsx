@@ -18,7 +18,6 @@ const navLinks: NavLink[] = [
     ],
   },
   { label: 'Stay', href: '/hebergement' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
 
