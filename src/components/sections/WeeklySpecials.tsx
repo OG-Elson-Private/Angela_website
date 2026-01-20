@@ -116,7 +116,7 @@ export function WeeklySpecials() {
         <div className="text-center mb-12">
           <p className="font-script text-2xl md:text-3xl text-coral mb-2">Fresh & Delicious</p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-ocean-dark mb-4">
-            This Week&apos;s Menu
+            Weekly Food Delivery in Diani
           </h2>
           <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
             Order before Thursday for Friday delivery. Order before Monday for Tuesday delivery.

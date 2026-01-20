@@ -69,10 +69,10 @@ export function TwoPillars() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-ocean-dark mb-4">
-            Two Ways to Experience Diani
+            Two Ways to Experience Diani Beach
           </h2>
           <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
-            Whether you&apos;re craving authentic flavors or seeking the perfect coastal retreat,
+            Whether you&apos;re craving authentic Kenyan cuisine or seeking the perfect coastal retreat,
             Chef Angie has you covered.
           </p>
         </div>
@@ -82,7 +82,7 @@ export function TwoPillars() {
           <PillarCard
             title="Taste"
             subtitle="Cooking Services"
-            description="Experience the rich flavors of Kenya with our weekly food delivery, private chef services, and event catering."
+            description="Experience authentic Kenyan cuisine with our weekly food delivery, private chef services, and event catering in Diani Beach."
             price=""
             priceLabel=""
             image="/images/dishes/cooking-services.jpg"
@@ -95,7 +95,7 @@ export function TwoPillars() {
             title="Stay"
             subtitle="Accommodation"
             description="Your home away from home in Diani Beach. A beautiful apartment with pool, just steps from the ocean."
-            price="From 5,000 KES"
+            price="From 4,000 KES"
             priceLabel="Per night, direct booking"
             image="/images/apartment/pool.jpg"
             imageAlt="Apartment pool area in Diani Beach"

@@ -28,10 +28,10 @@ export function Hero() {
           Chef Angie
         </h1>
         <p className="font-heading text-2xl md:text-3xl lg:text-4xl font-light mb-4">
-          Your Complete Diani Experience
+          Authentic Kenyan Cuisine in Diani Beach
         </p>
         <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
-          Authentic Kenyan cuisine and coastal hospitality.
+          Experience traditional Swahili food and coastal hospitality.
           From our kitchen to your table, from our apartment to your vacation.
         </p>
 
