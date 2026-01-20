@@ -5,7 +5,7 @@ import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
   title: 'About Chef Angie | Your Host in Diani Beach',
-  description: 'Meet Chef Angie - passionate cook, gracious host, and your guide to authentic Kenyan coastal cuisine in Diani Beach. Discover her story and what makes her cooking special.',
+  description: 'Meet Chef Angie - passionate cook and gracious host offering authentic Kenyan coastal cuisine in Diani Beach. Discover her story.',
   openGraph: {
     title: 'About Chef Angie | Diani Beach',
     description: 'Meet the chef behind the flavors - authentic Kenyan cuisine with love',

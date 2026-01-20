@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     default: 'Chef Angie | Authentic Kenyan Cuisine in Diani Beach',
     template: '%s | Chef Angie',
   },
-  description: 'Experience authentic Kenyan cuisine with Chef Angie in Diani Beach. Weekly food delivery (Biryani Friday, Pilau Tuesday), private chef services, and vacation apartment rental with pool.',
+  description: 'Authentic Kenyan cuisine in Diani Beach. Weekly delivery (Biryani Friday, Pilau Tuesday), private chef & vacation apartment with pool.',
   keywords: ['chef', 'diani beach', 'kenya', 'cuisine', 'biryani', 'pilau', 'vacation rental', 'apartment', 'catering'],
   authors: [{ name: 'Chef Angie' }],
   creator: 'Chef Angie',
