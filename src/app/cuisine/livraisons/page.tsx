@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'Biryani Friday & Pilau Tuesday Delivery',
-  description: 'Order authentic Biryani every Friday and Pilau every Tuesday. Fresh, home-cooked Kenyan cuisine delivered to Diani and Ukunda.',
+  title: 'Food Delivery Diani Beach | Biryani Friday & Pilau Tuesday',
+  description: 'Food delivery in Diani Beach. Order Biryani every Friday and Pilau every Tuesday. Fresh Kenyan cuisine delivered to Diani Beach and Ukunda.',
   openGraph: {
-    title: 'Weekly Food Delivery | Chef Angie',
-    description: 'Biryani Friday (550 KES) & Pilau Tuesday (450 KES) - Order now!',
+    title: 'Food Delivery Diani Beach | Chef Angie',
+    description: 'Weekly food delivery in Diani Beach - Biryani Friday & Pilau Tuesday',
     type: 'website',
     url: 'https://www.chefangela.co.ke/cuisine/livraisons',
     images: ['/images/og/og-delivery.jpg'],
@@ -58,10 +58,10 @@ export default function LivraisonsPage() {
         <div className="container-standard text-center text-white px-4">
           <p className="font-script text-3xl text-coral mb-4">Fresh Every Week</p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Weekly Food Delivery
+            Food Delivery in Diani Beach
           </h1>
           <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
-            Order before Thursday for <span className="text-coral font-semibold">Biryani Friday</span>.
+            Weekly food delivery to Diani Beach and Ukunda. Order before Thursday for <span className="text-coral font-semibold">Biryani Friday</span>.
             Order before Monday for <span className="text-coral font-semibold">Pilau Tuesday</span>.
           </p>
         </div>
@@ -227,7 +227,7 @@ export default function LivraisonsPage() {
           <div className="text-center mb-12">
             <p className="font-script text-2xl text-coral mb-2">Simple Process</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              How to Order
+              How to Order Food Delivery in Diani
             </h2>
           </div>
 
@@ -249,7 +249,7 @@ export default function LivraisonsPage() {
       <section className="py-12 bg-seafoam">
         <div className="container-standard text-center px-4">
           <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-6">
-            We Deliver To
+            Food Delivery Areas
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {deliveryAreas.map((area) => (
@@ -265,10 +265,10 @@ export default function LivraisonsPage() {
       <section className="py-16 bg-ocean-dark text-white">
         <div className="container-standard text-center px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
-            Ready to Order?
+            Ready to Order Food Delivery?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
-            Contact us on WhatsApp or call to place your order today!
+            Contact us on WhatsApp or call to place your food delivery order in Diani Beach today!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
