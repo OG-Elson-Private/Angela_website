@@ -172,12 +172,12 @@ export default function CuisinePage() {
         <div className="container-standard">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/images/chef/profile.jpg"
                 alt="Chef Angie preparing traditional cuisine"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
 
