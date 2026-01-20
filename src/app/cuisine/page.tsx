@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'Cuisine Services | Chef Angie',
-  description: 'Discover Chef Angie\'s culinary services in Diani Beach: weekly food delivery (Biryani Friday, Pilau Tuesday), private chef experiences, and event catering.',
+  title: 'Private Chef in Diani Beach | Catering & Food Delivery',
+  description: 'Hire a private chef in Diani Beach. Chef Angie offers personal chef services, event catering, and weekly food delivery (Biryani, Pilau).',
   openGraph: {
-    title: 'Cuisine Services | Chef Angie',
-    description: 'Authentic Kenyan cuisine in Diani Beach - Delivery, Private Chef, Catering',
+    title: 'Private Chef in Diani Beach | Chef Angie',
+    description: 'Hire a private chef in Diani Beach - Personal chef, catering & food delivery',
     type: 'website',
     url: 'https://www.chefangela.co.ke/cuisine',
     images: ['/images/og/og-cuisine.jpg'],
@@ -35,7 +35,7 @@ const services = [
     id: 'private-chef',
     title: 'Private Chef',
     subtitle: 'In-Home Dining Experience',
-    description: 'Have Chef Angie cook in your villa or apartment. Perfect for romantic dinners, family gatherings, or special celebrations.',
+    description: 'Hire a private chef in Diani Beach for your villa or apartment. Perfect for romantic dinners, family gatherings, or special celebrations.',
     price: 'From 3,500 KES/day',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -66,7 +66,7 @@ const services = [
 const whyChoose = [
   { title: 'Authentic Recipes', description: 'Traditional Swahili flavors passed down through generations' },
   { title: 'Fresh Ingredients', description: 'Locally sourced, high-quality produce and spices' },
-  { title: '4+ Years Experience', description: 'Trusted by hundreds of satisfied customers in Diani' },
+  { title: '4+ Years Experience', description: 'Trusted private chef by hundreds of satisfied customers in Diani Beach' },
   { title: 'Flexible Options', description: 'From single meals to full catering services' },
 ]
 
@@ -91,11 +91,11 @@ export default function CuisinePage() {
             Taste the Tradition
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Authentic Swahili Cuisine
+            Private Chef in Diani Beach
           </h1>
           <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8">
-            From weekly food delivery to private chef experiences,
-            discover the rich flavors of Kenya with Chef Angie.
+            Hire a personal chef for authentic Kenyan cuisine.
+            From weekly food delivery to private chef experiences in your villa.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
@@ -115,10 +115,10 @@ export default function CuisinePage() {
         <div className="container-standard">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
-              Our Culinary Services
+              Private Chef & Catering Services in Diani
             </h2>
             <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
-              Choose the service that fits your needs - from convenient weekly delivery to full-service catering.
+              Choose the service that fits your needs - from convenient weekly delivery to hiring a private chef in Diani Beach.
             </p>
           </div>
 
@@ -235,7 +235,7 @@ export default function CuisinePage() {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="font-script text-2xl text-coral mb-2">Private Chef Service</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-6">
-              Your Personal Chef Experience
+              Hire a Personal Chef in Diani Beach
             </h2>
             <p className="font-body text-lg text-gray-warm">
               Transform your villa or apartment into a private restaurant.
