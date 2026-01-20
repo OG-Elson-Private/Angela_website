@@ -78,7 +78,7 @@ export default function CuisinePage() {
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/images/dishes/chicken-biryani.jpg"
-            alt=""
+            alt="Authentic Chicken Biryani - traditional Kenyan rice dish with aromatic spices"
             fill
             className="object-cover"
             priority
