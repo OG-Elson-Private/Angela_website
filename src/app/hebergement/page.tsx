@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Book your perfect coastal getaway in Diani Beach. Beautiful apartment with pool, just steps from the ocean. Direct booking saves you money!',
   openGraph: {
     title: 'Vacation Apartment | Chef Angie - Diani Beach',
-    description: 'Your home away from home in Diani Beach - Apartment with pool from 5,000 KES/night',
+    description: 'Your home away from home in Diani Beach - Apartment with pool from 4,000 KES/night',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: ['/images/og/og-stay.jpg'],
@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 
 const amenities = [
   { icon: '🏊', name: 'Swimming Pool', description: 'Private pool access' },
-  { icon: '🛏️', name: '1 Bedroom', description: 'Comfortable double bed' },
+  { icon: '🛏️', name: '1 Bedroom', description: 'Comfortable queen size bed' },
   { icon: '🍳', name: 'Kitchenette', description: 'Basic cooking essentials' },
   { icon: '📶', name: 'Free WiFi', description: 'Stay connected' },
-  { icon: '🌀', name: 'Ceiling Fan', description: 'Stay cool' },
+  { icon: '🌀', name: 'Stand Fan', description: 'Stay cool' },
   { icon: '🚗', name: 'Free Parking', description: 'Safe parking space' },
-  { icon: '🏖️', name: 'Beach Access', description: '5 min walk to beach' },
+  { icon: '🏖️', name: 'Beach Access', description: '10 min walk to beach' },
   { icon: '🔒', name: '24/7 Security', description: 'Gated compound' },
 ]
 
@@ -35,8 +35,8 @@ const whyBookDirect = [
 ]
 
 const pricing = {
-  lowSeason: { price: 5000, period: 'Mid-January - October' },
-  highSeason: { price: 8000, period: 'November - Mid-January' },
+  lowSeason: { price: 4000, period: 'Mid-January - October' },
+  highSeason: { price: 7000, period: 'November - Mid-January' },
 }
 
 export default function StayPage() {
@@ -68,7 +68,7 @@ export default function StayPage() {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white">
-                <span className="font-ui font-semibold">From 5,000 KES</span>
+                <span className="font-ui font-semibold">From 4,000 KES</span>
                 <span className="text-white/70 text-sm"> / night</span>
               </div>
               <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white">
@@ -244,9 +244,9 @@ export default function StayPage() {
               </p>
               <ul className="space-y-3">
                 {[
-                  { name: 'Diani Beach', distance: '5 min walk' },
+                  { name: 'Diani Beach', distance: '10 min walk' },
                   { name: 'Restaurants & Bars', distance: '5-10 min walk' },
-                  { name: 'Carrefour Supermarket', distance: '5 min walk' },
+                  { name: 'Carrefour Supermarket', distance: '10 min walk' },
                   { name: 'Ukunda Airstrip', distance: '15 min drive' },
                   { name: 'Mombasa Airport', distance: '45 min drive' },
                 ].map((place) => (
@@ -310,7 +310,7 @@ export default function StayPage() {
                       'Cozy 1-bedroom apartment',
                       'Private pool access',
                       'Free WiFi & parking',
-                      '5 min walk to beach',
+                      '10 min walk to beach',
                       '24/7 security',
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
@@ -388,7 +388,7 @@ export default function StayPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between text-gray-warm">
                       <span>Apartment alone</span>
-                      <span>5,000 - 8,000 KES</span>
+                      <span>4,000 - 7,000 KES</span>
                     </div>
                     <div className="flex justify-between text-gray-warm">
                       <span>Chef service alone</span>
@@ -396,7 +396,7 @@ export default function StayPage() {
                     </div>
                     <div className="border-t border-teal/20 pt-2 mt-2 flex justify-between font-semibold text-gray-warm">
                       <span>If booked separately</span>
-                      <span className="line-through">8,500 - 11,500 KES</span>
+                      <span className="line-through">7,500 - 10,500 KES</span>
                     </div>
                     <div className="flex justify-between font-bold text-teal text-base">
                       <span>Package price</span>
