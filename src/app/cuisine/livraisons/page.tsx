@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'Weekly Delivery - Biryani Friday & Pilau Tuesday | Chef Angie',
+  title: 'Biryani Friday & Pilau Tuesday Delivery',
   description: 'Order authentic Biryani every Friday and Pilau every Tuesday. Fresh, home-cooked Kenyan cuisine delivered to Diani and Ukunda.',
   openGraph: {
     title: 'Weekly Food Delivery | Chef Angie',
