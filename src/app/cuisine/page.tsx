@@ -177,7 +177,7 @@ export default function CuisinePage() {
                 src="/images/chef/profile.jpg"
                 alt="Chef Angie preparing traditional cuisine"
                 fill
-                className="object-cover object-[center_20%]"
+                className="object-cover object-[center_25%]"
               />
             </div>
 
