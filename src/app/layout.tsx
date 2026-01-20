@@ -41,6 +41,11 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chefangela.co.ke'),
+  verification: {
+    other: {
+      'ahrefs-site-verification': '891dbc04eca9d7b3a034347d520cd51cbff47d7da1cc96a97afb42c185ebf21f',
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
