@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://chefangela.co.ke/sitemap.xml',
+    sitemap: 'https://www.chefangela.co.ke/sitemap.xml',
   }
 }

@@ -11,10 +11,10 @@ import {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://chefangela.co.ke',
+  '@id': 'https://www.chefangela.co.ke',
   name: 'Chef Angela',
   description: 'Authentic Kenyan cuisine and vacation rental in Diani Beach. Weekly food delivery (Biryani Friday, Pilau Tuesday), private chef services, and apartment with pool.',
-  url: 'https://chefangela.co.ke',
+  url: 'https://www.chefangela.co.ke',
   telephone: '+254719635944',
   email: 'liyayiangela20@gmail.com',
   address: {
@@ -28,10 +28,10 @@ const jsonLd = {
     latitude: -4.2868396,
     longitude: 39.5756094,
   },
-  image: 'https://chefangela.co.ke/images/og/og-home.jpg',
+  image: 'https://www.chefangela.co.ke/images/og/og-home.jpg',
   priceRange: '$$',
   servesCuisine: ['Kenyan', 'Swahili', 'African'],
-  hasMenu: 'https://chefangela.co.ke/cuisine/livraisons',
+  hasMenu: 'https://www.chefangela.co.ke/cuisine/livraisons',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
