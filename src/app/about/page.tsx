@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'About Chef Angie | Your Host in Diani Beach',
-  description: 'Meet Chef Angie - passionate cook and gracious host offering authentic Kenyan coastal cuisine in Diani Beach. Discover her story.',
+  title: 'Chef Angie Diani Beach | Private Chef & Host',
+  description: 'Meet Chef Angie, your private chef in Diani Beach. Passionate cook offering authentic Kenyan cuisine, catering, and vacation apartment.',
   openGraph: {
-    title: 'About Chef Angie | Diani Beach',
-    description: 'Meet the chef behind the flavors - authentic Kenyan cuisine with love',
+    title: 'Chef Angie Diani Beach | Private Chef & Host',
+    description: 'Meet Chef Angie - your private chef in Diani Beach for authentic Kenyan cuisine',
     type: 'website',
     url: 'https://www.chefangela.co.ke/about',
     images: ['/images/og/og-about.jpg'],
@@ -56,8 +56,8 @@ const journey = [
   },
   {
     year: 'Today',
-    title: 'Chef Angie\'s Kitchen',
-    description: 'Now I combine my love for cooking with hospitality, offering savory dishes, fresh pastries, and a beautiful apartment for guests to experience Diani Beach.',
+    title: 'Private Chef in Diani Beach',
+    description: 'Now I work as a private chef in Diani Beach, combining my love for cooking with hospitality, offering savory dishes, fresh pastries, and a vacation apartment.',
   },
 ]
 
@@ -71,11 +71,11 @@ export default function AboutPage() {
             <div className="text-white">
               <p className="font-script text-3xl text-coral mb-4">Nice to Meet You</p>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                I&apos;m Chef Angie
+                Chef Angie - Diani Beach
               </h1>
               <p className="font-body text-lg text-white/80 mb-8">
-                Welcome! I&apos;m Angela, but everyone calls me Chef Angie. I&apos;m a passionate cook
-                trained in baking, a proud Kenyan, and your host here in beautiful Diani Beach.
+                Welcome! I&apos;m Angela, your private chef in Diani Beach. I&apos;m a passionate cook
+                trained in baking, a proud Kenyan, and your host here on the beautiful coast.
                 From savory traditional dishes to delicious pastries, I&apos;m here to make your
                 culinary experience unforgettable.
               </p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <p className="font-script text-2xl text-coral mb-2">My Journey</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              From My Grandmother&apos;s Kitchen to Yours
+              How I Became a Private Chef in Diani
             </h2>
           </div>
 
@@ -216,7 +216,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <p className="font-script text-2xl text-coral mb-2">What I Offer</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              Two Ways to Experience Diani
+              Private Chef & Accommodation in Diani Beach
             </h2>
           </div>
 
@@ -236,7 +236,7 @@ export default function AboutPage() {
                 <p className="font-script text-xl text-coral mb-2">Taste</p>
                 <h3 className="font-heading text-2xl font-bold mb-3">My Cuisine</h3>
                 <p className="font-body text-white/80 mb-4">
-                  From weekly Biryani and Pilau deliveries to private chef services -
+                  Hire a private chef in Diani for weekly Biryani and Pilau deliveries -
                   experience authentic Kenyan coastal flavors.
                 </p>
                 <Button variant="gradient" asChild>
