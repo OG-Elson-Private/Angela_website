@@ -196,10 +196,10 @@ export function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:contact@chefangie.com"
+                  href="mailto:liyayiangela20@gmail.com"
                   className="font-body text-sm text-white/70 hover:text-coral transition-colors duration-200"
                 >
-                  contact@chefangie.com
+                  liyayiangela20@gmail.com
                 </a>
               </li>
             </ul>

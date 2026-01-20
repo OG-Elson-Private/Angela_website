@@ -16,7 +16,7 @@ const jsonLd = {
   description: 'Authentic Kenyan cuisine and vacation rental in Diani Beach. Weekly food delivery (Biryani Friday, Pilau Tuesday), private chef services, and apartment with pool.',
   url: 'https://chefangela.co.ke',
   telephone: '+254719635944',
-  email: 'contact@chefangela.co.ke',
+  email: 'liyayiangela20@gmail.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Diani Beach',
