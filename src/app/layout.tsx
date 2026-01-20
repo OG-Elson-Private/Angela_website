@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Cormorant_Garamond, Cormorant, Sacramento, Lato, Raleway } from 'next/font/google'
 import { Header, Footer, FloatingButtons } from '@/components/layout'
 import './globals.css'
@@ -99,6 +100,13 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingButtons />
+
+        {/* Ahrefs Web Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="UPk/YPj4v2tX61MD7SCZoA"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
