@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vacation Apartment | Chef Angie - Diani Beach',
     description: 'Your home away from home in Diani Beach - Apartment with pool from 5,000 KES/night',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/hebergement',
     images: ['/images/og/og-stay.jpg'],
   },
 }

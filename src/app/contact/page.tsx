@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Chef Angie',
     description: 'Get in touch for food orders and accommodation in Diani Beach',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/contact',
     images: ['/images/og/og-contact.jpg'],
   },
 }

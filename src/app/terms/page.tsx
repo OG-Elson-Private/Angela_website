@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Terms of Service | Chef Angela',
     description: 'Terms of Service for Chef Angela culinary and accommodation services',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/terms',
+    images: ['/images/og/og-home.jpg'],
   },
 }
 

@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Weekly Food Delivery | Chef Angie',
     description: 'Biryani Friday (550 KES) & Pilau Tuesday (450 KES) - Order now!',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/cuisine/livraisons',
     images: ['/images/og/og-delivery.jpg'],
   },
 }

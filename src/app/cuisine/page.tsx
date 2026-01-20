@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cuisine Services | Chef Angie',
     description: 'Authentic Kenyan cuisine in Diani Beach - Delivery, Private Chef, Catering',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/cuisine',
     images: ['/images/og/og-cuisine.jpg'],
   },
 }

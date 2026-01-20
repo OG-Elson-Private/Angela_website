@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | Chef Angela',
     description: 'Privacy Policy for Chef Angela culinary services',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/privacy',
+    images: ['/images/og/og-home.jpg'],
   },
 }
 

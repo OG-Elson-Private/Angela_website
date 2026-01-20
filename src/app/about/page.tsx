@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Chef Angie | Diani Beach',
     description: 'Meet the chef behind the flavors - authentic Kenyan cuisine with love',
+    type: 'website',
+    url: 'https://www.chefangela.co.ke/about',
     images: ['/images/og/og-about.jpg'],
   },
 }
