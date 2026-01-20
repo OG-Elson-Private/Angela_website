@@ -5,11 +5,11 @@ import { Button } from '@/components/ui'
 import { GallerySection } from '@/components/features/hebergement/GallerySection'
 
 export const metadata: Metadata = {
-  title: 'Vacation Apartment in Diani Beach | Chef Angie',
-  description: 'Book your perfect coastal getaway in Diani Beach. Beautiful apartment with pool, just steps from the ocean. Direct booking saves you money!',
+  title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool',
+  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 4,000 KES/night. Direct booking saves you money!',
   openGraph: {
-    title: 'Vacation Apartment | Chef Angie - Diani Beach',
-    description: 'Your home away from home in Diani Beach - Apartment with pool from 4,000 KES/night',
+    title: 'Vacation Apartment Diani Beach | Chef Angie',
+    description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 4,000 KES/night',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: ['/images/og/og-stay.jpg'],
@@ -59,11 +59,11 @@ export default function StayPage() {
           <div className="max-w-2xl">
             <p className="font-script text-3xl text-coral mb-4">Your Coastal Retreat</p>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Your Home in Diani Beach
+              Vacation Apartment in Diani Beach
             </h1>
             <p className="font-body text-lg text-white/80 mb-8">
-              A beautiful apartment with pool, just minutes from the pristine beaches of Diani.
-              Perfect for couples, solo travelers, or small families.
+              Book a holiday rental with pool, just minutes from the pristine beaches of Diani.
+              Perfect for couples, solo travelers, or small families seeking a vacation apartment.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -122,7 +122,7 @@ export default function StayPage() {
           <div className="text-center mb-12">
             <p className="font-script text-2xl text-coral mb-2">Everything You Need</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              Amenities & Features
+              Vacation Apartment Amenities
             </h2>
           </div>
 
@@ -145,7 +145,7 @@ export default function StayPage() {
             <div>
               <p className="font-script text-2xl text-coral mb-2">Save More</p>
               <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-8">
-                Why Book Direct?
+                Why Book This Holiday Rental Direct?
               </h2>
 
               <div className="space-y-6">
@@ -219,7 +219,7 @@ export default function StayPage() {
           <div className="text-center mb-12">
             <p className="font-script text-2xl text-coral mb-2">Prime Location</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              Where You&apos;ll Be
+              Vacation Apartment Location in Diani
             </h2>
           </div>
 
@@ -479,10 +479,10 @@ export default function StayPage() {
       <section className="py-16 bg-ocean-dark text-white">
         <div className="container-standard text-center px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
-            Ready for Your Diani Getaway?
+            Ready to Book Your Vacation Apartment?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
-            Book directly and save. Contact us for availability and special rates!
+            Book your holiday rental in Diani Beach directly and save. Contact us for availability!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
