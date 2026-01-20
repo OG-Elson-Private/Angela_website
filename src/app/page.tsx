@@ -10,7 +10,7 @@ import {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'Restaurant',
   '@id': 'https://www.chefangela.co.ke',
   name: 'Chef Angela',
   description: 'Authentic Kenyan cuisine and vacation rental in Diani Beach. Weekly food delivery (Biryani Friday, Pilau Tuesday), private chef services, and apartment with pool.',
