@@ -259,39 +259,97 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Chef Service Add-on - Premium Offer */}
-      <section id="chef-service" className="py-16 md:py-20 bg-gradient-to-br from-ocean-dark via-ocean-dark to-teal-dark relative overflow-hidden">
+      {/* All-Inclusive Package */}
+      <section id="package" className="py-16 md:py-20 bg-gradient-to-br from-ocean-dark via-ocean-dark to-teal-dark relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-coral/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/10 rounded-full blur-3xl" />
 
         <div className="container-standard px-4 relative">
-          {/* Exclusive Badge */}
+          {/* Best Value Badge */}
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-coral px-4 py-2 rounded-full animate-pulse">
+            <div className="inline-flex items-center gap-2 bg-coral px-4 py-2 rounded-full">
               <span className="text-white text-sm font-ui font-bold uppercase tracking-wider">
-                ✨ Exclusive Offer
+                🎁 Best Value
               </span>
             </div>
           </div>
 
           <div className="text-center mb-12">
-            <p className="font-script text-2xl md:text-3xl text-coral mb-3">Upgrade Your Stay</p>
+            <p className="font-script text-2xl md:text-3xl text-coral mb-3">All-Inclusive</p>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Chef-Made Meals at Your Door
+              The Complete Diani Package
             </h2>
             <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
-              Why worry about meals when you&apos;re on vacation? Enjoy home-cooked meals
-              without lifting a finger. Your menu, your schedule, delivered fresh.
+              Stay, eat, and relax — everything included in one simple price.
+              The perfect hassle-free vacation experience in Diani Beach.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Left - Benefits */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Left - What's Included */}
             <div className="space-y-6">
-              {/* 3 Meals Visual */}
+              {/* Package Includes Header */}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="font-ui font-semibold text-white mb-4 text-center">3 Meals Delivered Daily</h3>
+                <h3 className="font-ui font-semibold text-white mb-6 text-center text-lg">
+                  Your Package Includes
+                </h3>
+
+                {/* Accommodation */}
+                <div className="mb-6 pb-6 border-b border-white/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-teal rounded-full flex items-center justify-center">
+                      <span className="text-xl">🏠</span>
+                    </div>
+                    <h4 className="font-ui font-semibold text-white text-lg">Accommodation</h4>
+                  </div>
+                  <ul className="space-y-2 pl-13">
+                    {[
+                      'Cozy 1-bedroom apartment',
+                      'Private pool access',
+                      'Free WiFi & parking',
+                      '5 min walk to beach',
+                      '24/7 security',
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
+                        <svg className="w-4 h-4 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Chef Service */}
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-coral rounded-full flex items-center justify-center">
+                      <span className="text-xl">👨‍🍳</span>
+                    </div>
+                    <h4 className="font-ui font-semibold text-white text-lg">Personal Chef Service</h4>
+                  </div>
+                  <ul className="space-y-2 pl-13">
+                    {[
+                      '3 home-cooked meals daily',
+                      'Custom menu planning',
+                      'Delivered to your door',
+                      'Flexible timing',
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
+                        <svg className="w-4 h-4 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* 3 Meals Visual */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <h3 className="font-ui font-semibold text-white mb-4 text-center">Daily Meals Included</h3>
                 <div className="grid grid-cols-3 gap-4">
                   {[
                     { icon: '🌅', meal: 'Breakfast', time: 'Morning' },
@@ -306,93 +364,80 @@ export default function StayPage() {
                   ))}
                 </div>
               </div>
-
-              {/* Key Benefits */}
-              <div className="space-y-4">
-                {[
-                  { icon: '👨‍🍳', title: 'Personal Chef Service', desc: 'Professional chef prepares your meals' },
-                  { icon: '🚪', title: 'Delivered to Your Door', desc: 'Fresh meals at the time you choose' },
-                  { icon: '📝', title: 'Custom Menu', desc: 'You decide what you want to eat' },
-                  { icon: '🏖️', title: 'Stress-Free Vacation', desc: 'No cooking, no dishes, just relax' },
-                ].map((benefit) => (
-                  <div key={benefit.title} className="flex items-start gap-4 bg-white/5 rounded-xl p-4">
-                    <span className="text-2xl">{benefit.icon}</span>
-                    <div>
-                      <h4 className="font-ui font-semibold text-white">{benefit.title}</h4>
-                      <p className="text-white/70 text-sm">{benefit.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Right - Pricing Card */}
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
               {/* Header */}
-              <div className="bg-coral p-6 text-center">
-                <p className="text-white/80 text-sm font-ui uppercase tracking-wide mb-1">Daily Chef Service</p>
+              <div className="bg-gradient-to-r from-coral to-sunset p-6 text-center">
+                <p className="text-white/90 text-sm font-ui uppercase tracking-wide mb-1">All-Inclusive Package</p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="font-heading text-5xl font-bold text-white">3,500</span>
+                  <span className="font-heading text-5xl font-bold text-white">8,000</span>
                   <span className="text-white/80 font-ui">KES/day</span>
                 </div>
-                <p className="text-white/70 text-sm mt-2">For 3 complete meals</p>
+                <p className="text-white/80 text-sm mt-2">Stay + Chef Service</p>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                {/* What's Included */}
-                <div className="mb-6">
-                  <h4 className="font-ui font-semibold text-ocean-dark mb-3 flex items-center gap-2">
-                    <span className="text-teal">✓</span> What&apos;s Included
-                  </h4>
-                  <ul className="space-y-2">
-                    {[
-                      'Professional chef service',
-                      'Menu planning with you',
-                      'Shopping for ingredients',
-                      'Meal preparation',
-                      'Delivery to your apartment',
-                      'Flexible timing',
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-gray-warm">
-                        <svg className="w-4 h-4 text-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Savings Comparison */}
+                <div className="bg-teal/10 rounded-xl p-4 mb-6">
+                  <h4 className="font-ui font-semibold text-teal-dark mb-3 text-center">You Save with the Package!</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between text-gray-warm">
+                      <span>Apartment alone</span>
+                      <span>5,000 - 8,000 KES</span>
+                    </div>
+                    <div className="flex justify-between text-gray-warm">
+                      <span>Chef service alone</span>
+                      <span>3,500 KES</span>
+                    </div>
+                    <div className="border-t border-teal/20 pt-2 mt-2 flex justify-between font-semibold text-gray-warm">
+                      <span>If booked separately</span>
+                      <span className="line-through">8,500 - 11,500 KES</span>
+                    </div>
+                    <div className="flex justify-between font-bold text-teal text-base">
+                      <span>Package price</span>
+                      <span>8,000 KES</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* What's Not Included */}
+                {/* Note about ingredients */}
                 <div className="mb-6 bg-sand-light rounded-xl p-4">
-                  <h4 className="font-ui font-semibold text-ocean-dark mb-2 text-sm">Note</h4>
+                  <h4 className="font-ui font-semibold text-ocean-dark mb-2 text-sm flex items-center gap-2">
+                    <span>ℹ️</span> Good to Know
+                  </h4>
                   <p className="text-sm text-gray-warm">
                     Food ingredients are at your charge. You choose the menu, we provide
                     the shopping list, and you cover the ingredients cost.
                   </p>
                 </div>
 
-                {/* Value Comparison */}
-                <div className="bg-teal/10 rounded-xl p-4 mb-6">
-                  <p className="text-sm text-teal-dark font-ui">
-                    <span className="font-semibold">💡 Great Value:</span> For just 500 KES more than restaurant meals,
-                    enjoy personalized home-cooked dishes delivered straight to your door!
-                  </p>
+                {/* Perfect For */}
+                <div className="mb-6">
+                  <h4 className="font-ui font-semibold text-ocean-dark mb-3">Perfect For</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Couples', 'Solo travelers', 'Honeymooners', 'Remote workers'].map((tag) => (
+                      <span key={tag} className="bg-coral/10 text-coral px-3 py-1 rounded-full text-sm font-ui">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* CTA */}
                 <Button variant="gradient" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20your%20apartment%20WITH%20the%20Chef%20Service%20package.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ADietary%20preferences:%20____"
+                    href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20the%20ALL-INCLUSIVE%20PACKAGE%20(8,000%20KES/day).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ADietary%20preferences:%20____"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book Apartment + Chef Service
+                    Book the Package
                   </a>
                 </Button>
                 <p className="text-center text-xs text-gray-warm mt-3">
-                  Or add it anytime during your stay
+                  Instant confirmation via WhatsApp
                 </p>
               </div>
             </div>

@@ -57,7 +57,7 @@ export function CombinedExperience() {
 
         {/* CTA */}
         <Button variant="gradient" size="lg" asChild>
-          <Link href="/experiences">Discover Our Packages</Link>
+          <Link href="/hebergement#package">Discover Our Package</Link>
         </Button>
       </div>
     </section>
