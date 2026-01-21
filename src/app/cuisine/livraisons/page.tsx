@@ -14,6 +14,76 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FoodService',
+  '@id': 'https://www.chefangela.co.ke/cuisine/livraisons',
+  name: 'Chef Angie Food Delivery',
+  description: 'Weekly food delivery in Diani Beach. Biryani every Friday and Pilau every Tuesday. Fresh authentic Kenyan cuisine delivered to your door.',
+  url: 'https://www.chefangela.co.ke/cuisine/livraisons',
+  telephone: '+254719635944',
+  email: 'liyayiangela20@gmail.com',
+  image: 'https://www.chefangela.co.ke/images/dishes/chicken-biryani.jpg',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Diani Beach',
+    addressRegion: 'Kwale County',
+    addressCountry: 'KE',
+  },
+  areaServed: ['Diani Beach', 'Ukunda'],
+  serviceType: 'Food Delivery',
+  hasMenu: {
+    '@type': 'Menu',
+    name: 'Weekly Delivery Menu',
+    hasMenuSection: [
+      {
+        '@type': 'MenuSection',
+        name: 'Biryani Friday',
+        description: 'Available every Friday - Order by Thursday',
+        hasMenuItem: [
+          {
+            '@type': 'MenuItem',
+            name: 'Chicken Biryani',
+            description: 'Fragrant basmati rice with tender chicken, aromatic spices, saffron. Includes banana, salad, kachumbari.',
+            offers: {
+              '@type': 'Offer',
+              price: '550',
+              priceCurrency: 'KES',
+            },
+          },
+          {
+            '@type': 'MenuItem',
+            name: 'Beef Biryani',
+            description: 'Rich biryani with melt-in-your-mouth beef, traditional Swahili spices. Includes banana, salad, kachumbari.',
+            offers: {
+              '@type': 'Offer',
+              price: '500',
+              priceCurrency: 'KES',
+            },
+          },
+        ],
+      },
+      {
+        '@type': 'MenuSection',
+        name: 'Pilau Tuesday',
+        description: 'Available every Tuesday - Order by Monday',
+        hasMenuItem: [
+          {
+            '@type': 'MenuItem',
+            name: 'Beef Pilau',
+            description: 'Traditional Swahili pilau with fragrant spices, tender beef, fluffy rice. Includes kachumbari, salad.',
+            offers: {
+              '@type': 'Offer',
+              price: '450',
+              priceCurrency: 'KES',
+            },
+          },
+        ],
+      },
+    ],
+  },
+}
+
 const biryaniDishes = [
   {
     name: 'Chicken Biryani',
@@ -53,6 +123,10 @@ const orderSteps = [
 export default function LivraisonsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-ocean-dark">
         <div className="container-standard text-center text-white px-4">

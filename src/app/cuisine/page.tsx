@@ -15,6 +15,94 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FoodService',
+  '@id': 'https://www.chefangela.co.ke/cuisine',
+  name: 'Chef Angie - Private Chef Services',
+  description: 'Hire a private chef in Diani Beach. Personal chef services, event catering, and weekly food delivery of authentic Kenyan cuisine.',
+  url: 'https://www.chefangela.co.ke/cuisine',
+  telephone: '+254719635944',
+  email: 'liyayiangela20@gmail.com',
+  image: 'https://www.chefangela.co.ke/images/dishes/chicken-biryani.jpg',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Diani Beach',
+    addressRegion: 'Kwale County',
+    addressCountry: 'KE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -4.2868396,
+    longitude: 39.5756094,
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: -4.2868396,
+      longitude: 39.5756094,
+    },
+    geoRadius: '20000',
+  },
+  serviceType: ['Private Chef', 'Event Catering', 'Food Delivery'],
+  provider: {
+    '@type': 'Person',
+    name: 'Chef Angie',
+    jobTitle: 'Private Chef',
+    url: 'https://www.chefangela.co.ke/about',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Chef Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Private Chef Service',
+          description: 'Hire a personal chef for your villa or apartment in Diani Beach',
+        },
+        price: '3500',
+        priceCurrency: 'KES',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '3500',
+          priceCurrency: 'KES',
+          unitText: 'per day (1-9 guests)',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Weekly Food Delivery',
+          description: 'Biryani Friday and Pilau Tuesday - authentic Kenyan meals delivered',
+        },
+        price: '450',
+        priceCurrency: 'KES',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Event Catering',
+          description: 'Catering for weddings, corporate events, and celebrations',
+        },
+        price: '0',
+        priceCurrency: 'KES',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '0',
+          priceCurrency: 'KES',
+          valueAddedTaxIncluded: true,
+          description: 'Quote on request',
+        },
+      },
+    ],
+  },
+}
+
 const services = [
   {
     id: 'delivery',
@@ -73,6 +161,10 @@ const whyChoose = [
 export default function CuisinePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 bg-ocean-dark overflow-hidden">
         <div className="absolute inset-0 opacity-20">

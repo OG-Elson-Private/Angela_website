@@ -16,6 +16,56 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  '@id': 'https://www.chefangela.co.ke/hebergement',
+  name: 'Chef Angie Vacation Apartment',
+  description: 'Cozy vacation apartment in Diani Beach with pool access. Perfect holiday rental for couples and solo travelers, just 10 minutes walk from the beach.',
+  url: 'https://www.chefangela.co.ke/hebergement',
+  telephone: '+254719635944',
+  email: 'liyayiangela20@gmail.com',
+  image: 'https://www.chefangela.co.ke/images/apartment/pool.jpg',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Near Kenya Power Office, Diani Beach',
+    addressLocality: 'Diani Beach',
+    addressRegion: 'Kwale County',
+    addressCountry: 'KE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -4.2868396,
+    longitude: 39.5756094,
+  },
+  priceRange: '4000-8000 KES',
+  checkinTime: '12:00',
+  checkoutTime: '09:00',
+  petsAllowed: false,
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Swimming Pool', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Free WiFi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Free Parking', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Kitchenette', value: true },
+    { '@type': 'LocationFeatureSpecification', name: '24/7 Security', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Beach Access', value: true },
+  ],
+  numberOfRooms: 1,
+  occupancy: {
+    '@type': 'QuantitativeValue',
+    maxValue: 2,
+  },
+  offers: {
+    '@type': 'Offer',
+    name: 'Low Season Rate',
+    price: '4000',
+    priceCurrency: 'KES',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2026-01-15',
+    validThrough: '2026-10-31',
+  },
+}
+
 const amenities = [
   { icon: '🏊', name: 'Swimming Pool', description: 'Private pool access' },
   { icon: '🛏️', name: '1 Bedroom', description: 'Comfortable queen size bed' },
@@ -42,6 +92,10 @@ const pricing = {
 export default function StayPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
