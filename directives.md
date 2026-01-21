@@ -255,6 +255,19 @@ Avant chaque commit, tester sur TOUTES ces tailles (AUCUNE n'est optionnelle) :
 
 ## Images & Assets
 
+### Favicon & Icons (Manifest)
+
+**IMPORTANT - Erreur connue :**
+- Ne JAMAIS utiliser `purpose: "any maskable"` dans le manifest.ts
+- Cette valeur provoque une erreur de build Next.js
+- Utiliser uniquement `purpose: "any"` ou omettre la propriété purpose
+
+**Tailles d'icones recommandees pour Google Search :**
+- 16x16, 32x32, 48x48 (favicon)
+- 96x96 (taille intermediaire recommandee par Google)
+- 180x180 (apple-icon)
+- 192x192, 512x512 (PWA)
+
 ### Optimisation Images
 
 **Utiliser next/image OBLIGATOIREMENT :**
