@@ -14,6 +14,42 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': 'https://www.chefangela.co.ke/contact',
+  name: 'Contact Chef Angela',
+  description: 'Contact Chef Angela for food orders, private chef services, catering, or apartment bookings in Diani Beach, Kenya.',
+  url: 'https://www.chefangela.co.ke/contact',
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    name: 'Chef Angela',
+    telephone: '+254719635944',
+    email: 'liyayiangela20@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Diani Beach',
+      addressRegion: 'Kwale County',
+      addressCountry: 'KE',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -4.2868396,
+      longitude: 39.5756094,
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '08:00',
+      closes: '20:00',
+    },
+    sameAs: [
+      'https://instagram.com/chef.angie002',
+      'https://wa.me/254719635944',
+    ],
+  },
+}
+
 const contactMethods = [
   {
     icon: (
@@ -86,6 +122,10 @@ const services = [
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="py-20 md:py-28 bg-ocean-dark text-white">
         <div className="container-standard text-center px-4">

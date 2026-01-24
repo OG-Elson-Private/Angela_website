@@ -1,0 +1,21 @@
+{
+  "name": "Chef Angela - Authentic Kenyan Cuisine",
+  "short_name": "Chef Angela",
+  "description": "Authentic Kenyan cuisine in Diani Beach. Weekly food delivery, private chef services, and vacation apartment.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF8F4",
+  "theme_color": "#2A9D8F",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

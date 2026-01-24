@@ -38,6 +38,34 @@ const values = [
   },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://www.chefangela.co.ke/about',
+  name: 'Chef Angela',
+  alternateName: 'Chef Angie',
+  description: 'Private chef in Diani Beach, Kenya, offering authentic Kenyan cuisine, catering services, and vacation apartment.',
+  url: 'https://www.chefangela.co.ke/about',
+  image: 'https://www.chefangela.co.ke/images/chef/profile.jpg',
+  jobTitle: 'Private Chef',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Chef Angela',
+    url: 'https://www.chefangela.co.ke',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Diani Beach',
+    addressRegion: 'Kwale County',
+    addressCountry: 'KE',
+  },
+  sameAs: [
+    'https://instagram.com/chef.angie002',
+    'https://wa.me/254719635944',
+  ],
+  knowsAbout: ['Kenyan Cuisine', 'Swahili Food', 'Biryani', 'Pilau', 'Baking', 'Catering'],
+}
+
 const journey = [
   {
     year: 'Early Years',
@@ -64,6 +92,10 @@ const journey = [
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 bg-ocean-dark">
         <div className="container-standard px-4">
