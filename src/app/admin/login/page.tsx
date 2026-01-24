@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 
-export default function AdminLoginPage() {
+function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/admin'
@@ -47,6 +47,70 @@ export default function AdminLoginPage() {
   }
 
   return (
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white rounded-2xl shadow-lg p-8 space-y-6"
+    >
+      {/* Error Message */}
+      {loginError && (
+        <div
+          className="p-4 bg-coral/10 border border-coral/30 rounded-lg text-coral text-sm"
+          role="alert"
+        >
+          {loginError}
+        </div>
+      )}
+
+      {/* Email */}
+      <Input
+        type="email"
+        label="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="admin@example.com"
+        required
+        autoComplete="email"
+        autoFocus
+      />
+
+      {/* Password */}
+      <Input
+        type="password"
+        label="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Enter your password"
+        required
+        autoComplete="current-password"
+      />
+
+      {/* Submit Button */}
+      <Button
+        type="submit"
+        variant="primary"
+        size="lg"
+        isLoading={isLoading}
+        disabled={isLoading}
+        className="w-full"
+      >
+        {isLoading ? 'Signing in...' : 'Sign In'}
+      </Button>
+    </form>
+  )
+}
+
+function LoginFormFallback() {
+  return (
+    <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6 animate-pulse">
+      <div className="h-12 bg-gray-200 rounded-lg" />
+      <div className="h-12 bg-gray-200 rounded-lg" />
+      <div className="h-12 bg-gray-200 rounded-lg" />
+    </div>
+  )
+}
+
+export default function AdminLoginPage() {
+  return (
     <div className="min-h-screen flex items-center justify-center bg-sand-light px-4">
       <div className="w-full max-w-md">
         {/* Header */}
@@ -59,56 +123,10 @@ export default function AdminLoginPage() {
           </p>
         </div>
 
-        {/* Login Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white rounded-2xl shadow-lg p-8 space-y-6"
-        >
-          {/* Error Message */}
-          {loginError && (
-            <div
-              className="p-4 bg-coral/10 border border-coral/30 rounded-lg text-coral text-sm"
-              role="alert"
-            >
-              {loginError}
-            </div>
-          )}
-
-          {/* Email */}
-          <Input
-            type="email"
-            label="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="admin@example.com"
-            required
-            autoComplete="email"
-            autoFocus
-          />
-
-          {/* Password */}
-          <Input
-            type="password"
-            label="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter your password"
-            required
-            autoComplete="current-password"
-          />
-
-          {/* Submit Button */}
-          <Button
-            type="submit"
-            variant="primary"
-            size="lg"
-            isLoading={isLoading}
-            disabled={isLoading}
-            className="w-full"
-          >
-            {isLoading ? 'Signing in...' : 'Sign In'}
-          </Button>
-        </form>
+        {/* Login Form wrapped in Suspense */}
+        <Suspense fallback={<LoginFormFallback />}>
+          <LoginForm />
+        </Suspense>
 
         {/* Back to site */}
         <p className="text-center mt-6">
