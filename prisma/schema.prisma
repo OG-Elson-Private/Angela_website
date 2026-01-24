@@ -1,0 +1,54 @@
+// Prisma Schema for Chef Angie Testimonials System
+// Database: PostgreSQL (Neon)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Testimonial model for customer reviews
+model Testimonial {
+  id         String      @id @default(cuid())
+
+  // Client information
+  name       String
+  email      String
+  location   String?
+
+  // Content
+  service    ServiceType
+  rating     Int         @default(5) // 1-5
+  text       String
+
+  // Moderation
+  status     Status      @default(PENDING)
+
+  // Metadata
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  approvedAt DateTime?
+
+  @@index([status])
+  @@index([service])
+  @@index([createdAt])
+}
+
+// Service types for testimonials
+enum ServiceType {
+  BIRYANI_FRIDAY
+  PILAU_TUESDAY
+  PRIVATE_CHEF
+  CATERING
+  ACCOMMODATION
+}
+
+// Testimonial status for moderation
+enum Status {
+  PENDING   // Awaiting moderation
+  APPROVED  // Published on site
+  REJECTED  // Rejected (spam, inappropriate)
+}
