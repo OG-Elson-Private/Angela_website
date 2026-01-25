@@ -15,5 +15,11 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <AuthProvider>{children}</AuthProvider>
+  return (
+    <AuthProvider>
+      <div className="fixed inset-0 z-50 overflow-auto bg-sand-light">
+        {children}
+      </div>
+    </AuthProvider>
+  )
 }
