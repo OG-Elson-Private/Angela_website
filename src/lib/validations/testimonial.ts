@@ -11,6 +11,16 @@ export const ServiceType = z.enum([
 
 export type ServiceType = z.infer<typeof ServiceType>
 
+// Category groupings for filtering
+export const CUISINE_SERVICES: ServiceType[] = [
+  'PRIVATE_CHEF',
+  'CATERING',
+  'BIRYANI_FRIDAY',
+  'PILAU_TUESDAY',
+]
+
+export const ACCOMMODATION_SERVICES: ServiceType[] = ['ACCOMMODATION']
+
 // Service labels for display
 export const serviceLabels: Record<ServiceType, string> = {
   BIRYANI_FRIDAY: 'Biryani Friday',

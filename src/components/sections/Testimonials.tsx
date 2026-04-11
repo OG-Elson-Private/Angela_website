@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { TestimonialCard } from '@/components/ui/TestimonialCard'
 import { LeaveReviewButton } from '@/components/ui/LeaveReviewButton'
 import { StarRatingDisplay } from '@/components/ui/StarRating'
-import type { TestimonialPublic } from '@/lib/validations/testimonial'
+import { CUISINE_SERVICES, type TestimonialPublic } from '@/lib/validations/testimonial'
 
 interface TestimonialsResponse {
   testimonials: TestimonialPublic[]
@@ -13,24 +13,51 @@ interface TestimonialsResponse {
 }
 
 /**
- * Fetch approved testimonials from API
+ * Fetch approved cuisine testimonials for homepage
  * Runs on the server (Server Component)
  */
 async function getTestimonials(): Promise<TestimonialsResponse | null> {
   try {
-    // Use absolute URL for server-side fetch during build
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
-    const response = await fetch(`${baseUrl}/api/testimonials?limit=6`, {
-      next: { revalidate: 60 }, // Cache for 60 seconds
-    })
+    const results: TestimonialPublic[] = []
+    let totalRating = 0
+    let totalCount = 0
 
-    if (!response.ok) {
-      return null
+    const responses = await Promise.all(
+      CUISINE_SERVICES.map(async (service) => {
+        try {
+          const response = await fetch(`${baseUrl}/api/testimonials?service=${service}&limit=6`, {
+            next: { revalidate: 60 },
+          })
+          if (response.ok) return response.json()
+        } catch {
+          // Skip failed service fetch
+        }
+        return null
+      })
+    )
+
+    for (const data of responses) {
+      if (!data) continue
+      results.push(...data.testimonials)
+      if (data.aggregate) {
+        totalCount += data.aggregate.totalReviews
+        if (data.aggregate.averageRating !== null) {
+          totalRating += data.aggregate.averageRating * data.aggregate.totalReviews
+        }
+      }
     }
 
-    return response.json()
+    results.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+
+    return {
+      testimonials: results.slice(0, 6),
+      aggregate: {
+        averageRating: totalCount > 0 ? Math.round((totalRating / totalCount) * 10) / 10 : null,
+        totalReviews: totalCount,
+      },
+    }
   } catch {
-    // Return null if API is unavailable (e.g., during build)
     return null
   }
 }

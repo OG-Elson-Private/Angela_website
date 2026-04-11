@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { CUISINE_SERVICES } from '@/lib/validations/testimonial'
 import type { Prisma } from '@prisma/client'
 
 /**
@@ -24,6 +25,7 @@ export async function GET(request: NextRequest) {
     // Parse query parameters
     const { searchParams } = new URL(request.url)
     const status = searchParams.get('status')
+    const category = searchParams.get('category')
     const limit = parseInt(searchParams.get('limit') || '50', 10)
     const offset = parseInt(searchParams.get('offset') || '0', 10)
 
@@ -31,6 +33,11 @@ export async function GET(request: NextRequest) {
     const where: Prisma.TestimonialWhereInput = {}
     if (status && ['PENDING', 'APPROVED', 'REJECTED'].includes(status)) {
       where.status = status as 'PENDING' | 'APPROVED' | 'REJECTED'
+    }
+    if (category === 'cuisine') {
+      where.service = { in: [...CUISINE_SERVICES] }
+    } else if (category === 'accommodation') {
+      where.service = 'ACCOMMODATION'
     }
 
     // Fetch testimonials with count
@@ -44,9 +51,16 @@ export async function GET(request: NextRequest) {
       prisma.testimonial.count({ where }),
     ])
 
-    // Get counts by status
+    // Get counts by status (respecting category filter)
+    const categoryWhere: Prisma.TestimonialWhereInput = {}
+    if (category === 'cuisine') {
+      categoryWhere.service = { in: [...CUISINE_SERVICES] }
+    } else if (category === 'accommodation') {
+      categoryWhere.service = 'ACCOMMODATION'
+    }
     const counts = await prisma.testimonial.groupBy({
       by: ['status'],
+      where: categoryWhere,
       _count: { status: true },
     })
 

@@ -6,8 +6,9 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { StarRatingDisplay } from '@/components/ui/StarRating'
 
+import { serviceLabels, type ServiceType } from '@/lib/validations/testimonial'
+
 type TestimonialStatus = 'PENDING' | 'APPROVED' | 'REJECTED'
-type ServiceType = 'CUISINE' | 'ACCOMMODATION' | 'DELIVERY' | 'CATERING' | 'PRIVATE_CHEF'
 
 interface Testimonial {
   id: string
@@ -36,13 +37,7 @@ interface TestimonialsResponse {
   }
 }
 
-const SERVICE_LABELS: Record<ServiceType, string> = {
-  CUISINE: 'Cuisine',
-  ACCOMMODATION: 'Hebergement',
-  DELIVERY: 'Livraison',
-  CATERING: 'Traiteur',
-  PRIVATE_CHEF: 'Chef Prive',
-}
+const SERVICE_LABELS: Record<ServiceType, string> = serviceLabels
 
 const STATUS_STYLES: Record<TestimonialStatus, string> = {
   PENDING: 'bg-amber-100 text-amber-800',
@@ -57,6 +52,7 @@ export default function AdminDashboardPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [counts, setCounts] = useState({ PENDING: 0, APPROVED: 0, REJECTED: 0 })
   const [activeFilter, setActiveFilter] = useState<TestimonialStatus | 'ALL'>('PENDING')
+  const [activeCategory, setActiveCategory] = useState<'ALL' | 'cuisine' | 'accommodation'>('ALL')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [actionLoading, setActionLoading] = useState<string | null>(null)
@@ -74,8 +70,11 @@ export default function AdminDashboardPage() {
     setError(null)
 
     try {
-      const statusParam = activeFilter !== 'ALL' ? `?status=${activeFilter}` : ''
-      const response = await fetch(`/api/admin/testimonials${statusParam}`)
+      const params = new URLSearchParams()
+      if (activeFilter !== 'ALL') params.set('status', activeFilter)
+      if (activeCategory !== 'ALL') params.set('category', activeCategory)
+      const queryString = params.toString()
+      const response = await fetch(`/api/admin/testimonials${queryString ? `?${queryString}` : ''}`)
 
       if (!response.ok) {
         if (response.status === 401) {
@@ -93,7 +92,7 @@ export default function AdminDashboardPage() {
     } finally {
       setIsLoading(false)
     }
-  }, [activeFilter, router])
+  }, [activeFilter, activeCategory, router])
 
   useEffect(() => {
     if (authStatus === 'authenticated') {
@@ -227,7 +226,24 @@ export default function AdminDashboardPage() {
           </div>
         </div>
 
-        {/* Filter Tabs */}
+        {/* Category Filter */}
+        <div className="flex gap-2 mb-4 flex-wrap">
+          {(['ALL', 'cuisine', 'accommodation'] as const).map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                activeCategory === cat
+                  ? 'bg-ocean-dark text-white'
+                  : 'bg-white text-gray-warm hover:bg-sand border border-sand'
+              }`}
+            >
+              {cat === 'ALL' ? 'All Services' : cat === 'cuisine' ? 'Cuisine' : 'Accommodation'}
+            </button>
+          ))}
+        </div>
+
+        {/* Status Filter Tabs */}
         <div className="flex gap-2 mb-6 flex-wrap">
           {(['ALL', 'PENDING', 'APPROVED', 'REJECTED'] as const).map((filter) => (
             <button

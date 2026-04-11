@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui'
-import { LeaveReviewButton } from '@/components/ui/LeaveReviewButton'
+import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
 
 export const metadata: Metadata = {
   title: 'Private Chef in Diani Beach | Catering & Food Delivery',
@@ -426,20 +426,12 @@ export default function CuisinePage() {
         </div>
       </section>
 
-      {/* Share Your Experience */}
-      <section className="py-12 bg-sand-light border-t border-gray-light/30">
-        <div className="container-standard text-center px-4">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold text-ocean-dark mb-3">
-            Tried Our Food?
-          </h2>
-          <p className="font-body text-gray-warm max-w-lg mx-auto mb-6">
-            We&apos;d love to hear about your culinary experience with Chef Angie.
-          </p>
-          <LeaveReviewButton variant="outline" size="lg">
-            Share Your Experience
-          </LeaveReviewButton>
-        </div>
-      </section>
+      {/* Testimonials Carousel - Cuisine Services */}
+      <TestimonialsCarousel
+        category="cuisine"
+        title="What Our Food Lovers Say"
+        subtitle="Culinary Reviews"
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-teal to-ocean-dark text-white">

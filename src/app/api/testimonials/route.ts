@@ -146,9 +146,9 @@ export async function GET(request: NextRequest) {
       prisma.testimonial.count({ where }),
     ])
 
-    // Calculate aggregate rating
+    // Calculate aggregate rating (respecting service filter)
     const aggregateResult = await prisma.testimonial.aggregate({
-      where: { status: 'APPROVED' },
+      where,
       _avg: {
         rating: true,
       },

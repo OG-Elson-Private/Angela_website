@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui'
-import { LeaveReviewButton } from '@/components/ui/LeaveReviewButton'
 import { GallerySection } from '@/components/features/hebergement/GallerySection'
+import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
 
 export const metadata: Metadata = {
   title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool',
@@ -530,24 +530,12 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Share Your Experience */}
-      <section className="py-12 bg-white border-t border-gray-light/30">
-        <div className="container-standard text-center px-4">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold text-ocean-dark mb-3">
-            Stayed with Us?
-          </h2>
-          <p className="font-body text-gray-warm max-w-lg mx-auto mb-6">
-            We&apos;d love to hear about your experience at our vacation apartment in Diani Beach.
-          </p>
-          <LeaveReviewButton
-            variant="outline"
-            size="lg"
-            defaultService="ACCOMMODATION"
-          >
-            Share Your Experience
-          </LeaveReviewButton>
-        </div>
-      </section>
+      {/* Testimonials Carousel - Accommodation */}
+      <TestimonialsCarousel
+        category="accommodation"
+        title="What Our Guests Say"
+        subtitle="Guest Reviews"
+      />
 
       {/* Final CTA */}
       <section className="py-16 bg-ocean-dark text-white">
