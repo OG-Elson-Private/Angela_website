@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 4,000 KES/night',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
-    images: ['/images/og/og-stay.jpg'],
+    images: [{ url: '/api/og?page=stay', width: 1200, height: 630 }],
   },
 }
 

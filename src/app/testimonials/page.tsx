@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'Authentic reviews from guests who experienced Chef Angela\'s cuisine and accommodation in Diani Beach.',
     type: 'website',
-    images: ['/images/og/og-testimonials.jpg'],
+    images: [{ url: '/api/og?page=testimonials', width: 1200, height: 630 }],
   },
 }
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Meet Chef Angie - your private chef in Diani Beach for authentic Kenyan cuisine',
     type: 'website',
     url: 'https://www.chefangela.co.ke/about',
-    images: ['/images/og/og-about.jpg'],
+    images: [{ url: '/api/og?page=about', width: 1200, height: 630 }],
   },
 }
 

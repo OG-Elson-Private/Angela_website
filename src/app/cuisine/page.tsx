@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Hire a private chef in Diani Beach - Personal chef, catering & food delivery',
     type: 'website',
     url: 'https://www.chefangela.co.ke/cuisine',
-    images: ['/images/og/og-cuisine.jpg'],
+    images: [{ url: '/api/og?page=cuisine', width: 1200, height: 630 }],
   },
 }
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Privacy Policy for Chef Angela culinary services',
     type: 'website',
     url: 'https://www.chefangela.co.ke/privacy',
-    images: ['/images/og/og-home.jpg'],
+    images: [{ url: '/api/og?page=privacy', width: 1200, height: 630 }],
   },
 }
 

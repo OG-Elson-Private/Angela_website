@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     description: 'Experience authentic Kenyan cuisine and coastal hospitality in Diani Beach, Kenya.',
     images: [
       {
-        url: '/images/og/og-home.jpg',
+        url: '/api/og?page=home',
         width: 1200,
         height: 630,
         alt: 'Chef Angie - Authentic Kenyan Cuisine',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Chef Angie | Authentic Kenyan Cuisine in Diani Beach',
     description: 'Experience authentic Kenyan cuisine and coastal hospitality in Diani Beach, Kenya.',
-    images: ['/images/og/og-home.jpg'],
+    images: ['/api/og?page=home'],
   },
   robots: {
     index: true,

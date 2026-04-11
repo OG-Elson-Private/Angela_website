@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Get in touch for food orders and accommodation in Diani Beach',
     type: 'website',
     url: 'https://www.chefangela.co.ke/contact',
-    images: ['/images/og/og-contact.jpg'],
+    images: [{ url: '/api/og?page=contact', width: 1200, height: 630 }],
   },
 }
 
