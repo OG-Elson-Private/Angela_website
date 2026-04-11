@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/db'
 import { testimonialSchema, type TestimonialPublic } from '@/lib/validations/testimonial'
 import { checkRateLimit, getClientIP, formatResetTime } from '@/lib/rate-limit'
+import { sendNewTestimonialNotification } from '@/lib/email'
 import { ZodError } from 'zod'
 import type { Prisma } from '@prisma/client'
 
@@ -57,7 +58,13 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // TODO: Send email notification to admin (E12-S11)
+    // Send email notification (non-blocking, fire-and-forget)
+    sendNewTestimonialNotification({
+      name: validatedData.name,
+      service: validatedData.service,
+      rating: validatedData.rating,
+      text: validatedData.text,
+    }).catch(console.error)
 
     return NextResponse.json(
       {
