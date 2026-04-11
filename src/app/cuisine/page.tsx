@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui'
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
+import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
   title: 'Private Chef in Diani Beach | Catering & Food Delivery',
@@ -159,12 +160,17 @@ const whyChoose = [
   { title: 'Flexible Options', description: 'From single meals to full catering services' },
 ]
 
-export default function CuisinePage() {
+export default async function CuisinePage() {
+  const aggregateRating = await fetchAggregateRating('cuisine')
+  const pageJsonLd = aggregateRating
+    ? { ...jsonLd, aggregateRating }
+    : jsonLd
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 bg-ocean-dark overflow-hidden">

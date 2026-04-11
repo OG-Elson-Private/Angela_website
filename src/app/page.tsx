@@ -7,6 +7,7 @@ import {
   Testimonials,
   CTASection,
 } from '@/components/sections'
+import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -46,12 +47,17 @@ const jsonLd = {
   ],
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const aggregateRating = await fetchAggregateRating('cuisine')
+  const pageJsonLd = aggregateRating
+    ? { ...jsonLd, aggregateRating }
+    : jsonLd
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       {/* Hero Section - Full screen with background image */}
       <Hero />

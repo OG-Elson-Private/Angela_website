@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui'
 import { GallerySection } from '@/components/features/hebergement/GallerySection'
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
+import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
   title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool',
@@ -90,12 +91,17 @@ const pricing = {
   highSeason: { price: 7000, period: 'November - Mid-January' },
 }
 
-export default function StayPage() {
+export default async function StayPage() {
+  const aggregateRating = await fetchAggregateRating('accommodation')
+  const pageJsonLd = aggregateRating
+    ? { ...jsonLd, aggregateRating }
+    : jsonLd
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
