@@ -136,9 +136,10 @@ export async function GET(request: NextRequest) {
           text: true,
           createdAt: true,
         },
-        orderBy: {
-          approvedAt: 'desc',
-        },
+        orderBy: [
+          { approvedAt: 'desc' },
+          { createdAt: 'desc' },
+        ],
         take: Math.min(limit, 50), // Max 50 per request
         skip: offset,
       }),

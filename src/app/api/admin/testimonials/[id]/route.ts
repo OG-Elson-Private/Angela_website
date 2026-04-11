@@ -67,7 +67,10 @@ export async function PATCH(
     // Update testimonial status
     const updatedTestimonial = await prisma.testimonial.update({
       where: { id },
-      data: { status },
+      data: {
+        status,
+        approvedAt: status === 'APPROVED' ? new Date() : null,
+      },
     })
 
     return NextResponse.json({
