@@ -147,6 +147,12 @@ export default async function StayPage() {
                   Book Direct & Save
                 </a>
               </Button>
+              {/* TODO: Replace href with actual Airbnb listing URL */}
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
+                <a href="#booking-platforms">
+                  Book on Airbnb
+                </a>
+              </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
                 <Link href="#gallery">View Gallery</Link>
               </Button>
@@ -269,6 +275,68 @@ export default async function StayPage() {
               <p className="text-center text-sm text-gray-warm mt-4">
                 Or call: <a href="tel:+254719635944" className="text-teal hover:underline">+254 719 635 944</a>
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Platforms */}
+      <section id="booking-platforms" className="section-padding bg-white">
+        <div className="container-standard">
+          <div className="text-center mb-10">
+            <p className="font-script text-2xl text-coral mb-2">Multiple Ways to Book</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
+              Choose Your Booking Method
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {/* Direct Booking */}
+            <div className="bg-teal/5 border-2 border-teal rounded-2xl p-6 text-center relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal text-white text-xs font-ui font-bold px-3 py-1 rounded-full">
+                Best Price
+              </div>
+              <div className="text-3xl mb-3">💬</div>
+              <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">WhatsApp Direct</h3>
+              <p className="font-body text-sm text-gray-warm mb-4">No fees, best rate, instant confirmation</p>
+              <Button variant="primary" size="sm" className="w-full" asChild>
+                <a
+                  href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Direct
+                </a>
+              </Button>
+            </div>
+
+            {/* Airbnb — TODO: Replace href with actual listing URL */}
+            <div className="bg-sand-light border border-gray-light rounded-2xl p-6 text-center">
+              <div className="text-3xl mb-3">🏠</div>
+              <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">Airbnb</h3>
+              <p className="font-body text-sm text-gray-warm mb-4">Book with Airbnb protection & reviews</p>
+              <Button variant="outline" size="sm" className="w-full" asChild>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Airbnb listing - coming soon"
+                >
+                  Coming Soon
+                </a>
+              </Button>
+            </div>
+
+            {/* Phone */}
+            <div className="bg-sand-light border border-gray-light rounded-2xl p-6 text-center">
+              <div className="text-3xl mb-3">📞</div>
+              <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">Call Us</h3>
+              <p className="font-body text-sm text-gray-warm mb-4">Speak directly for custom stays</p>
+              <Button variant="outline" size="sm" className="w-full" asChild>
+                <a href="tel:+254719635944">
+                  +254 719 635 944
+                </a>
+              </Button>
             </div>
           </div>
         </div>
