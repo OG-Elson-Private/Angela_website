@@ -84,16 +84,20 @@ Si des comptes sont crees sur d'autres plateformes, ajouter les liens dans la se
 
 ---
 
-## 6. Rate Limiting — Upstash Redis (Story 4.2, a venir)
+## 6. Rate Limiting — Upstash Redis (Story 4.2)
 
-**Statut :** En cours d'implementation
+**Statut :** Code deploye, en attente de configuration
 
-**Actions qui seront requises :**
-1. Creer un compte sur [upstash.com](https://upstash.com) (free tier disponible)
-2. Creer une base Redis
-3. Ajouter les variables d'env dans Vercel :
-   - `UPSTASH_REDIS_REST_URL`
-   - `UPSTASH_REDIS_REST_TOKEN`
+**Actions requises :**
+1. Creer un compte sur [upstash.com](https://upstash.com) (free tier : 10 000 requetes/jour)
+2. Creer une base Redis (region : EU West ou proche du serveur Vercel)
+3. Copier les credentials REST depuis le dashboard Upstash
+4. Ajouter les variables d'env dans Vercel Dashboard :
+   - `UPSTASH_REDIS_REST_URL` = l'URL REST fournie par Upstash
+   - `UPSTASH_REDIS_REST_TOKEN` = le token REST fourni par Upstash
+5. Redeploy sur Vercel pour prendre en compte les nouvelles variables
+
+**Note :** Sans ces variables, le rate limiting fonctionne toujours en mode in-memory (comme avant). La migration est transparente.
 
 ---
 
