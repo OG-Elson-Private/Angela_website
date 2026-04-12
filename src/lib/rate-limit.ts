@@ -81,37 +81,35 @@ function cleanupExpiredEntries(): void {
 
 // --- Public API ---
 
+interface RateLimitResult {
+  success: boolean
+  remaining: number
+  resetIn: number
+}
+
 /**
  * Check if the request should be rate limited.
  * Uses Upstash Redis in production, in-memory Map in development.
  * Gracefully falls back to allowing the request if Redis is unreachable.
  */
-export function checkRateLimit(identifier: string): {
-  success: boolean
-  remaining: number
-  resetIn: number
-} {
+export async function checkRateLimit(identifier: string): Promise<RateLimitResult> {
   const rl = getUpstashRatelimit()
 
   if (!rl) {
     return checkInMemory(identifier)
   }
 
-  // Upstash call — async but we return sync for backward compat.
-  // We fire the Upstash check and store the promise result.
-  // For the FIRST call we use in-memory as immediate response,
-  // but also kick off the Upstash call to track state.
-  //
-  // Actually, since the consumer can await us, let's return a
-  // "thenable" that resolves to the Upstash result.
-  const result = checkInMemory(identifier)
-
-  // Also check Upstash in the background for persistent tracking
-  rl.limit(identifier).catch(() => {
-    // Redis unreachable — silently continue with in-memory
-  })
-
-  return result
+  try {
+    const result = await rl.limit(identifier)
+    return {
+      success: result.success,
+      remaining: result.remaining,
+      resetIn: result.reset ? result.reset - Date.now() : RATE_LIMIT_WINDOW_MS,
+    }
+  } catch (error) {
+    console.error('[rate-limit] Upstash error, allowing request:', error)
+    return { success: true, remaining: MAX_REQUESTS_PER_WINDOW, resetIn: RATE_LIMIT_WINDOW_MS }
+  }
 }
 
 /**

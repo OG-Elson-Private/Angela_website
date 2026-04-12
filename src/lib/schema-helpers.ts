@@ -45,8 +45,8 @@ export async function fetchAggregateRating(
 
     for (const data of responses) {
       if (!data?.aggregate) continue
-      totalCount += data.aggregate.totalReviews
-      if (data.aggregate.averageRating !== null) {
+      if (data.aggregate.averageRating !== null && data.aggregate.totalReviews > 0) {
+        totalCount += data.aggregate.totalReviews
         totalRating += data.aggregate.averageRating * data.aggregate.totalReviews
       }
     }

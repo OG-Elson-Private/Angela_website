@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limiting check
     const clientIP = getClientIP(request)
-    const rateLimit = checkRateLimit(clientIP)
+    const rateLimit = await checkRateLimit(clientIP)
 
     if (!rateLimit.success) {
       return NextResponse.json(
@@ -58,13 +58,13 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // Send email notification (non-blocking, fire-and-forget)
-    sendNewTestimonialNotification({
+    // Send email notification (awaited to prevent serverless freeze before completion)
+    await sendNewTestimonialNotification({
       name: validatedData.name,
       service: validatedData.service,
       rating: validatedData.rating,
       text: validatedData.text,
-    }).catch(console.error)
+    })
 
     return NextResponse.json(
       {

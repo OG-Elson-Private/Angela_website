@@ -1,6 +1,15 @@
 import { Resend } from 'resend'
 import { serviceLabels, type ServiceType } from '@/lib/validations/testimonial'
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
 interface NewTestimonialData {
   name: string
   service: ServiceType | string
@@ -28,15 +37,20 @@ export async function sendNewTestimonialNotification(data: NewTestimonialData): 
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.chefangela.co.ke'
     const serviceLabel = serviceLabels[data.service as ServiceType] || data.service
-    const stars = '★'.repeat(data.rating) + '☆'.repeat(5 - data.rating)
+    const rating = Math.max(1, Math.min(5, data.rating))
+    const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating)
     const textExcerpt = data.text.length > 200 ? data.text.slice(0, 200) + '...' : data.text
+
+    // Escape user-provided content to prevent XSS in email HTML
+    const safeName = escapeHtml(data.name)
+    const safeText = escapeHtml(textExcerpt)
 
     const resend = new Resend(apiKey)
 
     await resend.emails.send({
       from: 'Chef Angie Website <onboarding@resend.dev>',
       to,
-      subject: `New Review: ${data.name} — ${serviceLabel} (${data.rating}★)`,
+      subject: `New Review: ${data.name} — ${serviceLabel} (${rating}★)`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #134E4A; padding: 24px; border-radius: 12px 12px 0 0;">
@@ -47,7 +61,7 @@ export async function sendNewTestimonialNotification(data: NewTestimonialData): 
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 8px 0; color: #666; width: 100px;">Name</td>
-                <td style="padding: 8px 0; font-weight: bold;">${data.name}</td>
+                <td style="padding: 8px 0; font-weight: bold;">${safeName}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; color: #666;">Service</td>
@@ -59,7 +73,7 @@ export async function sendNewTestimonialNotification(data: NewTestimonialData): 
               </tr>
             </table>
             <div style="margin-top: 16px; padding: 16px; background: white; border-radius: 8px; border-left: 4px solid #0D9488;">
-              <p style="margin: 0; color: #333; line-height: 1.6;">"${textExcerpt}"</p>
+              <p style="margin: 0; color: #333; line-height: 1.6;">"${safeText}"</p>
             </div>
           </div>
           <div style="padding: 16px; text-align: center; background: #134E4A; border-radius: 0 0 12px 12px;">
