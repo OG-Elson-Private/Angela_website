@@ -147,9 +147,8 @@ export default async function StayPage() {
                   Book Direct & Save
                 </a>
               </Button>
-              {/* TODO: Replace href with actual Airbnb listing URL */}
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
-                <a href="#booking-platforms">
+                <a href="https://www.airbnb.com/rooms/1553536656876088045" target="_blank" rel="noopener noreferrer">
                   Book on Airbnb
                 </a>
               </Button>
@@ -310,17 +309,20 @@ export default async function StayPage() {
               </Button>
             </div>
 
-            {/* Airbnb — TODO: Replace with actual listing URL and remove disabled state */}
-            <div className="bg-sand-light border border-gray-light rounded-2xl p-6 text-center opacity-75">
+            {/* Airbnb */}
+            <div className="bg-sand-light border border-gray-light rounded-2xl p-6 text-center">
               <div className="text-3xl mb-3">🏠</div>
               <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">Airbnb</h3>
               <p className="font-body text-sm text-gray-warm mb-4">Book with Airbnb protection & reviews</p>
-              <span
-                className="inline-flex items-center justify-center w-full px-4 py-2 border border-gray-light rounded-lg text-sm font-medium text-gray-warm cursor-not-allowed"
-                aria-disabled="true"
-              >
-                Coming Soon
-              </span>
+              <Button variant="outline" size="sm" className="w-full" asChild>
+                <a
+                  href="https://www.airbnb.com/rooms/1553536656876088045"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book on Airbnb
+                </a>
+              </Button>
             </div>
 
             {/* Phone */}
