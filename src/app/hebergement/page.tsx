@@ -2,16 +2,16 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui'
-import { GallerySection } from '@/components/features/hebergement/GallerySection'
+import { VideoSection } from '@/components/features/hebergement/VideoSection'
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
   title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool',
-  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 4,000 KES/night. Direct booking saves you money!',
+  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 3,000 KES/night. Direct booking saves you money!',
   openGraph: {
     title: 'Vacation Apartment Diani Beach | Chef Angie',
-    description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 4,000 KES/night',
+    description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 3,000 KES/night',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: [{ url: '/api/og?page=stay', width: 1200, height: 630 }],
@@ -40,7 +40,7 @@ const jsonLd = {
     latitude: -4.2868396,
     longitude: 39.5756094,
   },
-  priceRange: '4000-8000 KES',
+  priceRange: '3000-8000 KES',
   checkinTime: '12:00',
   checkoutTime: '09:00',
   petsAllowed: false,
@@ -60,7 +60,7 @@ const jsonLd = {
   offers: {
     '@type': 'Offer',
     name: 'Low Season Rate',
-    price: '4000',
+    price: '3000',
     priceCurrency: 'KES',
     availability: 'https://schema.org/InStock',
     validFrom: '2026-01-15',
@@ -87,7 +87,7 @@ const whyBookDirect = [
 ]
 
 const pricing = {
-  lowSeason: { price: 4000, period: 'Mid-January - October' },
+  lowSeason: { price: 3000, period: 'Mid-January - October' },
   highSeason: { price: 7000, period: 'November - Mid-January' },
 }
 
@@ -129,7 +129,7 @@ export default async function StayPage() {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white">
-                <span className="font-ui font-semibold">From 4,000 KES</span>
+                <span className="font-ui font-semibold">From 3,000 KES</span>
                 <span className="text-white/70 text-sm"> / night</span>
               </div>
               <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white">
@@ -153,7 +153,7 @@ export default async function StayPage() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
-                <Link href="#gallery">View Gallery</Link>
+                <Link href="#gallery">Watch Video Tour</Link>
               </Button>
             </div>
           </div>
@@ -179,8 +179,8 @@ export default async function StayPage() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <GallerySection />
+      {/* Video Tour */}
+      <VideoSection />
 
       {/* Amenities */}
       <section className="section-padding bg-white">
@@ -515,7 +515,7 @@ export default async function StayPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between text-gray-warm">
                       <span>Apartment alone</span>
-                      <span>4,000 - 7,000 KES</span>
+                      <span>3,000 - 7,000 KES</span>
                     </div>
                     <div className="flex justify-between text-gray-warm">
                       <span>Chef service alone</span>
@@ -523,7 +523,7 @@ export default async function StayPage() {
                     </div>
                     <div className="border-t border-teal/20 pt-2 mt-2 flex justify-between font-semibold text-gray-warm">
                       <span>If booked separately</span>
-                      <span className="line-through">7,500 - 10,500 KES</span>
+                      <span className="line-through">6,500 - 10,500 KES</span>
                     </div>
                     <div className="flex justify-between font-bold text-teal text-base">
                       <span>Package price</span>
