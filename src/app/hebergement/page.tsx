@@ -25,7 +25,7 @@ const jsonLd = {
   name: 'Chef Angie Vacation Apartment',
   description: 'Cozy vacation apartment in Diani Beach with pool access. Perfect holiday rental for couples and solo travelers, just 10 minutes walk from the beach.',
   url: 'https://www.chefangela.co.ke/hebergement',
-  telephone: '+254719635944',
+  telephone: '+254706310918',
   email: 'liyayiangela20@gmail.com',
   image: 'https://www.chefangela.co.ke/images/apartment/pool.jpg',
   address: {
@@ -140,7 +140,7 @@ export default async function StayPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="gradient" size="lg" asChild>
                 <a
-                  href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -148,8 +148,8 @@ export default async function StayPage() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
-                <a href="https://www.airbnb.com/rooms/1553536656876088045" target="_blank" rel="noopener noreferrer">
-                  Book on Airbnb
+                <a href="https://www.booking.com/hotel/ke/karean-studio-suites.html" target="_blank" rel="noopener noreferrer">
+                  Book on Booking
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
@@ -263,7 +263,7 @@ export default async function StayPage() {
 
               <Button variant="gradient" size="lg" className="w-full" asChild>
                 <a
-                  href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment.%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -272,7 +272,7 @@ export default async function StayPage() {
               </Button>
 
               <p className="text-center text-sm text-gray-warm mt-4">
-                Or call: <a href="tel:+254719635944" className="text-teal hover:underline">+254 719 635 944</a>
+                Or call: <a href="tel:+254706310918" className="text-teal hover:underline">+254 706 310 918</a>
               </p>
             </div>
           </div>
@@ -300,7 +300,7 @@ export default async function StayPage() {
               <p className="font-body text-sm text-gray-warm mb-4">No fees, best rate, instant confirmation</p>
               <Button variant="primary" size="sm" className="w-full" asChild>
                 <a
-                  href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -309,18 +309,18 @@ export default async function StayPage() {
               </Button>
             </div>
 
-            {/* Airbnb */}
+            {/* Booking.com */}
             <div className="bg-sand-light border border-gray-light rounded-2xl p-6 text-center">
-              <div className="text-3xl mb-3">🏠</div>
-              <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">Airbnb</h3>
-              <p className="font-body text-sm text-gray-warm mb-4">Book with Airbnb protection & reviews</p>
+              <div className="text-3xl mb-3">🛏️</div>
+              <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">Booking.com</h3>
+              <p className="font-body text-sm text-gray-warm mb-4">Book with Booking.com guarantee & reviews</p>
               <Button variant="outline" size="sm" className="w-full" asChild>
                 <a
-                  href="https://www.airbnb.com/rooms/1553536656876088045"
+                  href="https://www.booking.com/hotel/ke/karean-studio-suites.html"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book on Airbnb
+                  Book on Booking
                 </a>
               </Button>
             </div>
@@ -331,8 +331,8 @@ export default async function StayPage() {
               <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-2">Call Us</h3>
               <p className="font-body text-sm text-gray-warm mb-4">Speak directly for custom stays</p>
               <Button variant="outline" size="sm" className="w-full" asChild>
-                <a href="tel:+254719635944">
-                  +254 719 635 944
+                <a href="tel:+254706310918">
+                  +254 706 310 918
                 </a>
               </Button>
             </div>
@@ -558,7 +558,7 @@ export default async function StayPage() {
                 {/* CTA */}
                 <Button variant="gradient" size="lg" className="w-full" asChild>
                   <a
-                    href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20the%20ALL-INCLUSIVE%20PACKAGE%20(8,000%20KES/day).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ADietary%20preferences:%20____"
+                    href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20the%20ALL-INCLUSIVE%20PACKAGE%20(8,000%20KES/day).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ADietary%20preferences:%20____"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -621,7 +621,7 @@ export default async function StayPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
               <a
-                href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
+                href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20booking%20your%20apartment."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -629,7 +629,7 @@ export default async function StayPage() {
               </a>
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
-              <a href="tel:+254719635944">Call +254 719 635 944</a>
+              <a href="tel:+254706310918">Call +254 706 310 918</a>
             </Button>
           </div>
         </div>

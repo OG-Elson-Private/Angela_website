@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Chef Angela',
   description: 'Authentic Kenyan cuisine and vacation rental in Diani Beach. Weekly food delivery (Biryani Friday, Pilau Tuesday), private chef services, and apartment with pool.',
   url: 'https://www.chefangela.co.ke',
-  telephone: '+254719635944',
+  telephone: '+254706310918',
   email: 'liyayiangela20@gmail.com',
   address: {
     '@type': 'PostalAddress',
@@ -43,7 +43,7 @@ const jsonLd = {
   ],
   sameAs: [
     'https://instagram.com/chef.angie002',
-    'https://wa.me/254719635944',
+    'https://wa.me/254706310918',
   ],
 }
 

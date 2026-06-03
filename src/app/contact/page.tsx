@@ -24,7 +24,7 @@ const jsonLd = {
   mainEntity: {
     '@type': 'LocalBusiness',
     name: 'Chef Angela',
-    telephone: '+254719635944',
+    telephone: '+254706310918',
     email: 'liyayiangela20@gmail.com',
     address: {
       '@type': 'PostalAddress',
@@ -45,7 +45,7 @@ const jsonLd = {
     },
     sameAs: [
       'https://instagram.com/chef.angie002',
-      'https://wa.me/254719635944',
+      'https://wa.me/254706310918',
     ],
   },
 }
@@ -59,8 +59,8 @@ const contactMethods = [
     ),
     title: 'WhatsApp',
     subtitle: 'Fastest response',
-    value: '+254 719 635 944',
-    href: 'https://wa.me/254719635944?text=Hello%20Chef%20Angie!',
+    value: '+254 706 310 918',
+    href: 'https://wa.me/254706310918?text=Hello%20Chef%20Angie!',
     color: 'bg-[#25D366]',
     external: true,
   },
@@ -72,8 +72,8 @@ const contactMethods = [
     ),
     title: 'Phone',
     subtitle: 'Call directly',
-    value: '+254 719 635 944',
-    href: 'tel:+254719635944',
+    value: '+254 706 310 918',
+    href: 'tel:+254706310918',
     color: 'bg-teal',
     external: false,
   },
@@ -282,7 +282,7 @@ export default function ContactPage() {
           </p>
           <Button variant="gradient" size="lg" asChild>
             <a
-              href="https://wa.me/254719635944?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+              href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
             >

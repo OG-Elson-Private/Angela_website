@@ -195,9 +195,9 @@ export default function PrivacyPage() {
                 </p>
                 <p className="font-body text-gray-warm">
                   Diani Beach, Kwale County, Kenya<br />
-                  Phone: <a href="tel:+254719635944" className="text-teal hover:underline">+254 719 635 944</a><br />
+                  Phone: <a href="tel:+254706310918" className="text-teal hover:underline">+254 706 310 918</a><br />
                   Email: <a href="mailto:liyayiangela20@gmail.com" className="text-teal hover:underline">liyayiangela20@gmail.com</a><br />
-                  WhatsApp: <a href="https://wa.me/254719635944" className="text-teal hover:underline" target="_blank" rel="noopener noreferrer">+254 719 635 944</a>
+                  WhatsApp: <a href="https://wa.me/254706310918" className="text-teal hover:underline" target="_blank" rel="noopener noreferrer">+254 706 310 918</a>
                 </p>
               </div>
             </div>

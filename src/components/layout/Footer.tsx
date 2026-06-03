@@ -27,7 +27,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     platform: 'whatsapp',
-    url: 'https://wa.me/254719635944',
+    url: 'https://wa.me/254706310918',
     label: 'WhatsApp',
   },
 ]
@@ -175,10 +175,10 @@ export function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+254719635944"
+                  href="tel:+254706310918"
                   className="font-body text-sm text-white/70 hover:text-coral transition-colors duration-200"
                 >
-                  +254 719 635 944
+                  +254 706 310 918
                 </a>
               </li>
               <li className="flex items-start gap-3">

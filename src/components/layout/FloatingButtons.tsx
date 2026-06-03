@@ -16,7 +16,7 @@ export function FloatingButtons() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const whatsappUrl = 'https://wa.me/254719635944?text=' + encodeURIComponent(
+  const whatsappUrl = 'https://wa.me/254706310918?text=' + encodeURIComponent(
     'Hello Chef Angie! I would like to know more about your services.'
   )
 
@@ -51,7 +51,7 @@ export function FloatingButtons() {
 
       {/* Phone Button */}
       <a
-        href="tel:+254719635944"
+        href="tel:+254706310918"
         className="group flex items-center justify-center w-14 h-14 bg-teal rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200"
         aria-label="Call us"
       >
