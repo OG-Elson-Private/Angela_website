@@ -7,6 +7,7 @@ export const ServiceType = z.enum([
   'PRIVATE_CHEF',
   'CATERING',
   'ACCOMMODATION',
+  'CONCIERGE',
 ])
 
 export type ServiceType = z.infer<typeof ServiceType>
@@ -28,6 +29,7 @@ export const serviceLabels: Record<ServiceType, string> = {
   PRIVATE_CHEF: 'Private Chef',
   CATERING: 'Catering',
   ACCOMMODATION: 'Accommodation',
+  CONCIERGE: 'Diani Insider Service',
 }
 
 // Schema for testimonial submission (client-side and server-side)

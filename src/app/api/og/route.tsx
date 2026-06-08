@@ -20,6 +20,10 @@ const PAGES: Record<string, { title: string; subtitle: string }> = {
     title: 'Meet Chef Angie',
     subtitle: 'Passionate Cook · 4+ Years Experience · Diani Beach, Kenya',
   },
+  'ask-angela': {
+    title: 'Your Diani Insider',
+    subtitle: 'We Find You the Best Deal Possible in Diani Beach, Kenya',
+  },
   contact: {
     title: 'Get in Touch',
     subtitle: 'WhatsApp · Phone · Instagram — Diani Beach, Kenya',

@@ -7,6 +7,7 @@ const quickLinks: NavLink[] = [
   { label: 'About', href: '/about' },
   { label: 'Cuisine', href: '/cuisine' },
   { label: 'Stay', href: '/hebergement' },
+  { label: 'Ask Angela', href: '/ask-angela' },
   { label: 'Reviews', href: '/testimonials' },
   { label: 'Contact', href: '/contact' },
 ]
