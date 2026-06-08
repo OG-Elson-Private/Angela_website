@@ -226,7 +226,7 @@ export default async function AskAngelaPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/chef/angela_diani_insider.jpg"
+                  src="/images/chef/picture_flyer.jpeg"
                   alt="Chef Angela — your Diani insider"
                   fill
                   className="object-cover"
