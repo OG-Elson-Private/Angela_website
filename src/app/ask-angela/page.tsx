@@ -136,7 +136,22 @@ const advantages = [
     description: 'Messages answered within minutes during Diani business hours.',
   },
   {
-    icon: '🇰🇪',
+    // Inline Kenyan flag SVG — the 🇰🇪 emoji fails to render on some platforms
+    // (falls back to "KE" glyphs), so we ship a self-contained flag instead.
+    icon: (
+      <svg
+        viewBox="0 0 6 4"
+        className="w-12 h-8 mx-auto rounded-sm shadow-sm"
+        role="img"
+        aria-label="Flag of Kenya"
+      >
+        <rect width="6" height="1.33" y="0" fill="#000000" />
+        <rect width="6" height="0.16" y="1.33" fill="#FFFFFF" />
+        <rect width="6" height="1.02" y="1.49" fill="#BB0000" />
+        <rect width="6" height="0.16" y="2.51" fill="#FFFFFF" />
+        <rect width="6" height="1.33" y="2.67" fill="#006600" />
+      </svg>
+    ),
     title: 'The real Diani',
     description:
       'You get the local experience — the side of Diani only locals usually access.',
@@ -179,7 +194,7 @@ export default async function AskAngelaPage() {
       />
 
       {/* Section 1 — Hero */}
-      <section className="relative py-24 md:py-32 bg-ocean-dark">
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-night-blue to-night-blue-deeper">
         <div className="container-standard px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
@@ -211,7 +226,7 @@ export default async function AskAngelaPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/chef/profile.jpg"
+                  src="/images/chef/angela_diani_insider.jpg"
                   alt="Chef Angela — your Diani insider"
                   fill
                   className="object-cover"

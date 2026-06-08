@@ -42,6 +42,11 @@ const config: Config = {
         ocean: {
           dark: '#134E4A',
         },
+        // Night blue - dedicated Hero accent for /ask-angela (Diani Insider)
+        'night-blue': {
+          DEFAULT: '#1B2F44',
+          deeper: '#0F1E30',
+        },
         charcoal: {
           DEFAULT: '#1F2937',
         },
