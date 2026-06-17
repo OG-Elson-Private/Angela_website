@@ -88,7 +88,7 @@ const whyBookDirect = [
 
 const pricing = {
   lowSeason: { price: 3000, period: 'Mid-January - October' },
-  highSeason: { price: 7000, period: 'November - Mid-January' },
+  highSeason: { price: 5000, priceWithAC: 5500, period: 'November - Mid-January' },
 }
 
 export default async function StayPage() {
@@ -257,6 +257,7 @@ export default async function StayPage() {
                   <div className="text-right">
                     <p className="font-heading text-2xl font-bold text-coral">{pricing.highSeason.price.toLocaleString()} KES</p>
                     <p className="text-sm text-gray-warm">per night</p>
+                    <p className="text-xs text-gray-warm mt-1 italic">{pricing.highSeason.priceWithAC.toLocaleString()} KES with AC</p>
                   </div>
                 </div>
               </div>
@@ -515,7 +516,7 @@ export default async function StayPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between text-gray-warm">
                       <span>Apartment alone</span>
-                      <span>3,000 - 7,000 KES</span>
+                      <span>3,000 - 5,500 KES</span>
                     </div>
                     <div className="flex justify-between text-gray-warm">
                       <span>Chef service alone</span>
@@ -523,7 +524,7 @@ export default async function StayPage() {
                     </div>
                     <div className="border-t border-teal/20 pt-2 mt-2 flex justify-between font-semibold text-gray-warm">
                       <span>If booked separately</span>
-                      <span className="line-through">6,500 - 10,500 KES</span>
+                      <span className="line-through">6,500 - 9,000 KES</span>
                     </div>
                     <div className="flex justify-between font-bold text-teal text-base">
                       <span>Package price</span>
