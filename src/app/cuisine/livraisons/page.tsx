@@ -1,13 +1,14 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'Food Delivery Diani Beach | Biryani Friday & Pilau Tuesday',
-  description: 'Food delivery in Diani Beach. Order Biryani every Friday and Pilau every Tuesday. Fresh Kenyan cuisine delivered to Diani Beach and Ukunda.',
+  title: 'Family Feast Delivery Diani Beach | Biryani Friday & Pilau Tuesday',
+  description: 'Family Feast delivery in Diani Beach — Biryani every Friday and Pilau every Tuesday. From 5 people, pre-order 24h in advance. Fresh Kenyan cuisine delivered to Diani Beach and Ukunda.',
   openGraph: {
-    title: 'Food Delivery Diani Beach | Chef Angie',
-    description: 'Weekly food delivery in Diani Beach - Biryani Friday & Pilau Tuesday',
+    title: 'Family Feast Delivery Diani Beach | Chef Angie',
+    description: 'Weekly Family Feast delivery in Diani Beach — Biryani Friday & Pilau Tuesday (from 5 people)',
     type: 'website',
     url: 'https://www.chefangela.co.ke/cuisine/livraisons',
     images: ['/images/og/og-delivery.jpg'],
@@ -35,11 +36,12 @@ const jsonLd = {
   hasMenu: {
     '@type': 'Menu',
     name: 'Weekly Delivery Menu',
+    eligibleQuantity: { '@type': 'QuantitativeValue', minValue: 5, unitText: 'people' },
     hasMenuSection: [
       {
         '@type': 'MenuSection',
         name: 'Biryani Friday',
-        description: 'Available every Friday - Order by Thursday',
+        description: 'Family Feast — every Friday, pre-order at least 24h in advance, minimum 5 people',
         hasMenuItem: [
           {
             '@type': 'MenuItem',
@@ -66,7 +68,7 @@ const jsonLd = {
       {
         '@type': 'MenuSection',
         name: 'Pilau Tuesday',
-        description: 'Available every Tuesday - Order by Monday',
+        description: 'Family Feast — every Tuesday, pre-order at least 24h in advance, minimum 5 people',
         hasMenuItem: [
           {
             '@type': 'MenuItem',
@@ -114,10 +116,10 @@ const pilauDish = {
 const deliveryAreas = ['Diani Beach', 'Ukunda']
 
 const orderSteps = [
-  { step: 1, title: 'Choose Your Dish', description: 'Select Biryani or Pilau and quantity' },
-  { step: 2, title: 'Contact Us', description: 'WhatsApp or call with your order' },
+  { step: 1, title: 'Choose Your Feast', description: 'Pick Biryani (Friday) or Pilau (Tuesday) and how many people (min 5)' },
+  { step: 2, title: 'Pre-order on WhatsApp', description: 'At least 24 hours before the delivery date' },
   { step: 3, title: 'Confirm Details', description: 'Share delivery location and time' },
-  { step: 4, title: 'Enjoy!', description: 'Fresh food delivered to your door' },
+  { step: 4, title: 'Enjoy Together', description: 'Fresh food delivered to your door' },
 ]
 
 export default function LivraisonsPage() {
@@ -130,13 +132,15 @@ export default function LivraisonsPage() {
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-ocean-dark">
         <div className="container-standard text-center text-white px-4">
-          <p className="font-script text-3xl text-coral mb-4">Fresh Every Week</p>
+          <p className="font-script text-3xl text-coral mb-4">Perfect for Sharing</p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Food Delivery in Diani Beach
+            Family Feast Delivery in Diani Beach
           </h1>
-          <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
-            Weekly food delivery to Diani Beach and Ukunda. Order before Thursday for <span className="text-coral font-semibold">Biryani Friday</span>.
-            Order before Monday for <span className="text-coral font-semibold">Pilau Tuesday</span>.
+          <p className="font-body text-lg text-white/80 max-w-2xl mx-auto mb-4">
+            Bring everyone together around Chef Angie&apos;s signature dishes. <span className="text-coral font-semibold">Biryani every Friday</span>, <span className="text-coral font-semibold">Pilau every Tuesday</span> — delivered to your villa, apartment, or accommodation in Diani Beach and Ukunda.
+          </p>
+          <p className="font-ui text-sm text-white/70">
+            Minimum 5 people — pre-order at least 24 hours in advance.
           </p>
         </div>
       </section>
@@ -151,7 +155,7 @@ export default function LivraisonsPage() {
               <h2 className="font-heading text-3xl md:text-4xl font-bold">Biryani Friday</h2>
             </div>
             <div className="bg-coral text-white px-4 py-2 rounded-full font-ui font-semibold text-sm uppercase tracking-wide">
-              Order by Thursday
+              From 5 — 24h Notice
             </div>
           </div>
 
@@ -189,7 +193,7 @@ export default function LivraisonsPage() {
 
                   <Button variant="gradient" size="md" className="w-full" asChild>
                     <a
-                      href={`https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20order%20${encodeURIComponent(dish.name)}%20for%20Friday%20delivery.%0A%0AQuantity:%20____%0ALocation:%20____%0ADelivery%20time:%20____`}
+                      href={`https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20pre-order%20${encodeURIComponent(dish.name)}%20for%20Friday%20delivery.%0A%0ANumber%20of%20people%20(min%205):%20____%0ADelivery%20date:%20____%0ADelivery%20location:%20____%0ADelivery%20time:%20____`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -231,7 +235,7 @@ export default function LivraisonsPage() {
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-ocean-dark">Pilau Tuesday</h2>
             </div>
             <div className="bg-coral text-white px-4 py-2 rounded-full font-ui font-semibold text-sm uppercase tracking-wide">
-              Order by Monday
+              From 5 — 24h Notice
             </div>
           </div>
 
@@ -283,7 +287,7 @@ export default function LivraisonsPage() {
 
               <Button variant="gradient" size="lg" className="w-full md:w-auto" asChild>
                 <a
-                  href={`https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20order%20Beef%20Pilau%20for%20Tuesday%20delivery.%0A%0AQuantity:%20____%0ALocation:%20____%0ADelivery%20time:%20____`}
+                  href={`https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I%20would%20like%20to%20pre-order%20Beef%20Pilau%20for%20Tuesday%20delivery.%0A%0ANumber%20of%20people%20(min%205):%20____%0ADelivery%20date:%20____%0ADelivery%20location:%20____%0ADelivery%20time:%20____`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -295,13 +299,31 @@ export default function LivraisonsPage() {
         </div>
       </section>
 
+      {/* Couples & Solo redirect */}
+      <section className="py-12 bg-white">
+        <div className="container-standard px-4">
+          <div className="max-w-2xl mx-auto bg-sand-light rounded-2xl p-8 text-center">
+            <p className="font-script text-2xl text-coral mb-2">Travelling alone or as a couple?</p>
+            <h3 className="font-heading text-xl font-semibold text-ocean-dark mb-4">
+              Book a Private Chef Experience instead
+            </h3>
+            <p className="font-body text-gray-warm mb-6">
+              For smaller parties, Chef Angie comes to your villa or apartment and cooks for you on site — the same signature flavours, served fresh at your table.
+            </p>
+            <Button variant="primary" size="md" asChild>
+              <Link href="/cuisine">Discover Private Chef</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* How to Order */}
       <section className="section-padding bg-white">
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="font-script text-2xl text-coral mb-2">Simple Process</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              How to Order Food Delivery in Diani
+              How to Order Your Family Feast in Diani
             </h2>
           </div>
 
@@ -339,10 +361,10 @@ export default function LivraisonsPage() {
       <section className="py-16 bg-ocean-dark text-white">
         <div className="container-standard text-center px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
-            Ready to Order Food Delivery?
+            Ready to Plan Your Family Feast?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
-            Contact us on WhatsApp or call to place your food delivery order in Diani Beach today!
+            Pre-order at least 24h in advance, from 5 people. WhatsApp or call to lock your delivery in Diani Beach.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
