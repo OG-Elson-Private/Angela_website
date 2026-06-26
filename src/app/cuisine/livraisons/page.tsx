@@ -49,7 +49,7 @@ const jsonLd = {
             description: 'Fragrant basmati rice with tender chicken, aromatic spices, saffron. Includes banana, salad, kachumbari.',
             offers: {
               '@type': 'Offer',
-              price: '550',
+              price: '450',
               priceCurrency: 'KES',
             },
           },
@@ -59,7 +59,7 @@ const jsonLd = {
             description: 'Rich biryani with melt-in-your-mouth beef, traditional Swahili spices. Includes banana, salad, kachumbari.',
             offers: {
               '@type': 'Offer',
-              price: '500',
+              price: '400',
               priceCurrency: 'KES',
             },
           },
@@ -89,7 +89,7 @@ const jsonLd = {
 const biryaniDishes = [
   {
     name: 'Chicken Biryani',
-    price: 550,
+    price: 450,
     description: 'Fragrant basmati rice layered with tender chicken pieces, slow-cooked with aromatic spices, saffron, and caramelized onions.',
     includes: ['Banana', 'Fresh Salad', 'Kachumbari'],
     image: '/images/dishes/chicken-biryani.jpg',
@@ -97,7 +97,7 @@ const biryaniDishes = [
   },
   {
     name: 'Beef Biryani',
-    price: 500,
+    price: 400,
     description: 'Rich and savory biryani with melt-in-your-mouth beef, infused with traditional Swahili spices and perfectly cooked rice.',
     includes: ['Banana', 'Fresh Salad', 'Kachumbari'],
     image: '/images/dishes/beef-biryani.jpg',
