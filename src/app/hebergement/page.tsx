@@ -8,7 +8,7 @@ import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
   title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool & Breakfast Add-on',
-  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 3,000 KES/night. Add the Welcome Breakfast for a 5-star morning in your studio!',
+  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 3,000 KES/night. Add the Welcome Breakfast for 2 (500 KES/night) for a 5-star morning in your studio!',
   openGraph: {
     title: 'Vacation Apartment Diani Beach | Chef Angie',
     description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 3,000 KES/night',
@@ -70,11 +70,11 @@ const jsonLd = {
     {
       '@type': 'Offer',
       name: 'Welcome Breakfast Add-on',
-      description: 'Breakfast in your studio between 7am and 11am — mahamri or chapati, sausage or omelette, African tea, fruits or fresh smoothie. Time arranged the evening before.',
+      description: 'Breakfast for 2 in your studio between 7am and 11am — mahamri or chapati, sausage or omelette, African tea, fruits or fresh smoothie. Time arranged the evening before.',
       price: '500',
       priceCurrency: 'KES',
       availability: 'https://schema.org/InStock',
-      eligibleQuantity: { '@type': 'QuantitativeValue', unitText: 'per person' },
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: 2, unitText: 'people' },
     },
   ],
 }
@@ -305,7 +305,7 @@ export default async function StayPage() {
                 Wake up to Chef Angie&apos;s Welcome Breakfast
               </h2>
               <p className="font-body text-lg text-gray-warm mb-6">
-                Start your Diani morning the local way. A handmade breakfast, prepared by Chef Angie and served right in your studio between <span className="font-semibold text-ocean-dark">7am and 11am</span>. Exact time arranged the evening before.
+                Start your Diani morning the local way. A handmade breakfast for 2, prepared by Chef Angie and served right in your studio between <span className="font-semibold text-ocean-dark">7am and 11am</span>. Exact time arranged the evening before.
               </p>
 
               <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
@@ -336,7 +336,7 @@ export default async function StayPage() {
                   <span className="font-heading text-5xl font-bold text-ocean-dark">500</span>
                   <span className="text-gray-warm font-ui">KES</span>
                 </div>
-                <p className="text-sm text-gray-warm mt-2">per person, on top of your room booking</p>
+                <p className="text-sm text-gray-warm mt-2">on top of your room booking — breakfast for 2</p>
               </div>
 
               <div className="bg-sand-light rounded-xl p-4 mb-6">
@@ -344,6 +344,7 @@ export default async function StayPage() {
                   <span>ℹ️</span> Good to Know
                 </h4>
                 <ul className="text-sm text-gray-warm space-y-1">
+                  <li>• Breakfast prepared for 2 people</li>
                   <li>• Order at booking or anytime before your stay</li>
                   <li>• Time arranged the evening before (7am–11am window)</li>
                   <li>• Available every day during your stay</li>
@@ -352,7 +353,7 @@ export default async function StayPage() {
 
               <Button variant="gradient" size="lg" className="w-full" asChild>
                 <a
-                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20add%20the%20Welcome%20Breakfast%20to%20my%20stay%20(500%20KES%2Fperson).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ABreakfast%20choices:%20____"
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20add%20the%20Welcome%20Breakfast%20to%20my%20stay%20(500%20KES%20per%20night%2C%20for%202).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ABreakfast%20choices:%20____"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

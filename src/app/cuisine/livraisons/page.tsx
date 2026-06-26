@@ -116,7 +116,7 @@ const pilauDish = {
 const deliveryAreas = ['Diani Beach', 'Ukunda']
 
 const orderSteps = [
-  { step: 1, title: 'Choose Your Feast', description: 'Pick Biryani (Friday) or Pilau (Tuesday) and how many people (min 5)' },
+  { step: 1, title: 'Choose Your Feast', description: 'Pick Biryani (Friday) or Pilau (Tuesday) — for 5 people or more' },
   { step: 2, title: 'Pre-order on WhatsApp', description: 'At least 24 hours before the delivery date' },
   { step: 3, title: 'Confirm Details', description: 'Share delivery location and time' },
   { step: 4, title: 'Enjoy Together', description: 'Fresh food delivered to your door' },
@@ -136,11 +136,18 @@ export default function LivraisonsPage() {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Family Feast Delivery in Diani Beach
           </h1>
-          <p className="font-body text-lg text-white/80 max-w-2xl mx-auto mb-4">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 bg-coral text-white px-5 py-2 rounded-full font-ui font-semibold text-base shadow-lg">
+              <span className="text-xl">👥</span>
+              <span>Minimum 5 people</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur border border-white/30 text-white px-5 py-2 rounded-full font-ui font-semibold text-base">
+              <span className="text-xl">⏰</span>
+              <span>Pre-order 24h ahead</span>
+            </div>
+          </div>
+          <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
             Bring everyone together around Chef Angie&apos;s signature dishes. <span className="text-coral font-semibold">Biryani every Friday</span>, <span className="text-coral font-semibold">Pilau every Tuesday</span> — delivered to your villa, apartment, or accommodation in Diani Beach and Ukunda.
-          </p>
-          <p className="font-ui text-sm text-white/70">
-            Minimum 5 people — pre-order at least 24 hours in advance.
           </p>
         </div>
       </section>
@@ -154,8 +161,9 @@ export default function LivraisonsPage() {
               <p className="font-script text-2xl text-coral mb-2">Every Friday</p>
               <h2 className="font-heading text-3xl md:text-4xl font-bold">Biryani Friday</h2>
             </div>
-            <div className="bg-coral text-white px-4 py-2 rounded-full font-ui font-semibold text-sm uppercase tracking-wide">
-              From 5 — 24h Notice
+            <div className="bg-coral text-white px-5 py-2 rounded-full font-ui font-bold text-sm uppercase tracking-wide flex items-center gap-2">
+              <span>👥</span>
+              <span>Min 5 people · 24h ahead</span>
             </div>
           </div>
 
@@ -234,8 +242,9 @@ export default function LivraisonsPage() {
               <p className="font-script text-2xl text-coral mb-2">Every Tuesday</p>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-ocean-dark">Pilau Tuesday</h2>
             </div>
-            <div className="bg-coral text-white px-4 py-2 rounded-full font-ui font-semibold text-sm uppercase tracking-wide">
-              From 5 — 24h Notice
+            <div className="bg-coral text-white px-5 py-2 rounded-full font-ui font-bold text-sm uppercase tracking-wide flex items-center gap-2">
+              <span>👥</span>
+              <span>Min 5 people · 24h ahead</span>
             </div>
           </div>
 
