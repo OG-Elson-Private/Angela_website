@@ -3,6 +3,15 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/cuisine/livraisons',
+        destination: '/cuisine',
+        permanent: false, // 302 — temporary, preserves SEO for future reactivation
+      },
+    ]
+  },
   async headers() {
     return [
       {

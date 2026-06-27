@@ -14,8 +14,6 @@ const quickLinks: NavLink[] = [
 
 const cuisineLinks: NavLink[] = [
   { label: 'Our Services', href: '/cuisine' },
-  { label: 'Biryani Friday', href: '/cuisine/livraisons#biryani' },
-  { label: 'Pilau Tuesday', href: '/cuisine/livraisons#pilau' },
   { label: 'Private Chef', href: '/cuisine#chef-prive' },
   { label: 'Catering', href: '/cuisine#traiteur' },
 ]

@@ -107,21 +107,6 @@ const jsonLd = {
 
 const services = [
   {
-    id: 'delivery',
-    title: 'Weekly Delivery',
-    subtitle: 'Biryani Friday & Pilau Tuesday',
-    description: 'Fresh, authentic meals delivered to your door every week. Order before Thursday for Friday, before Monday for Tuesday.',
-    price: 'From 450 KES',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
-      </svg>
-    ),
-    href: '/cuisine/livraisons',
-    cta: 'View Menu',
-    features: ['Fresh ingredients', 'Home delivery', 'Diani, Ukunda'],
-  },
-  {
     id: 'private-chef',
     title: 'Private Chef',
     subtitle: 'In-Home Dining Experience',
@@ -198,7 +183,7 @@ export default async function CuisinePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
-              <Link href="/cuisine/livraisons">Order This Week</Link>
+              <Link href="#chef-prive">Book Your Private Chef Experience</Link>
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
               <a href="https://wa.me/254706310918" target="_blank" rel="noopener noreferrer">
@@ -450,7 +435,13 @@ export default async function CuisinePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
-              <Link href="/cuisine/livraisons">Order Now</Link>
+              <a
+                href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20discuss%20your%20cuisine%20services.%20Could%20you%20tell%20me%20more%20about%20what%20you%20offer%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Talk to Chef Angie
+              </a>
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
               <Link href="/contact">Contact Us</Link>
