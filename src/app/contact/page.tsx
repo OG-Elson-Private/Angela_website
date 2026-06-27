@@ -94,12 +94,6 @@ const contactMethods = [
 
 const services = [
   {
-    title: 'Food Orders',
-    description: 'Biryani Friday & Pilau Tuesday deliveries',
-    link: '/cuisine/livraisons',
-    linkText: 'View Menu',
-  },
-  {
     title: 'Private Chef',
     description: 'In-home cooking experiences',
     link: '/cuisine#chef-prive',

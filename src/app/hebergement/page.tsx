@@ -7,8 +7,8 @@ import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
-  title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool',
-  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 3,000 KES/night. Direct booking saves you money!',
+  title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool & Breakfast Add-on',
+  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 3,000 KES/night. Add the Welcome Breakfast (500 KES/person) for a 5-star morning in your studio!',
   openGraph: {
     title: 'Vacation Apartment Diani Beach | Chef Angie',
     description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 3,000 KES/night',
@@ -57,15 +57,26 @@ const jsonLd = {
     '@type': 'QuantitativeValue',
     maxValue: 2,
   },
-  offers: {
-    '@type': 'Offer',
-    name: 'Low Season Rate',
-    price: '3000',
-    priceCurrency: 'KES',
-    availability: 'https://schema.org/InStock',
-    validFrom: '2026-01-15',
-    validThrough: '2026-10-31',
-  },
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Low Season Rate',
+      price: '3000',
+      priceCurrency: 'KES',
+      availability: 'https://schema.org/InStock',
+      validFrom: '2026-01-15',
+      validThrough: '2026-10-31',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Welcome Breakfast Add-on',
+      description: 'Breakfast in your studio between 7am and 11am — mahamri or chapati, sausage or omelette, African tea, fruits or fresh smoothie. Time arranged the evening before.',
+      price: '500',
+      priceCurrency: 'KES',
+      availability: 'https://schema.org/InStock',
+      eligibleQuantity: { '@type': 'QuantitativeValue', unitText: 'per person' },
+    },
+  ],
 }
 
 const amenities = [
@@ -154,6 +165,9 @@ export default async function StayPage() {
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
                 <Link href="#gallery">Watch Video Tour</Link>
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-ocean-dark" asChild>
+                <Link href="#welcome-breakfast">+ Welcome Breakfast</Link>
               </Button>
             </div>
           </div>
@@ -273,6 +287,80 @@ export default async function StayPage() {
               </Button>
 
               <p className="text-center text-sm text-gray-warm mt-4">
+                Or call: <a href="tel:+254706310918" className="text-teal hover:underline">+254 706 310 918</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Add-on — Welcome Breakfast */}
+      <section id="welcome-breakfast" className="section-padding bg-sand-light">
+        <div className="container-standard px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — Visual / Content */}
+            <div>
+              <p className="font-script text-2xl text-coral mb-2">Add-on</p>
+              <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
+                Wake up to Chef Angie&apos;s Welcome Breakfast
+              </h2>
+              <p className="font-body text-lg text-gray-warm mb-6">
+                Start your Diani morning the local way. A handmade breakfast, prepared by Chef Angie and served right in your studio between <span className="font-semibold text-ocean-dark">7am and 11am</span>. Exact time arranged the evening before.
+              </p>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
+                <h3 className="font-ui font-semibold text-ocean-dark mb-4">What&apos;s in your breakfast</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Mahamri or chapati',
+                    'Sausage or omelette',
+                    'African tea',
+                    'Fresh fruits or fresh smoothie',
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-gray-warm">
+                      <svg className="w-5 h-5 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="font-body">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Right — Pricing & CTA */}
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="text-center mb-6">
+                <p className="font-script text-xl text-coral mb-2">Add-on Price</p>
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="font-heading text-5xl font-bold text-ocean-dark">500</span>
+                  <span className="text-gray-warm font-ui">KES</span>
+                </div>
+                <p className="text-sm text-gray-warm mt-2">per person, on top of your room booking</p>
+              </div>
+
+              <div className="bg-sand-light rounded-xl p-4 mb-6">
+                <h4 className="font-ui font-semibold text-ocean-dark mb-2 text-sm flex items-center gap-2">
+                  <span>ℹ️</span> Good to Know
+                </h4>
+                <ul className="text-sm text-gray-warm space-y-1">
+                  <li>• Order at booking or anytime before your stay</li>
+                  <li>• Time arranged the evening before (7am–11am window)</li>
+                  <li>• Available every day during your stay</li>
+                </ul>
+              </div>
+
+              <Button variant="gradient" size="lg" className="w-full" asChild>
+                <a
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20add%20the%20Welcome%20Breakfast%20to%20my%20stay%20(500%20KES%20per%20person).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ABreakfast%20choices:%20____"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Add Welcome Breakfast
+                </a>
+              </Button>
+
+              <p className="text-center text-xs text-gray-warm mt-3">
                 Or call: <a href="tel:+254706310918" className="text-teal hover:underline">+254 706 310 918</a>
               </p>
             </div>

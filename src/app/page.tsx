@@ -1,7 +1,6 @@
 import {
   Hero,
   TwoPillars,
-  WeeklySpecials,
   CombinedExperience,
   AboutPreview,
   Testimonials,
@@ -32,7 +31,6 @@ const jsonLd = {
   image: 'https://www.chefangela.co.ke/images/og/og-home.jpg',
   priceRange: '$$',
   servesCuisine: ['Kenyan', 'Swahili', 'African'],
-  hasMenu: 'https://www.chefangela.co.ke/cuisine/livraisons',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -64,9 +62,6 @@ export default async function HomePage() {
 
       {/* Two Pillars - Cuisine & Stay cards */}
       <TwoPillars />
-
-      {/* Weekly Specials - Biryani Friday & Pilau Tuesday */}
-      <WeeklySpecials />
 
       {/* Combined Experience Banner */}
       <CombinedExperience />

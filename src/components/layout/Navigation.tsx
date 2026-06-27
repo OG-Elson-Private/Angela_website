@@ -9,14 +9,7 @@ import type { NavLink } from '@/types'
 const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  {
-    label: 'Cuisine',
-    href: '/cuisine',
-    children: [
-      { label: 'Our Services', href: '/cuisine' },
-      { label: 'Weekly Delivery', href: '/cuisine/livraisons' },
-    ],
-  },
+  { label: 'Cuisine', href: '/cuisine' },
   { label: 'Stay', href: '/hebergement' },
   { label: 'Ask Angela', href: '/ask-angela' },
   { label: 'Contact', href: '/contact' },

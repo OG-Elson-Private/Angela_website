@@ -1,6 +1,5 @@
 export { Hero } from './Hero'
 export { TwoPillars } from './TwoPillars'
-export { WeeklySpecials } from './WeeklySpecials'
 export { CombinedExperience } from './CombinedExperience'
 export { AboutPreview } from './AboutPreview'
 export { Testimonials } from './Testimonials'
