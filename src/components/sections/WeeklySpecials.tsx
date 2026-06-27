@@ -80,7 +80,7 @@ export function WeeklySpecials() {
     {
       name: 'Chicken Biryani',
       description: 'Fragrant basmati rice layered with tender chicken, aromatic spices, and slow-cooked to perfection.',
-      price: 550,
+      price: 450,
       day: 'Friday',
       includes: ['Banana', 'Fresh Salad'],
       image: '/images/dishes/chicken-biryani.jpg',
@@ -90,7 +90,7 @@ export function WeeklySpecials() {
     {
       name: 'Beef Biryani',
       description: 'Rich and savory beef biryani with perfectly spiced rice and melt-in-your-mouth meat.',
-      price: 500,
+      price: 400,
       day: 'Friday',
       includes: ['Banana', 'Fresh Salad'],
       image: '/images/dishes/beef-biryani.jpg',
