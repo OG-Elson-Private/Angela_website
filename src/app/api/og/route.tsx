@@ -14,7 +14,7 @@ const PAGES: Record<string, { title: string; subtitle: string }> = {
   },
   stay: {
     title: 'Vacation Apartment',
-    subtitle: 'Holiday Rental with Pool — From 3,000 KES/night · Diani Beach',
+    subtitle: 'Holiday Rental with Pool & AC — From 3,500 KES/night · Diani Beach',
   },
   about: {
     title: 'Meet Chef Angie',

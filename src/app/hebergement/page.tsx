@@ -7,11 +7,11 @@ import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
-  title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool & Breakfast Add-on',
-  description: 'Book a vacation apartment in Diani Beach with pool. Holiday rental near the beach from 3,000 KES/night. Add the Welcome Breakfast (500 KES/person) for a 5-star morning in your studio!',
+  title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool, AC & Breakfast',
+  description: 'Book a vacation apartment in Diani Beach with pool and air conditioning. Holiday rental near the beach from 3,500 KES/night. Add the Welcome Breakfast (500 KES/person) for a 5-star morning in your studio!',
   openGraph: {
     title: 'Vacation Apartment Diani Beach | Chef Angie',
-    description: 'Vacation apartment in Diani Beach - Holiday rental with pool from 3,000 KES/night',
+    description: 'Vacation apartment in Diani Beach - Holiday rental with pool & AC from 3,500 KES/night',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: [{ url: '/api/og?page=stay', width: 1200, height: 630 }],
@@ -23,7 +23,7 @@ const jsonLd = {
   '@type': 'LodgingBusiness',
   '@id': 'https://www.chefangela.co.ke/hebergement',
   name: 'Chef Angie Vacation Apartment',
-  description: 'Cozy vacation apartment in Diani Beach with pool access. Perfect holiday rental for couples and solo travelers, just 10 minutes walk from the beach.',
+  description: 'Cozy vacation apartment in Diani Beach with pool access, now 100% air-conditioned year-round. Perfect holiday rental for couples and solo travelers, just 10 minutes walk from the beach.',
   url: 'https://www.chefangela.co.ke/hebergement',
   telephone: '+254706310918',
   email: 'liyayiangela20@gmail.com',
@@ -40,12 +40,13 @@ const jsonLd = {
     latitude: -4.2868396,
     longitude: 39.5756094,
   },
-  priceRange: '3000-8000 KES',
+  priceRange: '3500-8000 KES',
   checkinTime: '12:00',
   checkoutTime: '09:00',
   petsAllowed: false,
   amenityFeature: [
     { '@type': 'LocationFeatureSpecification', name: 'Swimming Pool', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Air Conditioning', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Free WiFi', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Free Parking', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Kitchenette', value: true },
@@ -61,7 +62,7 @@ const jsonLd = {
     {
       '@type': 'Offer',
       name: 'Low Season Rate',
-      price: '3000',
+      price: '3500',
       priceCurrency: 'KES',
       availability: 'https://schema.org/InStock',
       validFrom: '2026-01-15',
@@ -70,7 +71,7 @@ const jsonLd = {
     {
       '@type': 'Offer',
       name: 'Welcome Breakfast Add-on',
-      description: 'Breakfast in your studio between 7am and 11am — mahamri or chapati, sausage or omelette, African tea, fruits or fresh smoothie. Time arranged the evening before.',
+      description: 'Breakfast in your studio between 7am and 11am — mahamri or chapati, sausage and omelette, African tea. Time arranged the evening before.',
       price: '500',
       priceCurrency: 'KES',
       availability: 'https://schema.org/InStock',
@@ -84,7 +85,8 @@ const amenities = [
   { icon: '🛏️', name: '1 Bedroom', description: 'Comfortable queen size bed' },
   { icon: '🍳', name: 'Kitchenette', description: 'Basic cooking essentials' },
   { icon: '📶', name: 'Free WiFi', description: 'Stay connected' },
-  { icon: '🌀', name: 'Stand Fan', description: 'Stay cool' },
+  { icon: '❄️', name: 'Air Conditioning', description: 'Stay cool year-round (installed June 2026)' },
+  { icon: '🌀', name: 'Stand Fan', description: 'Extra airflow' },
   { icon: '🚗', name: 'Free Parking', description: 'Safe parking space' },
   { icon: '🏖️', name: 'Beach Access', description: '10 min walk to beach' },
   { icon: '🔒', name: '24/7 Security', description: 'Gated compound' },
@@ -98,8 +100,8 @@ const whyBookDirect = [
 ]
 
 const pricing = {
-  lowSeason: { price: 3000, period: 'Mid-January - October' },
-  highSeason: { price: 5000, priceWithAC: 5500, period: 'November - Mid-January' },
+  lowSeason: { price: 3500, period: 'Mid-January - October' },
+  highSeason: { price: 5000, period: 'November - Mid-January' }, // AC included year-round since 2026-06-27
 }
 
 export default async function StayPage() {
@@ -140,7 +142,7 @@ export default async function StayPage() {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white">
-                <span className="font-ui font-semibold">From 3,000 KES</span>
+                <span className="font-ui font-semibold">From 3,500 KES</span>
                 <span className="text-white/70 text-sm"> / night</span>
               </div>
               <div className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white">
@@ -174,12 +176,24 @@ export default async function StayPage() {
         </div>
       </section>
 
+      {/* AC Just Installed Banner — added 2026-06-27, in validation phase
+          Easy removal: git revert <commit B SHA> OR delete this entire <section> */}
+      <section className="bg-coral py-3">
+        <div className="container-standard px-4 text-center">
+          <p className="font-ui font-semibold text-white flex items-center justify-center gap-2 flex-wrap">
+            <span>❄️</span>
+            <span>NEW — Now 100% AC-equipped year-round for your comfort</span>
+          </p>
+        </div>
+      </section>
+
       {/* Quick Features */}
       <section className="py-8 bg-teal">
         <div className="container-standard px-4">
           <div className="flex flex-wrap justify-center gap-8 text-white">
             {[
               { icon: '🏊', text: 'Pool' },
+              { icon: '❄️', text: 'AC' },
               { icon: '🛏️', text: '1 Bedroom' },
               { icon: '👥', text: '2 Guests' },
               { icon: '🏖️', text: 'Near Beach' },
@@ -271,7 +285,6 @@ export default async function StayPage() {
                   <div className="text-right">
                     <p className="font-heading text-2xl font-bold text-coral">{pricing.highSeason.price.toLocaleString()} KES</p>
                     <p className="text-sm text-gray-warm">per night</p>
-                    <p className="text-xs text-gray-warm mt-1 italic">{pricing.highSeason.priceWithAC.toLocaleString()} KES with AC</p>
                   </div>
                 </div>
               </div>
@@ -313,9 +326,8 @@ export default async function StayPage() {
                 <ul className="space-y-3">
                   {[
                     'Mahamri or chapati',
-                    'Sausage or omelette',
+                    'Sausage and omelette',
                     'African tea',
-                    'Fresh fruits or fresh smoothie',
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-gray-warm">
                       <svg className="w-5 h-5 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -352,7 +364,7 @@ export default async function StayPage() {
 
               <Button variant="gradient" size="lg" className="w-full" asChild>
                 <a
-                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20add%20the%20Welcome%20Breakfast%20to%20my%20stay%20(500%20KES%20per%20person).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ABreakfast%20choices:%20____"
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20order%20the%20Welcome%20Breakfast%20(500%20KES%20per%20person)%20for%20my%20stay.%0A%0A-%20Date(s):%20____%0A-%20Delivery%20time%20(between%207am%20and%2011am):%20____%0A-%20Number%20of%20people:%20____%0A%0AMy%20choice:%0A-%20Mahamri%20OR%20Chapati:%20____%0A-%20(Sausage%20and%20omelette%20%2B%20African%20tea%20included)"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -524,6 +536,7 @@ export default async function StayPage() {
                   <ul className="space-y-2 pl-13">
                     {[
                       'Cozy 1-bedroom apartment',
+                      'Air conditioning year-round',
                       'Private pool access',
                       'Free WiFi & parking',
                       '10 min walk to beach',
@@ -604,7 +617,7 @@ export default async function StayPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between text-gray-warm">
                       <span>Apartment alone</span>
-                      <span>3,000 - 5,500 KES</span>
+                      <span>3,500 - 5,000 KES</span>
                     </div>
                     <div className="flex justify-between text-gray-warm">
                       <span>Chef service alone</span>
@@ -612,7 +625,7 @@ export default async function StayPage() {
                     </div>
                     <div className="border-t border-teal/20 pt-2 mt-2 flex justify-between font-semibold text-gray-warm">
                       <span>If booked separately</span>
-                      <span className="line-through">6,500 - 9,000 KES</span>
+                      <span className="line-through">7,000 - 8,500 KES</span>
                     </div>
                     <div className="flex justify-between font-bold text-teal text-base">
                       <span>Package price</span>
