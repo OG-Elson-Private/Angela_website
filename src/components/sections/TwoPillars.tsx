@@ -95,7 +95,7 @@ export function TwoPillars() {
             title="Stay"
             subtitle="Accommodation"
             description="Your home away from home in Diani Beach. A beautiful apartment with pool, just steps from the ocean."
-            price="From 3,000 KES"
+            price="From 3,500 KES"
             priceLabel="Per night, direct booking"
             image="/images/apartment/pool.jpg"
             imageAlt="Apartment pool area in Diani Beach"
