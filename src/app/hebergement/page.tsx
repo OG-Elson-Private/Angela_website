@@ -71,7 +71,7 @@ const jsonLd = {
     {
       '@type': 'Offer',
       name: 'Welcome Breakfast Add-on',
-      description: 'Breakfast in your studio between 7am and 11am — mahamri or chapati, sausage or omelette, African tea, fruits or fresh smoothie. Time arranged the evening before.',
+      description: 'Breakfast in your studio between 7am and 11am — mahamri or chapati, sausage and omelette, African tea. Time arranged the evening before.',
       price: '500',
       priceCurrency: 'KES',
       availability: 'https://schema.org/InStock',
@@ -326,9 +326,8 @@ export default async function StayPage() {
                 <ul className="space-y-3">
                   {[
                     'Mahamri or chapati',
-                    'Sausage or omelette',
+                    'Sausage and omelette',
                     'African tea',
-                    'Fresh fruits or fresh smoothie',
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-gray-warm">
                       <svg className="w-5 h-5 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -365,7 +364,7 @@ export default async function StayPage() {
 
               <Button variant="gradient" size="lg" className="w-full" asChild>
                 <a
-                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20add%20the%20Welcome%20Breakfast%20to%20my%20stay%20(500%20KES%20per%20person).%0A%0ACheck-in:%20____%0ACheck-out:%20____%0ANumber%20of%20guests:%20____%0ABreakfast%20choices:%20____"
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20order%20the%20Welcome%20Breakfast%20(500%20KES%20per%20person)%20for%20my%20stay.%0A%0A-%20Date(s):%20____%0A-%20Delivery%20time%20(between%207am%20and%2011am):%20____%0A-%20Number%20of%20people:%20____%0A%0AMy%20choice:%0A-%20Mahamri%20OR%20Chapati:%20____%0A-%20(Sausage%20and%20omelette%20%2B%20African%20tea%20included)"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
