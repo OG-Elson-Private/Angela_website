@@ -176,6 +176,17 @@ export default async function StayPage() {
         </div>
       </section>
 
+      {/* AC Just Installed Banner — added 2026-06-27, in validation phase
+          Easy removal: git revert <commit B SHA> OR delete this entire <section> */}
+      <section className="bg-coral py-3">
+        <div className="container-standard px-4 text-center">
+          <p className="font-ui font-semibold text-white flex items-center justify-center gap-2 flex-wrap">
+            <span>❄️</span>
+            <span>NEW — Now 100% AC-equipped year-round for your comfort</span>
+          </p>
+        </div>
+      </section>
+
       {/* Quick Features */}
       <section className="py-8 bg-teal">
         <div className="container-standard px-4">
