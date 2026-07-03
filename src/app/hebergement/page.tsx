@@ -307,8 +307,53 @@ export default async function StayPage() {
         </div>
       </section>
 
-      {/* Add-on — Welcome Breakfast */}
+      {/* Welcome Breakfast — Visual editorial lead-in */}
       <section id="welcome-breakfast" className="section-padding bg-sand-light">
+        <div className="container-standard px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Photo */}
+            <div className="order-1">
+              <Image
+                src="/images/hebergement/angela_breakfast_hero.jpg"
+                alt="Chef Angie holding a Kenyan breakfast tray with chapati, vegetable omelette, mandazi, sausages and a cup of Kenyan chai"
+                width={1072}
+                height={1344}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto max-w-md mx-auto md:mx-0 rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+
+            {/* Text */}
+            <div className="order-2 text-center md:text-left">
+              <span className="inline-block bg-coral text-white font-ui font-semibold text-sm uppercase tracking-wide px-4 py-1.5 rounded-full mb-5">
+                New · +500 KES
+              </span>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-ocean-dark mb-5 leading-tight">
+                Wake up to Angie&apos;s kitchen.
+              </h2>
+              <p className="font-body text-lg md:text-xl text-gray-warm mb-6">
+                Mandazi, chapati, vegetable omelette, grilled sausages and a cup of Kenyan chai
+                — brought right to your studio.
+              </p>
+              <p className="font-ui text-sm text-ocean-dark/70 mb-8">
+                Delivered to your room · 7am – 11am · 500 KES per person
+              </p>
+              <Button variant="gradient" size="lg" asChild>
+                <a
+                  href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'd%20like%20to%20order%20the%20Welcome%20Breakfast%20(500%20KES%20per%20person)%20for%20my%20stay.%0A%0A-%20Date(s):%20____%0A-%20Delivery%20time%20(between%207am%20and%2011am):%20____%0A-%20Number%20of%20people:%20____%0A%0AMy%20choice:%0A-%20Mahamri%20OR%20Chapati:%20____%0A-%20(Sausage%20and%20omelette%20%2B%20African%20tea%20included)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Add to your stay
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Add-on — Welcome Breakfast (details) */}
+      <section className="section-padding pt-0 bg-sand-light">
         <div className="container-standard px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — Visual / Content */}
