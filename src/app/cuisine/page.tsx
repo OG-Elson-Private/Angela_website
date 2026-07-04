@@ -150,7 +150,7 @@ const dishes = [
   { src: '/images/cuisine/dishes/01_breakfast_spread.jpg', caption: 'Kenyan Breakfast Spread', alt: 'Full Kenyan breakfast spread with plantains, mango, beignets, and hot tea by Chef Angie' },
   { src: '/images/cuisine/dishes/02_spaghetti_bolognese.jpg', caption: 'Spaghetti Bolognese', alt: 'Spaghetti Bolognese with sautéed vegetables prepared by Chef Angie' },
   { src: '/images/cuisine/dishes/03_grilled_fish_plate.jpg', caption: 'Grilled Fish Plate', alt: 'Grilled fish plate with homemade chips and sautéed vegetables by Chef Angie' },
-  { src: '/images/cuisine/dishes/04_ugali_beef_plate.jpg', caption: 'Ugali & Beef Stew', alt: 'Traditional Kenyan plate with ugali, beef stew, avocado and chips by Chef Angie' },
+  { src: '/images/cuisine/dishes/04_ugali_beef_plate.jpg', caption: 'Chicken, Ugali & Fries', alt: "Chef Angie's plate with chicken, ugali, fries and avocado on the side" },
   { src: '/images/cuisine/dishes/05_homemade_muffins.jpg', caption: 'Homemade Muffins', alt: 'Freshly baked homemade muffins by Chef Angie' },
   { src: '/images/cuisine/dishes/06_fresh_mandazi.jpg', caption: 'Fresh Mandazi', alt: 'Golden fresh mandazi (Kenyan doughnuts) by Chef Angie' },
   { src: '/images/cuisine/dishes/07_chicken_biryani.jpg', caption: 'Chicken Biryani', alt: "Chef Angie's chicken biryani with fragrant basmati rice and spices" },
