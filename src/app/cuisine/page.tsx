@@ -138,12 +138,32 @@ const services = [
   },
 ]
 
-const whyChoose = [
+const whyChoose: { title: string; description: string; instagram?: boolean }[] = [
   { title: 'Authentic Recipes', description: 'Traditional Swahili flavors passed down through generations' },
   { title: 'Fresh Ingredients', description: 'Locally sourced, high-quality produce and spices' },
-  { title: '4+ Years Experience', description: 'Trusted private chef by hundreds of satisfied customers in Diani Beach' },
+  { title: 'Trusted by Diani Villas', description: '4+ years cooking for villas, resorts and private guests across Diani Beach — from intimate dinners to full catering events.' },
   { title: 'Flexible Options', description: 'From single meals to full catering services' },
+  { title: 'Featured on Instagram', description: 'Follow @chef.angie002 for daily kitchen stories and behind-the-scenes cooking moments.', instagram: true },
 ]
+
+const dishes = [
+  { src: '/images/cuisine/dishes/01_breakfast_spread.jpg', caption: 'Kenyan Breakfast Spread', alt: 'Full Kenyan breakfast spread with plantains, mango, beignets, and hot tea by Chef Angie' },
+  { src: '/images/cuisine/dishes/02_spaghetti_bolognese.jpg', caption: 'Spaghetti Bolognese', alt: 'Spaghetti Bolognese with sautéed vegetables prepared by Chef Angie' },
+  { src: '/images/cuisine/dishes/03_grilled_fish_plate.jpg', caption: 'Grilled Fish Plate', alt: 'Grilled fish plate with homemade chips and sautéed vegetables by Chef Angie' },
+  { src: '/images/cuisine/dishes/04_ugali_beef_plate.jpg', caption: 'Ugali & Beef Stew', alt: 'Traditional Kenyan plate with ugali, beef stew, avocado and chips by Chef Angie' },
+  { src: '/images/cuisine/dishes/05_homemade_muffins.jpg', caption: 'Homemade Muffins', alt: 'Freshly baked homemade muffins by Chef Angie' },
+  { src: '/images/cuisine/dishes/06_fresh_mandazi.jpg', caption: 'Fresh Mandazi', alt: 'Golden fresh mandazi (Kenyan doughnuts) by Chef Angie' },
+  { src: '/images/cuisine/dishes/07_chicken_biryani.jpg', caption: 'Chicken Biryani', alt: "Chef Angie's chicken biryani with fragrant basmati rice and spices" },
+  { src: '/images/cuisine/dishes/08_beef_pilau.jpg', caption: 'Beef Pilau', alt: "Chef Angie's beef pilau with aromatic spices" },
+]
+
+function InstagramIcon({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+    </svg>
+  )
+}
 
 export default async function CuisinePage() {
   const aggregateRating = await fetchAggregateRating('cuisine')
@@ -277,10 +297,14 @@ export default async function CuisinePage() {
               <div className="space-y-6">
                 {whyChoose.map((item, index) => (
                   <div key={index} className="flex gap-4">
-                    <div className="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-teal" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${item.instagram ? 'bg-coral/10' : 'bg-teal/10'}`}>
+                      {item.instagram ? (
+                        <InstagramIcon className="w-6 h-6 text-coral" />
+                      ) : (
+                        <svg className="w-6 h-6 text-teal" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
                     </div>
                     <div>
                       <h3 className="font-ui font-semibold text-ocean-dark mb-1">{item.title}</h3>
@@ -309,6 +333,60 @@ export default async function CuisinePage() {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Signature Dishes Section */}
+      <section className="section-padding bg-white">
+        <div className="container-standard px-4">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="font-script text-2xl md:text-3xl text-coral mb-2">
+              A taste of what&apos;s on Chef Angie&apos;s table
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
+              Signature Dishes
+            </h2>
+            <p className="font-body text-gray-warm">
+              From spice-loaded biryanis to freshly-baked chapati, every dish is made with
+              locally-sourced ingredients and generations of Swahili tradition.
+            </p>
+          </div>
+
+          {/* TODO POST-SHOOT 02/07/2026 : remplacer les photos Row 2 par les hero shots du shoot pro (Samaki wa Nazi + variations) */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {dishes.map((dish) => (
+              <div
+                key={dish.src}
+                className="group relative aspect-square rounded-xl overflow-hidden shadow-md"
+              >
+                <Image
+                  src={dish.src}
+                  alt={dish.alt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  quality={80}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ocean-dark/85 via-ocean-dark/30 to-transparent p-3 pt-8">
+                  <p className="font-ui text-sm font-semibold text-white">{dish.caption}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-coral text-coral hover:bg-coral hover:text-white"
+              asChild
+            >
+              <a href="https://www.instagram.com/chef.angie002/" target="_blank" rel="noopener noreferrer">
+                <InstagramIcon className="w-5 h-5 mr-2" />
+                See more on Instagram
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -411,6 +489,29 @@ export default async function CuisinePage() {
             <Button variant="gradient" size="lg" asChild>
               <a href="https://wa.me/254706310918?text=Hello%20Chef%20Angie!%20I'm%20interested%20in%20catering%20for%20an%20event.%20Event%20type:%20____%20Date:%20____%20Number%20of%20guests:%20____" target="_blank" rel="noopener noreferrer">
                 Request a Quote
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Follow the Daily Kitchen Section */}
+      <section className="section-padding bg-sand-light">
+        <div className="container-standard px-4">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="font-script text-2xl md:text-3xl text-coral mb-2">
+              Behind the scenes with Chef Angie
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
+              Follow the daily kitchen
+            </h2>
+            <p className="font-body text-lg text-gray-warm mb-8">
+              Fresh dishes, kitchen moments, and daily specials — join the community on Instagram.
+            </p>
+            <Button variant="gradient" size="lg" className="w-full sm:w-auto" asChild>
+              <a href="https://www.instagram.com/chef.angie002/" target="_blank" rel="noopener noreferrer">
+                <InstagramIcon className="w-5 h-5 mr-2" />
+                Follow @chef.angie002
               </a>
             </Button>
           </div>
