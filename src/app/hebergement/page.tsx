@@ -310,38 +310,55 @@ export default async function StayPage() {
       {/* Add-on — Welcome Breakfast */}
       <section id="welcome-breakfast" className="section-padding bg-sand-light">
         <div className="container-standard px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left — Visual / Content */}
+          {/* Row 1 — Photo + intro */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Photo */}
             <div>
+              <Image
+                src="/images/hebergement/angela_breakfast_hero.jpg"
+                alt="Chef Angie holding a Kenyan breakfast tray with chapati, vegetable omelette, mandazi, sausages and a cup of Kenyan chai"
+                width={1072}
+                height={1344}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto max-w-md mx-auto md:mx-0 rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+
+            {/* Intro */}
+            <div className="flex flex-col justify-center text-center md:text-left">
               <p className="font-script text-2xl text-coral mb-2">Add-on</p>
               <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
                 Wake up to Chef Angie&apos;s Welcome Breakfast
               </h2>
-              <p className="font-body text-lg text-gray-warm mb-6">
+              <p className="font-body text-lg text-gray-warm">
                 Start your Diani morning the local way. A handmade breakfast, prepared by Chef Angie and served right in your studio between <span className="font-semibold text-ocean-dark">7am and 11am</span>. Exact time arranged the evening before.
               </p>
+            </div>
+          </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm mb-6">
-                <h3 className="font-ui font-semibold text-ocean-dark mb-4">What&apos;s in your breakfast</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Mahamri or chapati',
-                    'Sausage and omelette',
-                    'African tea',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-gray-warm">
-                      <svg className="w-5 h-5 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="font-body">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Row 2 — Details cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-12 md:mt-16">
+            {/* What's in your breakfast */}
+            <div className="bg-white rounded-2xl p-6 shadow-md">
+              <h3 className="font-ui font-semibold text-ocean-dark mb-4">What&apos;s in your breakfast</h3>
+              <ul className="space-y-3">
+                {[
+                  'Mahamri or chapati',
+                  'Sausage and omelette',
+                  'African tea',
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-gray-warm">
+                    <svg className="w-5 h-5 text-coral flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-body">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Right — Pricing & CTA */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            {/* Price + Good to Know + CTA */}
+            <div className="bg-white rounded-2xl shadow-md p-8">
               <div className="text-center mb-6">
                 <p className="font-script text-xl text-coral mb-2">Add-on Price</p>
                 <div className="flex items-baseline justify-center gap-1">
