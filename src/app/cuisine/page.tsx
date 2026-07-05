@@ -217,65 +217,6 @@ export default async function CuisinePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="section-padding bg-sand-light">
-        <div className="container-standard">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
-              Private Chef & Catering Services in Diani
-            </h2>
-            <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
-              Choose the service that fits your needs - from convenient weekly delivery to hiring a private chef in Diani Beach.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-teal"
-              >
-                {/* Icon */}
-                <div className="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center text-teal mb-6">
-                  {service.icon}
-                </div>
-
-                {/* Content */}
-                <p className="font-ui text-sm text-coral uppercase tracking-wide mb-2">
-                  {service.subtitle}
-                </p>
-                <h3 className="font-heading text-2xl font-semibold text-ocean-dark mb-3">
-                  {service.title}
-                </h3>
-                <p className="font-body text-gray-warm mb-4">
-                  {service.description}
-                </p>
-
-                {/* Features */}
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-gray-warm">
-                      <svg className="w-4 h-4 text-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-light">
-                  <span className="font-ui font-semibold text-coral">{service.price}</span>
-                  <Button variant="primary" size="sm" asChild>
-                    <Link href={service.href}>{service.cta}</Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
         <div className="container-standard">
@@ -390,6 +331,66 @@ export default async function CuisinePage() {
                 See more on Instagram
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section — overview / table of contents before detailed pricing */}
+      <section className="section-padding bg-sand-light">
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <p className="font-script text-2xl text-coral mb-2">From my kitchen to yours</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark mb-4">
+              Private Chef &amp; Catering Services in Diani
+            </h2>
+            <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
+              Choose the service that fits your needs - from convenient weekly delivery to hiring a private chef in Diani Beach.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="bg-white rounded-2xl p-8 md:p-10 shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-teal"
+              >
+                {/* Icon */}
+                <div className="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center text-teal mb-6">
+                  {service.icon}
+                </div>
+
+                {/* Content */}
+                <p className="font-ui text-sm text-coral uppercase tracking-wide mb-2">
+                  {service.subtitle}
+                </p>
+                <h3 className="font-heading text-2xl font-semibold text-ocean-dark mb-3">
+                  {service.title}
+                </h3>
+                <p className="font-body text-gray-warm mb-4">
+                  {service.description}
+                </p>
+
+                {/* Features */}
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2 text-sm text-gray-warm">
+                      <svg className="w-4 h-4 text-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Price & CTA */}
+                <div className="flex items-center justify-between pt-4 border-t border-gray-light">
+                  <span className="font-ui font-semibold text-coral">{service.price}</span>
+                  <Button variant="primary" size="sm" asChild>
+                    <Link href={service.href}>{service.cta}</Link>
+                  </Button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
