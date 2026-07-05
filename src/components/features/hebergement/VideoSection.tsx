@@ -8,14 +8,14 @@ export function VideoSection() {
             Video Tour
           </h2>
           <p className="font-body text-gray-warm mt-3 max-w-xl mx-auto">
-            Take a virtual tour of Chef Angela Studio Suites in Diani Beach.
+            Take a virtual tour of our newly upgraded Studio — air conditioning installed 2026.
           </p>
         </div>
 
         <div className="relative w-full max-w-[400px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden shadow-lg">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/ROaphUohLns"
-            title="Chef Angela Studio Suites — Video Tour"
+            src="https://www.youtube-nocookie.com/embed/aUJrxqSxJQo"
+            title="Angie's Cozy Studio Diani Beach — Studio Upgrade 2026"
             className="absolute inset-0 w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"

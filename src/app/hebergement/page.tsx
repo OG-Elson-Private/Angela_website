@@ -83,6 +83,24 @@ const jsonLd = {
   ],
 }
 
+const videoJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: "Angie's Cozy Studio Diani Beach — Studio Upgrade 2026",
+  description:
+    "Virtual tour of Angie's Cozy Studio in Diani Beach, Kenya. Fully-equipped studio with newly installed air conditioning, kitchenette, and beach access. Book direct at chefangela.co.ke.",
+  thumbnailUrl: ['https://img.youtube.com/vi/aUJrxqSxJQo/maxresdefault.jpg'],
+  uploadDate: '2026-07-05T18:00:00+03:00',
+  duration: 'PT1M30S',
+  contentUrl: 'https://www.youtube.com/watch?v=aUJrxqSxJQo',
+  embedUrl: 'https://www.youtube.com/embed/aUJrxqSxJQo',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Chef Angela Diani Beach',
+    url: 'https://www.chefangela.co.ke',
+  },
+}
+
 const amenities = [
   { icon: '🏊', name: 'Swimming Pool', description: 'Private pool access' },
   { icon: '🛏️', name: '1 Bedroom', description: 'Comfortable queen size bed' },
@@ -118,6 +136,10 @@ export default async function StayPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
       />
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">

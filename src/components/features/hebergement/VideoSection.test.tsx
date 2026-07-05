@@ -5,13 +5,13 @@ import { VideoSection } from './VideoSection'
 describe('VideoSection', () => {
   it('should render iframe with youtube-nocookie embed URL', () => {
     const html = renderToString(<VideoSection />)
-    expect(html).toContain('youtube-nocookie.com/embed/ROaphUohLns')
+    expect(html).toContain('youtube-nocookie.com/embed/aUJrxqSxJQo')
   })
 
   it('should have descriptive iframe title for accessibility', () => {
     const html = renderToString(<VideoSection />)
-    expect(html).toContain('Chef Angela Studio Suites')
-    expect(html).toMatch(/title="[^"]*Video Tour[^"]*"/)
+    expect(html).toContain('Studio Upgrade 2026')
+    expect(html).toMatch(/title="[^"]*Studio Upgrade 2026[^"]*"/)
   })
 
   it('should include sandbox attribute for security', () => {
