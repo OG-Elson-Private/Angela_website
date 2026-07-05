@@ -5,6 +5,9 @@ import { StarRatingDisplay } from '@/components/ui/StarRating'
 import type { TestimonialPublic } from '@/lib/validations/testimonial'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/testimonials',
+  },
   title: 'Customer Reviews | Chef Angela - Diani Beach',
   description:
     'Read authentic reviews from our guests. Discover what customers say about Chef Angela\'s Kenyan cuisine, private chef services, and vacation rental in Diani Beach.',

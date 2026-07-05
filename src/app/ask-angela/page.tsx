@@ -6,6 +6,9 @@ import { TestimonialCard } from '@/components/ui/TestimonialCard'
 import { prisma } from '@/lib/db'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/ask-angela',
+  },
   title: 'Ask Angela | Diani Insider — Best Deals in Diani Beach',
   description:
     'Need something in Diani? Angela finds you the best deal on car rentals, restaurants, activities, shopping and more. Born and raised in Diani.',

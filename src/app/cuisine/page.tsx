@@ -6,6 +6,9 @@ import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/cuisine',
+  },
   title: 'Private Chef in Diani Beach | Catering & Food Delivery',
   description: 'Hire a private chef in Diani Beach. Chef Angie offers personal chef services, event catering, and weekly food delivery (Biryani, Pilau).',
   openGraph: {

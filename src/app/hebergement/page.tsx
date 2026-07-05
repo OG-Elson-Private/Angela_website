@@ -7,6 +7,9 @@ import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/hebergement',
+  },
   title: 'Vacation Apartment Diani Beach | Holiday Rental with Pool, AC & Breakfast',
   description: 'Book a vacation apartment in Diani Beach with pool and air conditioning. Holiday rental near the beach from 3,500 KES/night. Add the Welcome Breakfast (500 KES/person) for a 5-star morning in your studio!',
   openGraph: {

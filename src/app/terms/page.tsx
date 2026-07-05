@@ -2,6 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/terms',
+  },
   title: 'Terms of Service | Chef Angela',
   description: 'Terms of Service for Chef Angela - Read our terms and conditions for culinary services, food delivery, private chef, and accommodation in Diani Beach, Kenya.',
   openGraph: {

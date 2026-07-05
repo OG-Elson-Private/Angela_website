@@ -4,6 +4,9 @@ import Link from 'next/link'
 import { Button } from '@/components/ui'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/about',
+  },
   title: 'Chef Angie Diani Beach | Private Chef & Host',
   description: 'Meet Chef Angie, your private chef in Diani Beach. Passionate cook offering authentic Kenyan cuisine, catering, and vacation apartment.',
   openGraph: {

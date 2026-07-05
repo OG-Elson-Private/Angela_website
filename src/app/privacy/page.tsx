@@ -2,6 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/privacy',
+  },
   title: 'Privacy Policy | Chef Angela',
   description: 'Privacy Policy for Chef Angela - Learn how we collect, use, and protect your personal information when using our culinary services in Diani Beach, Kenya.',
   openGraph: {
