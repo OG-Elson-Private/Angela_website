@@ -380,6 +380,9 @@ export default async function StayPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-sm italic text-ocean-dark/70">
+                Custom requests welcome — arrange in advance.
+              </p>
             </div>
 
             {/* Price + Good to Know + CTA */}
