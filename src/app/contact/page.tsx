@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     canonical: '/contact',
   },
   title: 'Contact | Chef Angie - Diani Beach',
-  description: 'Contact Chef Angie for food orders, private chef services, catering inquiries, or apartment bookings in Diani Beach, Kenya.',
+  description: 'Contact Chef Angie for private chef services, catering inquiries, or apartment bookings in Diani Beach, Kenya.',
   openGraph: {
     title: 'Contact Chef Angie',
-    description: 'Get in touch for food orders and accommodation in Diani Beach',
+    description: 'Get in touch for private chef, catering and accommodation in Diani Beach',
     type: 'website',
     url: 'https://www.chefangela.co.ke/contact',
     images: [{ url: '/api/og?page=contact', width: 1200, height: 630 }],
@@ -22,7 +22,7 @@ const jsonLd = {
   '@type': 'ContactPage',
   '@id': 'https://www.chefangela.co.ke/contact',
   name: 'Contact Chef Angela',
-  description: 'Contact Chef Angela for food orders, private chef services, catering, or apartment bookings in Diani Beach, Kenya.',
+  description: 'Contact Chef Angela for private chef services, catering, or apartment bookings in Diani Beach, Kenya.',
   url: 'https://www.chefangela.co.ke/contact',
   mainEntity: {
     '@type': 'LocalBusiness',

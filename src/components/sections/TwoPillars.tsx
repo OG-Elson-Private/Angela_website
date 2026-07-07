@@ -82,7 +82,7 @@ export function TwoPillars() {
           <PillarCard
             title="Taste"
             subtitle="Cooking Services"
-            description="Experience authentic Kenyan cuisine with our weekly food delivery, private chef services, and event catering in Diani Beach."
+            description="Experience authentic Kenyan cuisine with our private chef services and event catering in Diani Beach."
             price=""
             priceLabel=""
             image="/images/dishes/cooking-services.jpg"

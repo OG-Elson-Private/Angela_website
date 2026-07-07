@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     canonical: '/terms',
   },
   title: 'Terms of Service | Chef Angela',
-  description: 'Terms of Service for Chef Angela - Read our terms and conditions for culinary services, food delivery, private chef, and accommodation in Diani Beach, Kenya.',
+  description: 'Terms of Service for Chef Angela - Culinary services, private chef, catering, and accommodation in Diani Beach, Kenya.',
   openGraph: {
     title: 'Terms of Service | Chef Angela',
     description: 'Terms of Service for Chef Angela culinary and accommodation services',

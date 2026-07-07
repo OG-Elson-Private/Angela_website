@@ -6,11 +6,11 @@ export const runtime = 'edge'
 const PAGES: Record<string, { title: string; subtitle: string }> = {
   home: {
     title: 'Authentic Kenyan Cuisine',
-    subtitle: 'Private Chef · Food Delivery · Vacation Apartment — Diani Beach, Kenya',
+    subtitle: 'Private Chef · Catering · Vacation Apartment — Diani Beach, Kenya',
   },
   cuisine: {
-    title: 'Private Chef & Food Delivery',
-    subtitle: 'Biryani Friday · Pilau Tuesday · Catering · Diani Beach',
+    title: 'Private Chef & Catering',
+    subtitle: 'Personal Chef · Event Catering · Authentic Swahili Cuisine · Diani',
   },
   stay: {
     title: 'Vacation Apartment',

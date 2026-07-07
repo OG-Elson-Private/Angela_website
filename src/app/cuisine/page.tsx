@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/cuisine',
   },
-  title: 'Private Chef in Diani Beach | Catering & Food Delivery',
-  description: 'Hire a private chef in Diani Beach. Chef Angie offers personal chef services, event catering, and weekly food delivery (Biryani, Pilau).',
+  title: 'Private Chef in Diani Beach | Personal Chef & Catering',
+  description: 'Hire a private chef in Diani Beach. Chef Angie offers personal chef services and event catering — authentic Kenyan and Swahili cuisine.',
   openGraph: {
     title: 'Private Chef in Diani Beach | Chef Angie',
-    description: 'Hire a private chef in Diani Beach - Personal chef, catering & food delivery',
+    description: 'Hire a private chef in Diani Beach - Personal chef & event catering',
     type: 'website',
     url: 'https://www.chefangela.co.ke/cuisine',
     images: [{ url: '/api/og?page=cuisine', width: 1200, height: 630 }],
@@ -25,7 +25,7 @@ const jsonLd = {
   '@type': 'FoodService',
   '@id': 'https://www.chefangela.co.ke/cuisine',
   name: 'Chef Angie - Private Chef Services',
-  description: 'Hire a private chef in Diani Beach. Personal chef services, event catering, and weekly food delivery of authentic Kenyan cuisine.',
+  description: 'Hire a private chef in Diani Beach. Personal chef services and event catering — authentic Kenyan cuisine, Swahili coast.',
   url: 'https://www.chefangela.co.ke/cuisine',
   telephone: '+254706310918',
   email: 'liyayiangela20@gmail.com',
@@ -50,7 +50,7 @@ const jsonLd = {
     },
     geoRadius: '20000',
   },
-  serviceType: ['Private Chef', 'Event Catering', 'Food Delivery'],
+  serviceType: ['Private Chef', 'Event Catering'],
   provider: {
     '@type': 'Person',
     name: 'Chef Angie',
@@ -76,16 +76,6 @@ const jsonLd = {
           priceCurrency: 'KES',
           unitText: 'per day (1-9 guests)',
         },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Weekly Food Delivery',
-          description: 'Biryani Friday and Pilau Tuesday - authentic Kenyan meals delivered',
-        },
-        price: '450',
-        priceCurrency: 'KES',
       },
       {
         '@type': 'Offer',
@@ -202,7 +192,7 @@ export default async function CuisinePage() {
           </h1>
           <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8">
             Hire a personal chef for authentic Kenyan cuisine.
-            From weekly food delivery to private chef experiences in your villa.
+            From intimate dinners to full catering, cooked fresh in your villa.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>
