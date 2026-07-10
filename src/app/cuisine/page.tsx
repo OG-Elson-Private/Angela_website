@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui'
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
+import { DishGallery } from '@/components/features/cuisine/DishGallery'
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
 export const metadata: Metadata = {
@@ -289,26 +290,8 @@ export default async function CuisinePage() {
           </div>
 
           {/* Pro shoot 2026-07-04: grilled fish (Samaki) hero shots integrated — #3 setting + #9 close-up */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {dishes.map((dish) => (
-              <div
-                key={dish.src}
-                className="group relative aspect-square rounded-xl overflow-hidden shadow-md"
-              >
-                <Image
-                  src={dish.src}
-                  alt={dish.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  quality={80}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ocean-dark/85 via-ocean-dark/30 to-transparent p-3 pt-8">
-                  <p className="font-ui text-sm font-semibold text-white">{dish.caption}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Click a dish → full photo in a lightbox with prev/next arrows (non-looping) */}
+          <DishGallery dishes={dishes} />
 
           <div className="text-center mt-10">
             <Button
