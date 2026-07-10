@@ -142,12 +142,13 @@ const whyChoose: { title: string; description: string; instagram?: boolean }[] =
 const dishes = [
   { src: '/images/cuisine/dishes/01_breakfast_spread.jpg', caption: 'Kenyan Breakfast Spread', alt: 'Full Kenyan breakfast spread with plantains, mango, beignets, and hot tea by Chef Angie' },
   { src: '/images/cuisine/dishes/02_spaghetti_bolognese.jpg', caption: 'Spaghetti Bolognese', alt: 'Spaghetti Bolognese with sautéed vegetables prepared by Chef Angie' },
-  { src: '/images/cuisine/dishes/03_grilled_fish_plate.jpg', caption: 'Grilled Fish Plate', alt: 'Grilled fish plate with homemade chips and sautéed vegetables by Chef Angie' },
+  { src: '/images/cuisine/dishes/03_grilled_fish_plate.jpg', caption: 'Grilled Fish with Coconut Curry', alt: 'Whole grilled fish with coconut curry sauce, basmati rice, and fresh lime — signature dish at Chef Angela Diani Beach' },
   { src: '/images/cuisine/dishes/04_ugali_beef_plate.jpg', caption: 'Chicken, Ugali & Fries', alt: "Chef Angie's plate with chicken, ugali, fries and avocado on the side" },
   { src: '/images/cuisine/dishes/05_homemade_muffins.jpg', caption: 'Homemade Muffins', alt: 'Freshly baked homemade muffins by Chef Angie' },
   { src: '/images/cuisine/dishes/06_fresh_mandazi.jpg', caption: 'Fresh Mandazi', alt: 'Golden fresh mandazi (Kenyan doughnuts) by Chef Angie' },
   { src: '/images/cuisine/dishes/07_chicken_biryani.jpg', caption: 'Chicken Biryani', alt: "Chef Angie's chicken biryani with fragrant basmati rice and spices" },
   { src: '/images/cuisine/dishes/08_beef_pilau.jpg', caption: 'Beef Pilau', alt: "Chef Angie's beef pilau with aromatic spices" },
+  { src: '/images/cuisine/dishes/09_grilled_fish_coconut_curry.jpg', caption: 'Swahili Grilled Fish', alt: 'Close-up of grilled whole fish with rice and coconut curry — authentic Swahili coastal cuisine by Chef Angela' },
 ]
 
 function InstagramIcon({ className = 'w-5 h-5' }: { className?: string }) {
@@ -287,8 +288,8 @@ export default async function CuisinePage() {
             </p>
           </div>
 
-          {/* TODO POST-SHOOT 02/07/2026 : remplacer les photos Row 2 par les hero shots du shoot pro (Samaki wa Nazi + variations) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {/* Pro shoot 2026-07-04: grilled fish (Samaki) hero shots integrated — #3 setting + #9 close-up */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {dishes.map((dish) => (
               <div
                 key={dish.src}
