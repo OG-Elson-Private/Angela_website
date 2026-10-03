@@ -39,3 +39,8 @@ next-env.d.ts
 .vscode/
 *.swp
 *.swo
+
+# Local planning/context docs (not part of the site)
+.bmad/
+PRD_AMELIORATIONS.md
+RAPPORT_CONTEXTE.md
