@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/db'
 import { TestimonialCard } from '@/components/ui/TestimonialCard'
+import { CategoryReviewsCarousel } from '@/components/sections/CategoryReviewsCarousel'
 import { LeaveReviewButton } from '@/components/ui/LeaveReviewButton'
 import { StarRatingDisplay } from '@/components/ui/StarRating'
 import {
@@ -92,7 +93,8 @@ interface CategoryBlockProps {
 }
 
 /**
- * One labeled category of reviews (title, per-category rating, responsive grid).
+ * One labeled category of reviews (title, per-category rating,
+ * swipeable carousel on mobile / grid on md+).
  * Never renders when the category has no approved reviews.
  */
 function CategoryBlock({ title, testimonials, aggregate }: CategoryBlockProps) {
@@ -115,7 +117,13 @@ function CategoryBlock({ title, testimonials, aggregate }: CategoryBlockProps) {
         <AggregateRating aggregate={aggregate} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Mobile: swipeable carousel */}
+      <div className="md:hidden">
+        <CategoryReviewsCarousel testimonials={testimonials} />
+      </div>
+
+      {/* Desktop/tablet: grid */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.id}
