@@ -315,7 +315,7 @@ export default function AboutPage() {
             Ready to Experience Chef Angie&apos;s Hospitality?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
-            Whether you want to order delicious food or book a stay, I&apos;m here to help.
+            Whether you&apos;re craving authentic Kenyan cuisine or looking for a place to stay, I&apos;m here to help.
             Reach out and let&apos;s make your Diani Beach experience special!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

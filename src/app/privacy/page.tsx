@@ -88,7 +88,7 @@ export default function PrivacyPage() {
                 <li>To manage accommodation bookings</li>
                 <li>To arrange private chef services</li>
                 <li>To communicate with you about your orders and services</li>
-                <li>To send you updates about our weekly specials (Biryani Friday, Pilau Tuesday)</li>
+                <li>To send you updates about our services and special offers</li>
                 <li>To improve our services and website</li>
                 <li>To comply with legal obligations</li>
               </ul>

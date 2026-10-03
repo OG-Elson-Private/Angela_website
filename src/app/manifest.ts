@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Chef Angela - Authentic Kenyan Cuisine',
     short_name: 'Chef Angela',
-    description: 'Authentic Kenyan cuisine in Diani Beach. Weekly delivery, private chef & vacation apartment.',
+    description: 'Authentic Kenyan cuisine in Diani Beach. Private chef, catering & vacation apartment.',
     start_url: '/',
     display: 'standalone',
     background_color: '#FFF9F0',

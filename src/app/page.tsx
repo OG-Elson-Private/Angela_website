@@ -8,6 +8,9 @@ import {
 } from '@/components/sections'
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
+// ISR: refresh homepage data (testimonials, aggregate rating) every 60s
+export const revalidate = 60
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Restaurant',

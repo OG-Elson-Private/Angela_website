@@ -233,7 +233,6 @@ export default function ContactPage() {
                   <div>
                     <p className="font-ui font-semibold text-ocean-dark">Hours</p>
                     <p className="font-body text-gray-warm">Open 7 days a week</p>
-                    <p className="font-body text-gray-warm text-sm">Order deadlines: Thursday for Friday, Monday for Tuesday</p>
                   </div>
                 </div>
 
@@ -244,7 +243,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-ui font-semibold text-ocean-dark">Delivery Areas</p>
+                    <p className="font-ui font-semibold text-ocean-dark">Areas We Serve</p>
                     <p className="font-body text-gray-warm">Diani, Ukunda</p>
                   </div>
                 </div>

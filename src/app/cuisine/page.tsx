@@ -318,7 +318,7 @@ export default async function CuisinePage() {
               Private Chef &amp; Catering Services in Diani
             </h2>
             <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
-              Choose the service that fits your needs - from convenient weekly delivery to hiring a private chef in Diani Beach.
+              Choose the service that fits your needs - from a private chef experience to catering your event in Diani Beach.
             </p>
           </div>
 
@@ -510,7 +510,7 @@ export default async function CuisinePage() {
             Ready to Taste the Difference?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
-            Order your first meal or book a consultation today.
+            Book your private chef experience or a consultation today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>

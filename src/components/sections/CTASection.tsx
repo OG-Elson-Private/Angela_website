@@ -29,7 +29,7 @@ export function CTASection() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <Button variant="gradient" size="lg" asChild>
-            <Link href="/cuisine">Order Food</Link>
+            <Link href="/cuisine">Explore Cuisine</Link>
           </Button>
           <Button
             variant="outline"

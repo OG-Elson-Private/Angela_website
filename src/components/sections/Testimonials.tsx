@@ -1,65 +1,135 @@
 import Link from 'next/link'
+import type { Prisma } from '@prisma/client'
+import { prisma } from '@/lib/db'
 import { TestimonialCard } from '@/components/ui/TestimonialCard'
 import { LeaveReviewButton } from '@/components/ui/LeaveReviewButton'
 import { StarRatingDisplay } from '@/components/ui/StarRating'
-import { CUISINE_SERVICES, type TestimonialPublic } from '@/lib/validations/testimonial'
+import {
+  CUISINE_SERVICES,
+  ACCOMMODATION_SERVICES,
+  type ServiceType,
+  type TestimonialPublic,
+} from '@/lib/validations/testimonial'
+import {
+  clampRating,
+  combineTestimonialResponses,
+  type TestimonialAggregate,
+  type TestimonialsGroup,
+} from '@/lib/testimonials'
 
-interface TestimonialsResponse {
-  testimonials: TestimonialPublic[]
-  aggregate: {
-    averageRating: number | null
-    totalReviews: number
+/**
+ * Load approved testimonials for a group of services (e.g. cuisine or accommodation)
+ * directly from the database (Server Component — no HTTP self-fetch).
+ * On any DB error, degrades gracefully to an empty group.
+ */
+async function getTestimonialsByGroup(services: ServiceType[]): Promise<TestimonialsGroup> {
+  const where: Prisma.TestimonialWhereInput = {
+    status: 'APPROVED' as const,
+    service: { in: services },
+  }
+
+  try {
+    const [testimonials, aggregate] = await Promise.all([
+      prisma.testimonial.findMany({
+        where,
+        select: {
+          id: true,
+          name: true,
+          location: true,
+          service: true,
+          rating: true,
+          text: true,
+          createdAt: true,
+        },
+        orderBy: [{ approvedAt: 'desc' }, { createdAt: 'desc' }],
+        take: 6,
+      }),
+      prisma.testimonial.aggregate({
+        where,
+        _avg: { rating: true },
+        _count: { rating: true },
+      }),
+    ])
+
+    return {
+      testimonials,
+      aggregate: {
+        averageRating: aggregate._avg.rating,
+        totalReviews: aggregate._count.rating,
+      },
+    }
+  } catch (error) {
+    console.error('[Testimonials] DB query failed:', error)
+    return { testimonials: [], aggregate: { averageRating: null, totalReviews: 0 } }
   }
 }
 
+interface AggregateRatingProps {
+  aggregate: TestimonialAggregate
+}
+
 /**
- * Fetch approved cuisine testimonials for homepage
- * Runs on the server (Server Component)
+ * Star rating + numeric summary, shared by the global header and category blocks
  */
-async function getTestimonials(): Promise<TestimonialsResponse | null> {
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
-    const results: TestimonialPublic[] = []
-    let totalRating = 0
-    let totalCount = 0
+function AggregateRating({ aggregate }: AggregateRatingProps) {
+  if (aggregate.averageRating === null || aggregate.totalReviews === 0) return null
 
-    const responses = await Promise.all(
-      CUISINE_SERVICES.map(async (service) => {
-        try {
-          const response = await fetch(`${baseUrl}/api/testimonials?service=${service}&limit=6`, {
-            next: { revalidate: 60 },
-          })
-          if (response.ok) return response.json()
-        } catch {
-          // Skip failed service fetch
-        }
-        return null
-      })
-    )
+  return (
+    <div className="flex items-center justify-center gap-3">
+      <StarRatingDisplay rating={clampRating(aggregate.averageRating)} size="md" />
+      <span className="font-body text-charcoal">
+        {aggregate.averageRating.toFixed(1)} ({aggregate.totalReviews} review
+        {aggregate.totalReviews !== 1 ? 's' : ''})
+      </span>
+    </div>
+  )
+}
 
-    for (const data of responses) {
-      if (!data) continue
-      results.push(...data.testimonials)
-      if (data.aggregate) {
-        totalCount += data.aggregate.totalReviews
-        if (data.aggregate.averageRating !== null) {
-          totalRating += data.aggregate.averageRating * data.aggregate.totalReviews
-        }
-      }
-    }
+interface CategoryBlockProps {
+  title: string
+  testimonials: TestimonialPublic[]
+  aggregate: TestimonialAggregate
+}
 
-    results.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+/**
+ * One labeled category of reviews (title, per-category rating, responsive grid).
+ * Never renders when the category has no approved reviews.
+ */
+function CategoryBlock({ title, testimonials, aggregate }: CategoryBlockProps) {
+  if (testimonials.length === 0) return null
 
-    return {
-      testimonials: results.slice(0, 6),
-      aggregate: {
-        averageRating: totalCount > 0 ? Math.round((totalRating / totalCount) * 10) / 10 : null,
-        totalReviews: totalCount,
-      },
-    }
-  } catch {
-    return null
-  }
+  const headingId = `reviews-${title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')}`
+
+  return (
+    <section aria-labelledby={headingId} className="mb-10">
+      <div className="text-center mb-6">
+        <h3
+          id={headingId}
+          className="font-heading text-2xl md:text-3xl font-semibold text-ocean-dark mb-2"
+        >
+          {title}
+        </h3>
+        <AggregateRating aggregate={aggregate} />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((testimonial) => (
+          <TestimonialCard
+            key={testimonial.id}
+            name={testimonial.name}
+            location={testimonial.location}
+            service={testimonial.service}
+            rating={clampRating(testimonial.rating)}
+            text={testimonial.text}
+            createdAt={testimonial.createdAt}
+          />
+        ))}
+      </div>
+    </section>
+  )
 }
 
 interface TestimonialsSectionProps {
@@ -68,15 +138,21 @@ interface TestimonialsSectionProps {
 
 /**
  * Testimonials Section for Homepage
- * - Displays approved testimonials in a grid
- * - Shows aggregate rating
+ * - Displays approved testimonials grouped by category:
+ *   "Cooking & Catering" (cuisine services) and "Your Stay" (accommodation)
+ * - A category is only rendered when it has at least one approved review
+ * - Shows a global aggregate rating across both categories
  * - Button to leave a new review (opens modal)
  * - Link to full testimonials page
  */
 export async function Testimonials({ showAllLink = true }: TestimonialsSectionProps) {
-  const data = await getTestimonials()
-  const testimonials = data?.testimonials || []
-  const aggregate = data?.aggregate
+  const [cuisine, accommodation] = await Promise.all([
+    getTestimonialsByGroup(CUISINE_SERVICES),
+    getTestimonialsByGroup(ACCOMMODATION_SERVICES),
+  ])
+
+  const globalAggregate = combineTestimonialResponses([cuisine, accommodation]).aggregate
+  const hasReviews = cuisine.testimonials.length + accommodation.testimonials.length > 0
 
   return (
     <section className="section-padding bg-cream/50">
@@ -90,46 +166,34 @@ export async function Testimonials({ showAllLink = true }: TestimonialsSectionPr
             What Our Guests Say
           </h2>
 
-          {/* Aggregate Rating */}
-          {aggregate && aggregate.totalReviews > 0 && (
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <StarRatingDisplay
-                rating={Math.round(aggregate.averageRating || 5) as 1 | 2 | 3 | 4 | 5}
-                size="md"
-              />
-              <span className="font-body text-charcoal">
-                {aggregate.averageRating?.toFixed(1)} ({aggregate.totalReviews} review
-                {aggregate.totalReviews !== 1 ? 's' : ''})
-              </span>
+          {/* Global Aggregate Rating (never shown above the empty state) */}
+          {hasReviews && (
+            <div className="mb-4">
+              <AggregateRating aggregate={globalAggregate} />
             </div>
           )}
 
           <p className="font-body text-lg text-gray-warm max-w-2xl mx-auto">
-            {testimonials.length > 0
+            {hasReviews
               ? 'Discover what our guests are saying about their experiences with Chef Angie.'
               : 'Be the first to share your experience with Chef Angie!'}
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        {testimonials.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.id}
-                name={testimonial.name}
-                location={testimonial.location}
-                service={testimonial.service}
-                rating={testimonial.rating as 1 | 2 | 3 | 4 | 5}
-                text={testimonial.text}
-                createdAt={testimonial.createdAt}
-              />
-            ))}
-          </div>
-        )}
+        {/* Category Blocks (each self-hides when empty) */}
+        <CategoryBlock
+          title="Cooking & Catering"
+          testimonials={cuisine.testimonials}
+          aggregate={cuisine.aggregate}
+        />
+        <CategoryBlock
+          title="Your Stay"
+          testimonials={accommodation.testimonials}
+          aggregate={accommodation.aggregate}
+        />
 
         {/* Empty State */}
-        {testimonials.length === 0 && (
+        {!hasReviews && (
           <div className="bg-white rounded-2xl border border-gray-light/50 p-8 md:p-12 text-center mb-10">
             <div className="w-16 h-16 mx-auto mb-4 bg-seafoam/50 rounded-full flex items-center justify-center">
               <svg
@@ -163,7 +227,7 @@ export async function Testimonials({ showAllLink = true }: TestimonialsSectionPr
             Leave a Review
           </LeaveReviewButton>
 
-          {showAllLink && testimonials.length > 0 && (
+          {showAllLink && hasReviews && (
             <Link
               href="/testimonials"
               className="font-ui font-medium text-teal hover:text-teal-dark underline underline-offset-4 transition-colors"

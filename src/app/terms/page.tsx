@@ -42,7 +42,7 @@ export default function TermsPage() {
               </h2>
               <p className="font-body text-gray-warm">
                 By accessing or using the services provided by Chef Angela, including our website
-                (chefangela.co.ke), food delivery services, private chef services, catering, and
+                (chefangela.co.ke), private chef services, catering, and
                 accommodation in Diani Beach, Kenya, you agree to be bound by these Terms of Service.
                 If you do not agree with any part of these terms, you may not use our services.
               </p>
@@ -56,7 +56,6 @@ export default function TermsPage() {
                 Chef Angela provides the following services in and around Diani Beach, Kenya:
               </p>
               <ul className="list-disc pl-6 font-body text-gray-warm space-y-2">
-                <li><strong>Weekly Food Delivery:</strong> Biryani Friday and Pilau Tuesday deliveries to Diani and Ukunda areas</li>
                 <li><strong>Private Chef Services:</strong> In-home cooking experiences for individuals and groups</li>
                 <li><strong>Event Catering:</strong> Catering services for events, parties, and celebrations</li>
                 <li><strong>Accommodation:</strong> Vacation apartment rental with pool in Diani Beach</li>
@@ -104,7 +103,6 @@ export default function TermsPage() {
                 <li>All prices are quoted in Kenyan Shillings (KES)</li>
                 <li>Prices are subject to change without prior notice</li>
                 <li>Payment methods accepted: M-Pesa, Cash, Bank Transfer</li>
-                <li>For food delivery, payment is required upon delivery or in advance via M-Pesa</li>
                 <li>For accommodation, a deposit may be required to confirm booking</li>
                 <li>Private chef service fees do not include food ingredients unless specified</li>
               </ul>
