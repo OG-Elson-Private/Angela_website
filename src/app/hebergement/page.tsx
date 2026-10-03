@@ -6,6 +6,8 @@ import { VideoSection } from '@/components/features/hebergement/VideoSection'
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel'
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
+export const revalidate = 300
+
 export const metadata: Metadata = {
   alternates: {
     canonical: '/hebergement',

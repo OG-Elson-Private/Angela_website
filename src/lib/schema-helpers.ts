@@ -1,4 +1,6 @@
 import { CUISINE_SERVICES, ACCOMMODATION_SERVICES, type ServiceType } from '@/lib/validations/testimonial'
+import { prisma } from '@/lib/db'
+import type { Prisma } from '@prisma/client'
 
 type Category = 'cuisine' | 'accommodation'
 
@@ -16,44 +18,30 @@ interface AggregateRatingSchema {
 }
 
 /**
- * Fetch aggregate rating for a category from the public API.
+ * Fetch aggregate rating for a category directly from the database.
  * Returns structured data object or null if no reviews.
  */
 export async function fetchAggregateRating(
   category: Category
 ): Promise<AggregateRatingSchema | null> {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
     const services = CATEGORY_SERVICES[category]
 
-    let totalRating = 0
-    let totalCount = 0
-
-    const responses = await Promise.all(
-      services.map(async (service) => {
-        try {
-          const res = await fetch(`${baseUrl}/api/testimonials?service=${service}&limit=1`, {
-            next: { revalidate: 300 },
-          })
-          if (res.ok) return res.json()
-        } catch {
-          // Skip
-        }
-        return null
-      })
-    )
-
-    for (const data of responses) {
-      if (!data?.aggregate) continue
-      if (data.aggregate.averageRating !== null && data.aggregate.totalReviews > 0) {
-        totalCount += data.aggregate.totalReviews
-        totalRating += data.aggregate.averageRating * data.aggregate.totalReviews
-      }
+    const where: Prisma.TestimonialWhereInput = {
+      status: 'APPROVED' as const,
+      service: { in: services },
     }
 
-    if (totalCount === 0) return null
+    const agg = await prisma.testimonial.aggregate({
+      where,
+      _avg: { rating: true },
+      _count: { rating: true },
+    })
 
-    const avgRating = Math.round((totalRating / totalCount) * 10) / 10
+    const totalCount = agg._count.rating
+    if (totalCount === 0 || agg._avg.rating === null) return null
+
+    const avgRating = Math.round(agg._avg.rating * 10) / 10
 
     return {
       '@type': 'AggregateRating',
@@ -62,7 +50,8 @@ export async function fetchAggregateRating(
       bestRating: '5',
       worstRating: '1',
     }
-  } catch {
+  } catch (error) {
+    console.error('[schema-helpers] aggregateRating DB query failed:', error)
     return null
   }
 }

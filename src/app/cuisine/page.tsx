@@ -6,6 +6,8 @@ import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel
 import { DishGallery } from '@/components/features/cuisine/DishGallery'
 import { fetchAggregateRating } from '@/lib/schema-helpers'
 
+export const revalidate = 300
+
 export const metadata: Metadata = {
   alternates: {
     canonical: '/cuisine',
