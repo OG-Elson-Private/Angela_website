@@ -13,8 +13,8 @@ import {
 const PUBLIC_DIR = path.resolve(__dirname, '../../public')
 
 describe('stays data', () => {
-  it('has at least two listings with unique slugs', () => {
-    expect(stays.length).toBeGreaterThanOrEqual(2)
+  it('has at least three listings with unique slugs', () => {
+    expect(stays.length).toBeGreaterThanOrEqual(3)
     const slugs = stays.map((stay) => stay.slug)
     expect(new Set(slugs).size).toBe(slugs.length)
   })
@@ -55,6 +55,16 @@ describe('stays data', () => {
     expect(lowestRate(apartment!)).toBeNull()
     expect(apartment!.amenities.some((a) => /air conditioning/i.test(a.name))).toBe(false)
     expect(apartment!.amenities.some((a) => /fan/i.test(a.name))).toBe(true)
+  })
+
+  it('lists the garden studio in the same compound as the featured studio, without AC', () => {
+    const garden = getStay('garden-studio')
+    expect(garden).toBeDefined()
+    expect(garden!.area).toBe(stays[0].area)
+    expect(garden!.map?.embedUrl).toBe(stays[0].map?.embedUrl)
+    expect(garden!.amenities.some((a) => /air conditioning/i.test(a.name))).toBe(false)
+    expect(garden!.amenities.some((a) => /fan/i.test(a.name))).toBe(true)
+    expect(lowestRate(garden!)).toBeNull()
   })
 
   it('computes the lowest rate across stays from published rates only', () => {

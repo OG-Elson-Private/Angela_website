@@ -75,6 +75,22 @@ export interface StayListing {
   }
 }
 
+/** Angie's compound near Kenya Power Office: shared by every stay located there. */
+const COMPOUND_AREA = 'Near Kenya Power Office, Diani Beach'
+const COMPOUND_MAP = {
+  embedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.9!2d39.5756094!3d-4.2868396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184047d6ec8f8b53%3A0xdeb39114145c126a!2sBstan%20Homes%20Diani%20at%20Blueswallow!5e0!3m2!1sen!2ske!4v1705600000000!5m2!1sen!2ske',
+  title: 'Compound location - Bstan Homes Diani at Blueswallow',
+}
+const COMPOUND_GEO = { latitude: -4.2868396, longitude: 39.5756094 }
+const COMPOUND_NEARBY = [
+  { name: 'Diani Beach', distance: '10 min walk' },
+  { name: 'Restaurants & Bars', distance: '5-10 min walk' },
+  { name: 'Carrefour Supermarket', distance: '10 min walk' },
+  { name: 'Ukunda Airstrip', distance: '15 min drive' },
+  { name: 'Mombasa Airport', distance: '45 min drive' },
+]
+
 const studioGallery: StayImage[] = [
   { src: '/images/apartment/gallery/img1_pool.jpg', alt: 'Swimming pool at the studio compound in Diani Beach' },
   { src: '/images/apartment/gallery/IMG-20260117-WA0006.jpg', alt: 'Living space of the studio' },
@@ -110,6 +126,20 @@ const airportRoadGallery: StayImage[] = [
   { src: '/images/stays/airport-road-apartment/06-wardrobe.jpg', alt: 'Open wardrobe with hanging rail and shelf' },
 ]
 
+const gardenStudioGallery: StayImage[] = [
+  { src: '/images/stays/garden-studio/01-studio-overview.jpg', alt: 'Garden Studio overview: double bed with mosquito net, kitchenette and TV' },
+  { src: '/images/stays/garden-studio/02-bed-and-kitchenette.jpg', alt: 'Bed with fresh towels, rug, desk and stand fan in the Garden Studio' },
+  { src: '/images/stays/garden-studio/03-pool.jpg', alt: 'Swimming pool with sun loungers in the compound' },
+  { src: '/images/stays/garden-studio/04-veranda.jpg', alt: 'Private veranda with two armchairs and a side table' },
+  { src: '/images/stays/garden-studio/05-sofa-corner.jpg', alt: 'Sofa corner with wooden wardrobe and artwork' },
+  { src: '/images/stays/garden-studio/06-tv-desk.jpg', alt: 'Wall-mounted TV, writing desk and water dispenser' },
+  { src: '/images/stays/garden-studio/07-kitchenette.jpg', alt: 'Kitchenette with fridge, gas hob, microwave and kettle' },
+  { src: '/images/stays/garden-studio/08-kitchenette-detail.jpg', alt: 'Kitchenette cupboards, sink and utensils' },
+  { src: '/images/stays/garden-studio/09-bathroom.jpg', alt: 'Bathroom with shower, toilet and sink' },
+  { src: '/images/stays/garden-studio/10-exterior.jpg', alt: 'Exterior of the Garden Studio with balustrade veranda and lawn' },
+  { src: '/images/stays/garden-studio/11-garden-path.jpg', alt: 'Garden path through palms leading to the pool' },
+]
+
 export const stays: StayListing[] = [
   {
     slug: 'angies-cozy-studio',
@@ -119,7 +149,7 @@ export const stays: StayListing[] = [
     description:
       'Cozy vacation studio in Diani Beach with pool access and air conditioning year-round. Perfect for couples and solo travelers, just a 10-minute walk from the beach, with Chef Angie next door for breakfast and private chef service.',
     badge: 'Pool & AC',
-    area: 'Near Kenya Power Office, Diani Beach',
+    area: COMPOUND_AREA,
     beachDistance: '10 min walk',
     maxGuests: 2,
     bedrooms: 1,
@@ -151,18 +181,8 @@ export const stays: StayListing[] = [
     booking: {
       bookingComUrl: 'https://www.booking.com/hotel/ke/karean-studio-suites.html',
     },
-    map: {
-      embedUrl:
-        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.9!2d39.5756094!3d-4.2868396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184047d6ec8f8b53%3A0xdeb39114145c126a!2sBstan%20Homes%20Diani%20at%20Blueswallow!5e0!3m2!1sen!2ske!4v1705600000000!5m2!1sen!2ske',
-      title: "Angie's Cozy Studio location - Bstan Homes Diani at Blueswallow",
-    },
-    nearby: [
-      { name: 'Diani Beach', distance: '10 min walk' },
-      { name: 'Restaurants & Bars', distance: '5-10 min walk' },
-      { name: 'Carrefour Supermarket', distance: '10 min walk' },
-      { name: 'Ukunda Airstrip', distance: '15 min drive' },
-      { name: 'Mombasa Airport', distance: '45 min drive' },
-    ],
+    map: COMPOUND_MAP,
+    nearby: COMPOUND_NEARBY,
     houseRules: [
       { label: 'Check-in', value: 'From 12:00 PM' },
       { label: 'Check-out', value: 'By 9:00 AM' },
@@ -174,8 +194,56 @@ export const stays: StayListing[] = [
     breakfastAddon: true,
     schema: {
       streetAddress: 'Near Kenya Power Office, Diani Beach',
-      geo: { latitude: -4.2868396, longitude: 39.5756094 },
+      geo: COMPOUND_GEO,
       priceRange: '3500-8000 KES',
+      checkinTime: '12:00',
+      checkoutTime: '09:00',
+    },
+  },
+  {
+    slug: 'garden-studio',
+    name: 'The Garden Studio',
+    type: 'Studio with pool',
+    tagline: "Fan-cooled studio in the same pool compound as Angie's, 10 minutes from the beach.",
+    description:
+      "A bright studio in the same gated compound as Angie's Cozy Studio, with the same pool and garden. Double bed with mosquito net, sofa corner, kitchenette with fridge, gas hob, microwave and kettle, smart TV, writing desk and a private veranda. Cooled by fans rather than air conditioning, which keeps the rate friendly.",
+    badge: 'Pool',
+    area: COMPOUND_AREA,
+    beachDistance: '10 min walk',
+    maxGuests: 2,
+    bedrooms: 1,
+    highlights: ['Swimming pool', 'Fan-cooled', 'Kitchenette', 'Private veranda'],
+    amenities: [
+      { icon: '🏊', name: 'Swimming Pool', description: 'Shared pool in the compound' },
+      { icon: '🛏️', name: 'Double Bed', description: 'With mosquito net and fresh linen' },
+      { icon: '🍳', name: 'Kitchenette', description: 'Fridge, gas hob, microwave, kettle' },
+      { icon: '📺', name: 'Smart TV', description: 'Wall-mounted flat screen' },
+      { icon: '🌀', name: 'Stand Fan', description: 'Fan-cooled, no air conditioning' },
+      { icon: '🌿', name: 'Private Veranda', description: 'Two armchairs facing the garden' },
+      { icon: '🚗', name: 'Free Parking', description: 'Inside the compound' },
+      { icon: '🔒', name: '24/7 Security', description: 'Gated compound' },
+    ],
+    pricing: {
+      seasons: [],
+      note: 'Nightly rates and availability on request.',
+    },
+    cover: { src: '/images/stays/garden-studio/01-studio-overview.jpg', alt: 'The Garden Studio in Diani Beach with double bed, mosquito net and kitchenette' },
+    images: gardenStudioGallery,
+    booking: {},
+    map: COMPOUND_MAP,
+    nearby: COMPOUND_NEARBY,
+    houseRules: [
+      { label: 'Check-in', value: 'From 12:00 PM' },
+      { label: 'Check-out', value: 'By 9:00 AM' },
+      { label: 'Smoking', value: 'Not allowed indoors' },
+      { label: 'Pets', value: 'Not allowed' },
+      { label: 'Parties', value: 'Not allowed' },
+      { label: 'Max Guests', value: '2 adults' },
+    ],
+    breakfastAddon: true,
+    schema: {
+      streetAddress: COMPOUND_AREA,
+      geo: COMPOUND_GEO,
       checkinTime: '12:00',
       checkoutTime: '09:00',
     },

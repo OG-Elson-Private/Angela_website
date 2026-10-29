@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   },
   title: 'Places to Stay in Diani Beach | Holiday Rentals Near the Beach with Breakfast',
   description:
-    "Choose your holiday rental in Diani Beach: Angie's air-conditioned studio with pool from 3,500 KES/night, or a bright one-bedroom apartment on Airport Road 4 minutes from the beach. Add Chef Angie's Welcome Breakfast for a 5-star morning.",
+    "Choose your holiday rental in Diani Beach: Angie's air-conditioned studio with pool from 3,500 KES/night, a fan-cooled studio in the same pool compound, or a one-bedroom apartment on Airport Road 4 minutes from the beach. Add Chef Angie's Welcome Breakfast for a 5-star morning.",
   openGraph: {
     title: 'Places to Stay in Diani Beach | Chef Angie',
-    description: 'Hand-picked holiday rentals near the beach in Diani — studio with pool & AC, one-bedroom apartment near Trade Winds. From 3,500 KES/night.',
+    description: 'Hand-picked holiday rentals near the beach in Diani — studios with pool, one-bedroom apartment near Trade Winds. From 3,500 KES/night.',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: [{ url: '/api/og?page=stay', width: 1200, height: 630 }],
