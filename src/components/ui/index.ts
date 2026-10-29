@@ -19,3 +19,5 @@ export type { LeaveReviewButtonProps } from './LeaveReviewButton'
 
 export { TestimonialCard } from './TestimonialCard'
 export type { TestimonialCardProps } from './TestimonialCard'
+export { Lightbox } from './Lightbox'
+export type { LightboxImage, LightboxProps } from './Lightbox'
