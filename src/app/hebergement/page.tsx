@@ -28,17 +28,17 @@ export const metadata: Metadata = {
     "Choose your holiday rental in Diani Beach: Angie's air-conditioned studio with pool from 3,500 KES/night, a fan-cooled studio in the same pool compound, a one-bedroom apartment on Airport Road 4 minutes from the beach, or a two-bedroom apartment at Diani East for families. Add Chef Angie's Welcome Breakfast for a 5-star morning.",
   openGraph: {
     title: 'Places to Stay in Diani Beach | Chef Angie',
-    description: 'Hand-picked holiday rentals in Diani — studios with pool, one-bedroom near Trade Winds, two-bedroom at Diani East. From 3,500 KES/night.',
+    description: 'Holiday rentals in Diani booked through Chef Angie — studios with pool, one-bedroom near Trade Winds, two-bedroom at Diani East. From 3,500 KES/night.',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: [{ url: '/api/og?page=stay', width: 1200, height: 630 }],
   },
 }
 
-const whyBookDirect = [
-  { title: 'Best Price Guarantee', description: 'No middleman fees - save up to 20%' },
-  { title: 'Flexible Booking', description: 'Easy changes and cancellations' },
-  { title: 'Personal Service', description: 'Direct communication with Angie, your local host' },
+const whyBookThroughAngie = [
+  { title: 'One Local Contact', description: 'Angie handles your booking and stays your contact throughout your stay' },
+  { title: 'Flexible Booking', description: 'Dates, changes and questions sorted over WhatsApp' },
+  { title: 'Local Know-how', description: 'Born and raised in Diani, with honest tips on where to go' },
   { title: 'Chef Service Available', description: 'Add private chef or breakfast to any stay' },
 ]
 
@@ -94,14 +94,14 @@ export default async function StayPage() {
 
         <div className="relative container-standard px-4">
           <div className="max-w-2xl">
-            <p className="font-script text-3xl text-coral mb-4">Hand-picked by Chef Angie</p>
+            <p className="font-script text-3xl text-coral mb-4">Arranged by Chef Angie</p>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Places to Stay in Diani Beach
             </h1>
             <p className="font-body text-lg text-white/80 mb-8">
-              Holiday rentals close to the beach, chosen and hosted by a local. Pick the stay that
-              suits you, then add Chef Angie&apos;s breakfast or private chef service for a vacation
-              that feels like home.
+              Holiday rentals close to the beach in Diani. Pick the stay that suits you, book it
+              through Chef Angie, and add her breakfast or private chef service for a vacation that
+              feels like home.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -143,11 +143,11 @@ export default async function StayPage() {
           <div className="text-center mb-10 md:mb-14">
             <p className="font-script text-2xl text-coral mb-2">Choose Your Stay</p>
             <h2 id="stays-heading" className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              Our Holiday Rentals in Diani
+              Holiday Rentals in Diani
             </h2>
             <p className="font-body text-gray-warm mt-3 max-w-2xl mx-auto">
-              Every stay is minutes from the beach and comes with Angie&apos;s local know-how.
-              Book direct on WhatsApp for the best rate.
+              Every stay is minutes from the beach. Chef Angie arranges your booking and stays
+              your single point of contact before and during your stay.
             </p>
           </div>
 
@@ -173,14 +173,14 @@ export default async function StayPage() {
       <section className="section-padding bg-seafoam">
         <div className="container-standard">
           <div className="text-center mb-10 md:mb-14">
-            <p className="font-script text-2xl text-coral mb-2">Save More</p>
+            <p className="font-script text-2xl text-coral mb-2">Simple &amp; Personal</p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold text-ocean-dark">
-              Why Book Your Stay Direct?
+              Why Book Your Stay Through Chef Angie?
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyBookDirect.map((item) => (
+            {whyBookThroughAngie.map((item) => (
               <div key={item.title} className="flex gap-4 bg-white rounded-2xl p-6 shadow-sm">
                 <div className="w-12 h-12 bg-teal rounded-xl flex items-center justify-center flex-shrink-0">
                   <CheckIcon className="w-6 h-6 text-white" />
@@ -450,7 +450,7 @@ export default async function StayPage() {
       {/* Testimonials Carousel - Accommodation */}
       <TestimonialsCarousel
         category="accommodation"
-        title="What Our Guests Say"
+        title="What Guests Say"
         subtitle="Guest Reviews"
       />
 
@@ -461,7 +461,7 @@ export default async function StayPage() {
             Ready to Book Your Stay in Diani?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
-            Tell Angie your dates and which stay you prefer. Book direct and save.
+            Tell Angie your dates and which stay you prefer. She takes care of the rest.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gradient" size="lg" asChild>

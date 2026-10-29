@@ -98,7 +98,7 @@ export function StayListingSection({ stay, position, tone }: StayListingSectionP
                   <div className="rounded-xl bg-sand-light p-4">
                     <p className="font-ui font-semibold text-ocean-dark">Rates on request</p>
                     <p className="text-sm text-gray-warm">
-                      Message Angie with your dates for the current nightly rate and availability.
+                      Send Angie your dates and she will confirm the nightly rate and availability.
                     </p>
                   </div>
                 )}
