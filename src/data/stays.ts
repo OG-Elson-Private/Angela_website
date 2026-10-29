@@ -154,12 +154,12 @@ const dianiEastGallery: StayImage[] = [
 
 export const stays: StayListing[] = [
   {
-    slug: 'angies-cozy-studio',
-    name: "Angie's Cozy Studio",
+    slug: 'poolside-studio',
+    name: 'The Poolside Studio',
     type: 'Studio with pool',
     tagline: 'Air-conditioned studio in a gated compound with pool, 10 minutes from the beach.',
     description:
-      'Cozy vacation studio in Diani Beach with pool access and air conditioning year-round. Perfect for couples and solo travelers, just a 10-minute walk from the beach, with Chef Angie next door for breakfast and private chef service.',
+      'Cozy vacation studio in Diani Beach with pool access and air conditioning year-round. Perfect for couples and solo travelers, just a 10-minute walk from the beach. Chef Angie\'s Welcome Breakfast and private chef service are available on request.',
     badge: 'Pool & AC',
     area: COMPOUND_AREA,
     beachDistance: '10 min walk',
@@ -183,11 +183,11 @@ export const stays: StayListing[] = [
       ],
       note: 'Air conditioning included year-round.',
     },
-    cover: { src: '/images/apartment/pool.jpg', alt: 'Swimming pool at Angie\'s Cozy Studio in Diani Beach' },
+    cover: { src: '/images/apartment/pool.jpg', alt: 'Swimming pool at The Poolside Studio in Diani Beach' },
     images: studioGallery,
     video: {
       youtubeId: 'aUJrxqSxJQo',
-      title: "Angie's Cozy Studio Diani Beach — Studio Upgrade 2026",
+      title: 'The Poolside Studio Diani Beach — Studio Upgrade 2026',
       intro: 'Take a virtual tour of the newly upgraded studio — air conditioning installed 2026.',
     },
     booking: {
@@ -216,9 +216,9 @@ export const stays: StayListing[] = [
     slug: 'garden-studio',
     name: 'The Garden Studio',
     type: 'Studio with pool',
-    tagline: "Fan-cooled studio in the same pool compound as Angie's, 10 minutes from the beach.",
+    tagline: 'Fan-cooled studio in the same pool compound as The Poolside Studio, 10 minutes from the beach.',
     description:
-      "A bright studio in the same gated compound as Angie's Cozy Studio, with the same pool and garden. Double bed with mosquito net, sofa corner, kitchenette with fridge, gas hob, microwave and kettle, smart TV, writing desk and a private veranda. Cooled by fans rather than air conditioning, which keeps the rate friendly.",
+      'A bright studio in the same gated compound as The Poolside Studio, with the same pool and garden. Double bed with mosquito net, sofa corner, kitchenette with fridge, gas hob, microwave and kettle, smart TV, writing desk and a private veranda. Cooled by fans rather than air conditioning, which keeps the rate friendly.',
     badge: 'Pool',
     area: COMPOUND_AREA,
     beachDistance: '10 min walk',

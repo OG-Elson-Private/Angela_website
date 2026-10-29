@@ -44,7 +44,7 @@ describe('stays data', () => {
 
   it('exposes the studio as the first, featured stay with published rates', () => {
     const studio = stays[0]
-    expect(studio.slug).toBe('angies-cozy-studio')
+    expect(studio.slug).toBe('poolside-studio')
     expect(lowestRate(studio)).toBe(3500)
     expect(studio.booking.bookingComUrl).toContain('booking.com')
   })
