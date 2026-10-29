@@ -140,6 +140,18 @@ const gardenStudioGallery: StayImage[] = [
   { src: '/images/stays/garden-studio/11-garden-path.jpg', alt: 'Garden path through palms leading to the pool' },
 ]
 
+const dianiEastGallery: StayImage[] = [
+  { src: '/images/stays/diani-east-apartment/01-living-room.jpg', alt: 'Open-plan living room with corner sofa, smart TV and breakfast bar at Diani East Apartments' },
+  { src: '/images/stays/diani-east-apartment/02-open-plan-kitchen.jpg', alt: 'Kitchen with gas cooker, double sink and breakfast bar opening onto the lounge' },
+  { src: '/images/stays/diani-east-apartment/03-bedroom-ensuite.jpg', alt: 'Main bedroom with double bed and en-suite bathroom' },
+  { src: '/images/stays/diani-east-apartment/04-bedroom-two.jpg', alt: 'Second bedroom with double bed and ceiling fan' },
+  { src: '/images/stays/diani-east-apartment/05-kitchen.jpg', alt: 'Fully equipped kitchen with four-burner gas cooker and shelving' },
+  { src: '/images/stays/diani-east-apartment/06-lounge-accent-wall.jpg', alt: 'Lounge with terracotta accent wall, sofa and wall-mounted TV' },
+  { src: '/images/stays/diani-east-apartment/07-breakfast-bar.jpg', alt: 'Granite breakfast bar with bar stools and water dispenser' },
+  { src: '/images/stays/diani-east-apartment/08-lounge-and-bar.jpg', alt: 'Lounge seating area with ceiling fan and dining stools at the bar' },
+  { src: '/images/stays/diani-east-apartment/09-hallway-bathroom.jpg', alt: 'Hallway leading to the bedrooms and the shower room' },
+]
+
 export const stays: StayListing[] = [
   {
     slug: 'angies-cozy-studio',
@@ -295,6 +307,54 @@ export const stays: StayListing[] = [
     breakfastAddon: false,
     schema: {
       streetAddress: 'Airport Road, near Trade Winds, Diani',
+    },
+  },
+  {
+    slug: 'diani-east-apartment',
+    name: 'Two-Bedroom Apartment at Diani East',
+    type: 'Two-bedroom apartment',
+    tagline: 'Spacious two-bedroom apartment in the Diani East complex, 3 minutes from Diani Link Road and Rockstarz restaurant.',
+    description:
+      'A roomy two-bedroom apartment in the Diani East Apartments complex, ideal for families and friends travelling together. Open-plan lounge with a corner sofa and smart TV, granite breakfast bar, full kitchen with a four-burner gas cooker and double sink, two double bedrooms (one en suite) and a second shower room. Ceiling fans throughout. Diani Link Road and Rockstarz restaurant are 3 minutes away.',
+    badge: 'Sleeps 4',
+    area: 'Diani East Apartments, off Diani Link Road',
+    beachDistance: 'Short drive',
+    maxGuests: 4,
+    bedrooms: 2,
+    highlights: ['2 bathrooms', 'Full kitchen', 'Smart TV', 'Ceiling fans'],
+    amenities: [
+      { icon: '🛏️', name: '2 Bedrooms', description: 'Two double beds, one en suite' },
+      { icon: '🚿', name: '2 Bathrooms', description: 'En-suite plus a second shower room' },
+      { icon: '🛋️', name: 'Open-plan Lounge', description: 'Corner sofa, coffee table, TV wall' },
+      { icon: '🍳', name: 'Full Kitchen', description: '4-burner gas cooker, double sink, kettle' },
+      { icon: '🍽️', name: 'Breakfast Bar', description: 'Granite counter with bar stools' },
+      { icon: '📺', name: 'Smart TV', description: 'Streaming-ready flat screen' },
+      { icon: '🌀', name: 'Ceiling Fans', description: 'Fan-cooled, no air conditioning' },
+      { icon: '💧', name: 'Water Dispenser', description: 'Drinking water on site' },
+    ],
+    pricing: {
+      seasons: [],
+      note: 'Nightly rates and availability on request.',
+    },
+    cover: { src: '/images/stays/diani-east-apartment/01-living-room.jpg', alt: 'Open-plan living room of the two-bedroom apartment at Diani East, Diani Beach' },
+    images: dianiEastGallery,
+    booking: {},
+    nearby: [
+      { name: 'Diani Link Road', distance: '3 min' },
+      { name: 'Rockstarz Restaurant', distance: '3 min' },
+      { name: 'Diani Beach', distance: 'Short drive' },
+    ],
+    houseRules: [
+      { label: 'Check-in', value: 'Arranged with Angie' },
+      { label: 'Check-out', value: 'Arranged with Angie' },
+      { label: 'Smoking', value: 'Not allowed indoors' },
+      { label: 'Pets', value: 'Not allowed' },
+      { label: 'Parties', value: 'Not allowed' },
+      { label: 'Max Guests', value: '4 adults' },
+    ],
+    breakfastAddon: false,
+    schema: {
+      streetAddress: 'Diani East Apartments, off Diani Link Road, Diani Beach',
     },
   },
 ]
