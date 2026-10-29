@@ -13,8 +13,8 @@ const PAGES: Record<string, { title: string; subtitle: string }> = {
     subtitle: 'Personal Chef · Event Catering · Authentic Swahili Cuisine · Diani',
   },
   stay: {
-    title: 'Vacation Apartment',
-    subtitle: 'Holiday Rental with Pool & AC — From 3,500 KES/night · Diani Beach',
+    title: 'Places to Stay',
+    subtitle: 'Holiday Rentals Near the Beach — From 3,500 KES/night · Diani Beach',
   },
   about: {
     title: 'Meet Chef Angie',

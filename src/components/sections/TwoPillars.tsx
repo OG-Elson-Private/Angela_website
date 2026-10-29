@@ -94,13 +94,13 @@ export function TwoPillars() {
           <PillarCard
             title="Stay"
             subtitle="Accommodation"
-            description="Your home away from home in Diani Beach. A beautiful apartment with pool, just steps from the ocean."
+            description="Hand-picked holiday rentals in Diani Beach: Angie's studio with pool and AC, or a bright one-bedroom apartment minutes from the beach."
             price="From 3,500 KES"
             priceLabel="Per night, direct booking"
             image="/images/apartment/pool.jpg"
             imageAlt="Apartment pool area in Diani Beach"
             href="/hebergement"
-            ctaText="View Apartment"
+            ctaText="View Our Stays"
           />
         </div>
       </div>
