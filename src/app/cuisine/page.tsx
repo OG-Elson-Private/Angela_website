@@ -53,7 +53,7 @@ const jsonLd = {
     },
     geoRadius: '20000',
   },
-  serviceType: ['Private Chef', 'Event Catering'],
+  serviceType: ['Private Chef', 'Event Catering', 'Cooking Class'],
   provider: {
     '@type': 'Person',
     name: 'Chef Angie',
@@ -78,6 +78,23 @@ const jsonLd = {
           price: '3500',
           priceCurrency: 'KES',
           unitText: 'per day (1-9 guests)',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Swahili Coast Cooking Class',
+          description: 'Private, hands-on cooking class at your villa in Diani Beach, full menu from starter to dessert',
+          url: 'https://www.chefangela.co.ke/cooking-class',
+        },
+        price: '8000',
+        priceCurrency: 'KES',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '8000',
+          priceCurrency: 'KES',
+          unitText: 'per person (ingredients not included)',
         },
       },
       {
@@ -131,6 +148,21 @@ const services = [
     href: '#traiteur',
     cta: 'Get Quote',
     features: ['10-200+ guests', 'Custom menus', 'Full setup'],
+  },
+  {
+    id: 'cooking-class',
+    title: 'Cooking Class',
+    subtitle: 'Hands-on Swahili Cooking',
+    description: 'A private cooking class at your villa. Cook a full Swahili coast menu with Chef Angela, from starter to dessert, then enjoy it together.',
+    price: 'From 8,000 KES/person',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v3m0 0a5 5 0 015 5v1H7v-1a5 5 0 015-5zm-7 9h14l-1 7H6l-1-7zm2-9l1.5 2M17 3l-1.5 2" />
+      </svg>
+    ),
+    href: '/cooking-class',
+    cta: 'See the Class',
+    features: ['1-6 guests', 'Up to 6 hours', 'Beginners welcome'],
   },
 ]
 
@@ -324,7 +356,7 @@ export default async function CuisinePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service) => (
               <div
                 key={service.id}

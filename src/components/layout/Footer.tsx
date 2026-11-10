@@ -6,6 +6,7 @@ const quickLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Cuisine', href: '/cuisine' },
+  { label: 'Cooking Class', href: '/cooking-class' },
   { label: 'Stay', href: '/hebergement' },
   { label: 'Ask Angela', href: '/ask-angela' },
   { label: 'Reviews', href: '/testimonials' },
@@ -16,6 +17,7 @@ const cuisineLinks: NavLink[] = [
   { label: 'Our Services', href: '/cuisine' },
   { label: 'Private Chef', href: '/cuisine#chef-prive' },
   { label: 'Catering', href: '/cuisine#traiteur' },
+  { label: 'Cooking Class', href: '/cooking-class' },
 ]
 
 const socialLinks: SocialLink[] = [

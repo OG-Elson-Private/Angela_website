@@ -12,6 +12,10 @@ const PAGES: Record<string, { title: string; subtitle: string }> = {
     title: 'Private Chef & Catering',
     subtitle: 'Personal Chef · Event Catering · Authentic Swahili Cuisine · Diani',
   },
+  'cooking-class': {
+    title: 'Swahili Coast Cooking Class',
+    subtitle: 'Private, Hands-on Class at Your Villa — From 8,000 KES/person · Diani Beach',
+  },
   stay: {
     title: 'Places to Stay',
     subtitle: 'Holiday Rentals Near the Beach — From 3,500 KES/night · Diani Beach',
