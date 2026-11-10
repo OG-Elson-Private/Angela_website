@@ -60,6 +60,15 @@ describe('GET /api/admin/testimonials', () => {
     expect(where.service).toBe('ACCOMMODATION')
   })
 
+  it('should filter by COOKING_CLASS when category=cooking-class', async () => {
+    const request = new NextRequest('http://localhost/api/admin/testimonials?category=cooking-class')
+    await GET(request)
+
+    const where = mockFindMany.mock.calls[0][0].where
+    expect(where.service).toBe('COOKING_CLASS')
+    expect(mockGroupBy.mock.calls[0][0].where).toEqual({ service: 'COOKING_CLASS' })
+  })
+
   it('should not filter by service when no category param', async () => {
     const request = new NextRequest('http://localhost/api/admin/testimonials')
     await GET(request)

@@ -8,6 +8,7 @@ import { StarRatingDisplay } from '@/components/ui/StarRating'
 import {
   CUISINE_SERVICES,
   ACCOMMODATION_SERVICES,
+  COOKING_CLASS_SERVICES,
   type ServiceType,
   type TestimonialPublic,
 } from '@/lib/validations/testimonial'
@@ -147,20 +148,22 @@ interface TestimonialsSectionProps {
 /**
  * Testimonials Section for Homepage
  * - Displays approved testimonials grouped by category:
- *   "Cooking & Catering" (cuisine services) and "Your Stay" (accommodation)
+ *   "Cooking & Catering" (cuisine services), "Cooking Class" and "Your Stay" (accommodation)
  * - A category is only rendered when it has at least one approved review
  * - Shows a global aggregate rating across both categories
  * - Button to leave a new review (opens modal)
  * - Link to full testimonials page
  */
 export async function Testimonials({ showAllLink = true }: TestimonialsSectionProps) {
-  const [cuisine, accommodation] = await Promise.all([
+  const [cuisine, cookingClass, accommodation] = await Promise.all([
     getTestimonialsByGroup(CUISINE_SERVICES),
+    getTestimonialsByGroup(COOKING_CLASS_SERVICES),
     getTestimonialsByGroup(ACCOMMODATION_SERVICES),
   ])
 
-  const globalAggregate = combineTestimonialResponses([cuisine, accommodation]).aggregate
-  const hasReviews = cuisine.testimonials.length + accommodation.testimonials.length > 0
+  const globalAggregate = combineTestimonialResponses([cuisine, cookingClass, accommodation]).aggregate
+  const hasReviews =
+    cuisine.testimonials.length + cookingClass.testimonials.length + accommodation.testimonials.length > 0
 
   return (
     <section className="section-padding bg-cream/50">
@@ -193,6 +196,11 @@ export async function Testimonials({ showAllLink = true }: TestimonialsSectionPr
           title="Cooking & Catering"
           testimonials={cuisine.testimonials}
           aggregate={cuisine.aggregate}
+        />
+        <CategoryBlock
+          title="Cooking Class"
+          testimonials={cookingClass.testimonials}
+          aggregate={cookingClass.aggregate}
         />
         <CategoryBlock
           title="Your Stay"

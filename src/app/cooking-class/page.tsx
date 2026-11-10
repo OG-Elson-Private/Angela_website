@@ -101,7 +101,7 @@ function WhatsAppIcon({ className = 'w-5 h-5' }: { className?: string }) {
 }
 
 export default async function CookingClassPage() {
-  const aggregateRating = await fetchAggregateRating('cuisine')
+  const aggregateRating = await fetchAggregateRating('cooking-class')
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [aggregateRating ? { ...serviceJsonLd, aggregateRating } : serviceJsonLd, faqJsonLd],
@@ -329,7 +329,7 @@ export default async function CookingClassPage() {
       </section>
 
       {/* Reviews */}
-      <TestimonialsCarousel category="cuisine" title="What Our Food Lovers Say" subtitle="Culinary Reviews" />
+      <TestimonialsCarousel category="cooking-class" title="What Class Guests Say" subtitle="Cooking Class Reviews" />
 
       {/* Final CTA */}
       <section className="py-16 bg-gradient-to-r from-teal to-ocean-dark text-white">

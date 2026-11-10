@@ -6,18 +6,25 @@ import { cn } from '@/lib/utils'
 import { TestimonialCard } from '@/components/ui/TestimonialCard'
 import { LeaveReviewButton } from '@/components/ui/LeaveReviewButton'
 import { StarRatingDisplay } from '@/components/ui/StarRating'
-import { CUISINE_SERVICES, ACCOMMODATION_SERVICES, type ServiceType } from '@/lib/validations/testimonial'
+import {
+  CUISINE_SERVICES,
+  ACCOMMODATION_SERVICES,
+  COOKING_CLASS_SERVICES,
+  type ServiceType,
+} from '@/lib/validations/testimonial'
 
-export type Category = 'cuisine' | 'accommodation'
+export type Category = 'cuisine' | 'accommodation' | 'cooking-class'
 
 export const CATEGORY_SERVICE_MAP: Record<Category, ServiceType[]> = {
   cuisine: CUISINE_SERVICES,
   accommodation: ACCOMMODATION_SERVICES,
+  'cooking-class': COOKING_CLASS_SERVICES,
 }
 
 const CATEGORY_DEFAULT_SERVICE: Record<Category, ServiceType> = {
   cuisine: 'PRIVATE_CHEF',
   accommodation: 'ACCOMMODATION',
+  'cooking-class': 'COOKING_CLASS',
 }
 
 interface TestimonialData {

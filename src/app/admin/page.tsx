@@ -52,7 +52,7 @@ export default function AdminDashboardPage() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [counts, setCounts] = useState({ PENDING: 0, APPROVED: 0, REJECTED: 0 })
   const [activeFilter, setActiveFilter] = useState<TestimonialStatus | 'ALL'>('PENDING')
-  const [activeCategory, setActiveCategory] = useState<'ALL' | 'cuisine' | 'accommodation'>('ALL')
+  const [activeCategory, setActiveCategory] = useState<'ALL' | 'cuisine' | 'cooking-class' | 'accommodation'>('ALL')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [actionLoading, setActionLoading] = useState<string | null>(null)
@@ -228,7 +228,7 @@ export default function AdminDashboardPage() {
 
         {/* Category Filter */}
         <div className="flex gap-2 mb-4 flex-wrap">
-          {(['ALL', 'cuisine', 'accommodation'] as const).map((cat) => (
+          {(['ALL', 'cuisine', 'cooking-class', 'accommodation'] as const).map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
@@ -238,7 +238,13 @@ export default function AdminDashboardPage() {
                   : 'bg-white text-gray-warm hover:bg-sand border border-sand'
               }`}
             >
-              {cat === 'ALL' ? 'All Services' : cat === 'cuisine' ? 'Cuisine' : 'Accommodation'}
+              {cat === 'ALL'
+                ? 'All Services'
+                : cat === 'cuisine'
+                  ? 'Cuisine'
+                  : cat === 'cooking-class'
+                    ? 'Cooking Class'
+                    : 'Accommodation'}
             </button>
           ))}
         </div>

@@ -1,12 +1,18 @@
-import { CUISINE_SERVICES, ACCOMMODATION_SERVICES, type ServiceType } from '@/lib/validations/testimonial'
+import {
+  CUISINE_SERVICES,
+  ACCOMMODATION_SERVICES,
+  COOKING_CLASS_SERVICES,
+  type ServiceType,
+} from '@/lib/validations/testimonial'
 import { prisma } from '@/lib/db'
 import type { Prisma } from '@prisma/client'
 
-type Category = 'cuisine' | 'accommodation'
+type Category = 'cuisine' | 'accommodation' | 'cooking-class'
 
 const CATEGORY_SERVICES: Record<Category, ServiceType[]> = {
   cuisine: CUISINE_SERVICES,
   accommodation: ACCOMMODATION_SERVICES,
+  'cooking-class': COOKING_CLASS_SERVICES,
 }
 
 interface AggregateRatingSchema {

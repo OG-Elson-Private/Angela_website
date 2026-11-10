@@ -38,6 +38,8 @@ export async function GET(request: NextRequest) {
       where.service = { in: [...CUISINE_SERVICES] }
     } else if (category === 'accommodation') {
       where.service = 'ACCOMMODATION'
+    } else if (category === 'cooking-class') {
+      where.service = 'COOKING_CLASS'
     }
 
     // Fetch testimonials with count
@@ -57,6 +59,8 @@ export async function GET(request: NextRequest) {
       categoryWhere.service = { in: [...CUISINE_SERVICES] }
     } else if (category === 'accommodation') {
       categoryWhere.service = 'ACCOMMODATION'
+    } else if (category === 'cooking-class') {
+      categoryWhere.service = 'COOKING_CLASS'
     }
     const counts = await prisma.testimonial.groupBy({
       by: ['status'],

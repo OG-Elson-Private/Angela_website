@@ -21,6 +21,8 @@ const serviceSlugMap: Record<string, ServiceType> = {
   cuisine: 'PRIVATE_CHEF',
   cooking: 'PRIVATE_CHEF',
   chef: 'PRIVATE_CHEF',
+  'cooking-class': 'COOKING_CLASS',
+  class: 'COOKING_CLASS',
   catering: 'CATERING',
   biryani: 'BIRYANI_FRIDAY',
   pilau: 'PILAU_TUESDAY',

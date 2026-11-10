@@ -45,6 +45,7 @@ enum ServiceType {
   CATERING
   ACCOMMODATION
   CONCIERGE
+  COOKING_CLASS
 }
 
 // Testimonial status for moderation

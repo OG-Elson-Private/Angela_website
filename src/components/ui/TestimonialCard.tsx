@@ -20,6 +20,7 @@ const serviceBadgeColors: Record<ServiceType, string> = {
   CATERING: 'bg-ocean-dark/10 text-ocean-dark border-ocean-dark/20',
   ACCOMMODATION: 'bg-seafoam text-teal border-teal/20',
   CONCIERGE: 'bg-teal/10 text-teal border-teal/20',
+  COOKING_CLASS: 'bg-coral/10 text-coral border-coral/20',
 }
 
 /**

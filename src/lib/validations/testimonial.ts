@@ -8,6 +8,7 @@ export const ServiceType = z.enum([
   'CATERING',
   'ACCOMMODATION',
   'CONCIERGE',
+  'COOKING_CLASS',
 ])
 
 export type ServiceType = z.infer<typeof ServiceType>
@@ -22,6 +23,8 @@ export const CUISINE_SERVICES: ServiceType[] = [
 
 export const ACCOMMODATION_SERVICES: ServiceType[] = ['ACCOMMODATION']
 
+export const COOKING_CLASS_SERVICES: ServiceType[] = ['COOKING_CLASS']
+
 // Service labels for display
 export const serviceLabels: Record<ServiceType, string> = {
   BIRYANI_FRIDAY: 'Biryani Friday',
@@ -30,6 +33,7 @@ export const serviceLabels: Record<ServiceType, string> = {
   CATERING: 'Catering',
   ACCOMMODATION: 'Accommodation',
   CONCIERGE: 'Diani Insider Service',
+  COOKING_CLASS: 'Cooking Class',
 }
 
 // Schema for testimonial submission (client-side and server-side)
