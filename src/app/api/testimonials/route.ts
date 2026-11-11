@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/db'
-import { testimonialSchema, type TestimonialPublic } from '@/lib/validations/testimonial'
+import { ServiceType, testimonialSchema, type TestimonialPublic } from '@/lib/validations/testimonial'
 import { checkRateLimit, getClientIP, formatResetTime } from '@/lib/rate-limit'
 import { sendNewTestimonialNotification } from '@/lib/email'
 import { ZodError } from 'zod'
@@ -124,10 +124,17 @@ export async function GET(request: NextRequest) {
       status: 'APPROVED',
     }
 
-    // Filter by service if provided and valid
-    const validServices = ['BIRYANI_FRIDAY', 'PILAU_TUESDAY', 'PRIVATE_CHEF', 'CATERING', 'ACCOMMODATION'] as const
-    if (service && validServices.includes(service as typeof validServices[number])) {
-      where.service = service as typeof validServices[number]
+    // Filter by service when provided; an unknown value is rejected rather than
+    // silently ignored, so a page never receives reviews from another category
+    if (service !== null) {
+      const parsed = ServiceType.safeParse(service)
+      if (!parsed.success) {
+        return NextResponse.json(
+          { error: 'Invalid service', message: 'Unknown service type.' },
+          { status: 400 }
+        )
+      }
+      where.service = parsed.data
     }
 
     // Fetch testimonials with pagination

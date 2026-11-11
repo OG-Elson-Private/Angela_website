@@ -99,7 +99,10 @@ export function TestimonialsCarousel({
 
         for (const data of responses) {
           if (!data) continue
-          results.push(...data.testimonials)
+          // Defensive: keep only reviews that belong to this category
+          results.push(
+            ...(data.testimonials as TestimonialData[]).filter((t) => services.includes(t.service))
+          )
           if (data.aggregate) {
             totalCount += data.aggregate.totalReviews
             if (data.aggregate.averageRating !== null) {

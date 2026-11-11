@@ -25,6 +25,28 @@ import { GET } from './route'
 import { NextRequest } from 'next/server'
 
 describe('GET /api/testimonials', () => {
+  it('filters by COOKING_CLASS so the cooking class page only gets its own reviews', async () => {
+    mockFindMany.mockResolvedValue([])
+    mockCount.mockResolvedValue(0)
+    mockAggregate.mockResolvedValue({ _avg: { rating: null }, _count: { rating: 0 } })
+
+    const request = new NextRequest('http://localhost/api/testimonials?service=COOKING_CLASS')
+    const response = await GET(request)
+
+    expect(response.status).toBe(200)
+    expect(mockFindMany.mock.calls.at(-1)?.[0].where).toEqual({
+      status: 'APPROVED',
+      service: 'COOKING_CLASS',
+    })
+  })
+
+  it('rejects an unknown service instead of returning every review', async () => {
+    const request = new NextRequest('http://localhost/api/testimonials?service=NOT_A_SERVICE')
+    const response = await GET(request)
+
+    expect(response.status).toBe(400)
+  })
+
   it('should sort by approvedAt desc with createdAt desc fallback', async () => {
     mockFindMany.mockResolvedValue([])
     mockCount.mockResolvedValue(0)
