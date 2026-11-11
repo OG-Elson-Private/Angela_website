@@ -42,6 +42,8 @@ interface TestimonialsCarouselProps {
   title?: string
   subtitle?: string
   className?: string
+  /** Render nothing (no spinner, no empty state) until at least one review exists. */
+  hideWhenEmpty?: boolean
 }
 
 export function TestimonialsCarousel({
@@ -49,6 +51,7 @@ export function TestimonialsCarousel({
   title = 'What Our Guests Say',
   subtitle = 'Real Experiences',
   className,
+  hideWhenEmpty = false,
 }: TestimonialsCarouselProps) {
   const [testimonials, setTestimonials] = useState<TestimonialData[]>([])
   const [aggregate, setAggregate] = useState<{ averageRating: number | null; totalReviews: number } | null>(null)
@@ -126,6 +129,10 @@ export function TestimonialsCarousel({
 
     fetchTestimonials()
   }, [category])
+
+  if (hideWhenEmpty && (isLoading || testimonials.length === 0)) {
+    return null
+  }
 
   if (isLoading) {
     return (

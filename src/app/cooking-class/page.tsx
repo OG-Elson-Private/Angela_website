@@ -329,7 +329,12 @@ export default async function CookingClassPage() {
       </section>
 
       {/* Reviews */}
-      <TestimonialsCarousel category="cooking-class" title="What Class Guests Say" subtitle="Cooking Class Reviews" />
+      <TestimonialsCarousel
+        category="cooking-class"
+        title="What Class Guests Say"
+        subtitle="Cooking Class Reviews"
+        hideWhenEmpty
+      />
 
       {/* Final CTA */}
       <section className="py-16 bg-gradient-to-r from-teal to-ocean-dark text-white">
