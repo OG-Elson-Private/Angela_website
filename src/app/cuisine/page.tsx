@@ -223,7 +223,7 @@ export default async function CuisinePage() {
           <p className="font-script text-3xl md:text-4xl text-coral mb-4">
             Taste the Tradition
           </p>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Private Chef in Diani Beach
           </h1>
           <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8">

@@ -127,7 +127,7 @@ export default async function CookingClassPage() {
 
         <div className="relative container-standard text-center text-white px-4">
           <p className="font-script text-3xl md:text-4xl text-coral mb-4">Cook with Chef Angela</p>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Swahili Coast Cooking Class in Diani Beach
           </h1>
           <p className="font-body text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8">

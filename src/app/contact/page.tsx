@@ -127,7 +127,7 @@ export default function ContactPage() {
       <section className="py-20 md:py-28 bg-ocean-dark text-white">
         <div className="container-standard text-center px-4">
           <p className="font-script text-3xl text-coral mb-4">Get in Touch</p>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Contact Chef Angie
           </h1>
           <p className="font-body text-lg text-white/80 max-w-2xl mx-auto">
