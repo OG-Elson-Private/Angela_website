@@ -253,8 +253,6 @@ The final result MUST be equally excellent on mobile, tablet, AND desktop.
 
 - Create **atomic commits** for every logical change
 - Verify the **current working branch** before committing
-- **NEVER** add signatures like "Generated with Claude Code"
-- **NEVER** add "Co-Authored-By: Claude" or similar
 
 ### Commit Messages (ENGLISH ONLY)
 
