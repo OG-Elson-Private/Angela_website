@@ -152,10 +152,11 @@ export default async function CookingClassPage() {
           </ul>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="gradient" size="lg" className="w-full sm:w-auto" asChild>
+            <Button variant="gradient" size="lg" className="w-full sm:w-auto border-2 border-transparent" asChild>
               <a href={COOKING_CLASS_BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="w-5 h-5 mr-2" />
-                Book Your Class on WhatsApp
+                <span className="sm:hidden">Book on WhatsApp</span>
+                <span className="hidden sm:inline">Book Your Class on WhatsApp</span>
               </a>
             </Button>
             <Button
@@ -236,13 +237,13 @@ export default async function CookingClassPage() {
             </p>
           </div>
 
-          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <dl className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {classFacts.map((fact) => (
-              <div key={fact.label} className="bg-white rounded-2xl p-6 shadow-card">
+              <div key={fact.label} className="bg-white rounded-2xl p-4 sm:p-6 shadow-card">
                 <dt className="font-ui text-xs font-semibold uppercase tracking-wider text-teal mb-2">{fact.label}</dt>
                 <dd>
-                  <p className="font-heading text-xl font-semibold text-ocean-dark">{fact.value}</p>
-                  {fact.detail && <p className="font-body text-sm text-gray-warm mt-1">{fact.detail}</p>}
+                  <p className="font-heading text-lg sm:text-xl font-semibold text-ocean-dark">{fact.value}</p>
+                  {fact.detail && <p className="font-body text-base lg:text-sm text-gray-warm mt-1">{fact.detail}</p>}
                 </dd>
               </div>
             ))}
@@ -280,7 +281,7 @@ export default async function CookingClassPage() {
                   {index + 1}
                 </span>
                 <h3 className="font-ui text-lg font-semibold text-ocean-dark mb-2">{step.title}</h3>
-                <p className="font-body text-sm text-gray-warm">{step.description}</p>
+                <p className="font-body text-base lg:text-sm text-gray-warm">{step.description}</p>
               </li>
             ))}
           </ol>
@@ -339,7 +340,7 @@ export default async function CookingClassPage() {
       {/* Final CTA */}
       <section className="py-16 bg-gradient-to-r from-teal to-ocean-dark text-white">
         <div className="container-standard text-center px-4">
-          <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-semibold text-white mb-4">
             Ready to Cook the Swahili Coast?
           </h2>
           <p className="font-body text-lg text-white/80 max-w-xl mx-auto mb-8">
