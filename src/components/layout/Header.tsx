@@ -90,7 +90,7 @@ export function Header() {
             type="button"
             onClick={() => setIsMobileMenuOpen(true)}
             className={cn(
-              'lg:hidden p-2 rounded-lg transition-colors',
+              'lg:hidden p-2.5 rounded-lg transition-colors',
               isScrolled ? 'text-ocean-dark hover:bg-gray-light' : 'text-white hover:bg-white/10'
             )}
             aria-label="Open menu"

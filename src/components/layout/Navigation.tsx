@@ -111,7 +111,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 text-ocean-dark hover:bg-gray-light rounded-lg transition-colors"
+              className="p-2.5 text-ocean-dark hover:bg-gray-light rounded-lg transition-colors"
               aria-label="Close menu"
             >
               <svg

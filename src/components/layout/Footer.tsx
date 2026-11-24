@@ -76,7 +76,7 @@ export function Footer() {
               />
               <span className="font-script text-2xl text-coral">Chef Angie</span>
             </Link>
-            <p className="font-body text-sm text-white/70 mb-6 max-w-xs">
+            <p className="font-body text-base sm:text-sm text-white/70 mb-6 max-w-xs">
               Authentic Kenyan cuisine and charming accommodation in Diani Beach.
               An unforgettable culinary experience and stay.
             </p>
@@ -88,7 +88,7 @@ export function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/10 rounded-lg text-white/70 hover:bg-coral hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center justify-center w-11 h-11 bg-white/10 rounded-lg text-white/70 hover:bg-coral hover:text-white transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <SocialIcon platform={social.platform} />
@@ -99,13 +99,13 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="font-heading text-lg font-semibold mb-4 text-white">Navigation</h3>
+            <ul className="space-y-0 sm:space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/70 hover:text-coral transition-colors duration-200"
+                    className="block sm:inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/70 hover:text-coral transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -116,13 +116,13 @@ export function Footer() {
 
           {/* Cuisine Links */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">Cuisine</h3>
-            <ul className="space-y-2">
+            <h3 className="font-heading text-lg font-semibold mb-4 text-white">Cuisine</h3>
+            <ul className="space-y-0 sm:space-y-2">
               {cuisineLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/70 hover:text-coral transition-colors duration-200"
+                    className="block sm:inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/70 hover:text-coral transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -133,11 +133,11 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
+            <h3 className="font-heading text-lg font-semibold mb-4 text-white">Contact</h3>
+            <ul className="space-y-1 sm:space-y-3">
+              <li className="flex items-center sm:items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-coral mt-0.5 flex-shrink-0"
+                  className="w-5 h-5 text-coral sm:mt-0.5 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -156,13 +156,13 @@ export function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="font-body text-sm text-white/70">
+                <span className="inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/70">
                   Diani Beach, Kenya
                 </span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center sm:items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-coral mt-0.5 flex-shrink-0"
+                  className="w-5 h-5 text-coral sm:mt-0.5 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -177,14 +177,14 @@ export function Footer() {
                 </svg>
                 <a
                   href="tel:+254706310918"
-                  className="font-body text-sm text-white/70 hover:text-coral transition-colors duration-200"
+                  className="inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/70 hover:text-coral transition-colors duration-200"
                 >
                   +254 706 310 918
                 </a>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-center sm:items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-coral mt-0.5 flex-shrink-0"
+                  className="w-5 h-5 text-coral sm:mt-0.5 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -199,7 +199,7 @@ export function Footer() {
                 </svg>
                 <a
                   href="mailto:liyayiangela20@gmail.com"
-                  className="font-body text-sm text-white/70 hover:text-coral transition-colors duration-200"
+                  className="inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/70 hover:text-coral transition-colors duration-200"
                 >
                   liyayiangela20@gmail.com
                 </a>
@@ -212,12 +212,12 @@ export function Footer() {
       {/* Review CTA */}
       <div className="border-t border-white/10 py-6">
         <div className="container-wide text-center">
-          <p className="font-body text-sm text-white/70 mb-3">
+          <p className="font-body text-base sm:text-sm text-white/70 mb-3">
             Had a great experience? We&apos;d love to hear from you!
           </p>
           <Link
             href="/testimonials"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-coral hover:bg-coral-dark text-white font-ui text-sm font-medium rounded-lg transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-5 py-3 sm:py-2.5 bg-coral hover:bg-coral-dark text-white font-ui text-sm font-medium rounded-lg transition-colors duration-200"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -237,13 +237,13 @@ export function Footer() {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy"
-                className="font-body text-sm text-white/50 hover:text-white/70 transition-colors duration-200"
+                className="inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/50 hover:text-white/70 transition-colors duration-200"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="font-body text-sm text-white/50 hover:text-white/70 transition-colors duration-200"
+                className="inline-block py-2.5 sm:py-0 font-body text-base sm:text-sm text-white/50 hover:text-white/70 transition-colors duration-200"
               >
                 Terms of Service
               </Link>
