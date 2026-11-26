@@ -11,8 +11,8 @@ export function AboutPreview() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/chef/profile.jpg"
-                alt="Chef Angie in her kitchen"
+                src="/images/chef/angela_garden_pool_3x4.jpg"
+                alt="Chef Angie in her chef whites by a pool garden in Diani Beach"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

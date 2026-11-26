@@ -177,10 +177,10 @@ export default async function CookingClassPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/chef/profile.jpg"
-                alt="Chef Angela, private chef and cooking class host in Diani Beach"
+                src="/images/chef/angela_garden_pool_4x5.jpg"
+                alt="Chef Angela, private chef and cooking class host, walking through a garden in Diani Beach"
                 fill
-                className="object-cover object-[center_25%]"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

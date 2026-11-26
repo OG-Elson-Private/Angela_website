@@ -250,10 +250,11 @@ export default async function CuisinePage() {
             {/* Image */}
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/chef/profile.jpg"
-                alt="Chef Angie preparing traditional cuisine"
+                src="/images/chef/angela_garden_walk_3x4.jpg"
+                alt="Chef Angie walking through a tropical garden in Diani Beach in her chef whites"
                 fill
-                className="object-cover object-[center_25%]"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
