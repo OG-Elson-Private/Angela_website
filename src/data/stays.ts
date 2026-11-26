@@ -153,7 +153,7 @@ const dianiEastGallery: StayImage[] = [
 ]
 
 const galuBeachGallery: StayImage[] = [
-  { src: '/images/stays/galu-beach-apartment/01-living-room.jpg', alt: 'Spacious living room with sectional sofa, smart TV and chequered floor in the new beachfront apartment on Galu Beach, Diani' },
+  { src: '/images/stays/galu-beach-apartment/01-living-room.jpg', alt: 'Spacious living room with sectional sofa, smart TV and chequered floor in the new beachfront apartment on Diani Beach, near Baobab Beach Resort' },
   { src: '/images/stays/galu-beach-apartment/03-bedroom-two-beds.jpg', alt: 'Air-conditioned bedroom with two double beds and orange curtains' },
   { src: '/images/stays/galu-beach-apartment/04-kitchen-and-bar.jpg', alt: 'Full kitchen with breakfast bar, fridge and gas cooker' },
   { src: '/images/stays/galu-beach-apartment/12-balcony-pool-view.jpg', alt: 'Private balcony overlooking the compound pool and garden' },
@@ -170,13 +170,13 @@ const galuBeachGallery: StayImage[] = [
 export const stays: StayListing[] = [
   {
     slug: 'galu-beach-apartment',
-    name: 'Beachfront One-Bedroom Apartment on Galu Beach',
+    name: 'Beachfront One-Bedroom Apartment on Diani Beach',
     type: 'Beachfront one-bedroom apartment',
-    tagline: 'Beachfront living: a brand-new, air-conditioned one-bedroom on Galu Beach, south Diani, 2 minutes on foot from the sand, for up to 6 guests.',
+    tagline: 'Beachfront living: a newly built, air-conditioned one-bedroom on Diani Beach near Baobab Beach Resort, 2 minutes on foot from the sand, for up to 6 guests.',
     description:
-      'The closest stay to the ocean in Angie\'s selection: a spacious one-bedroom in a brand-new building on Galu Beach, the quiet southern stretch of Diani Beach, a short walk from Baobab Beach Resort. Walk out of the compound and you are on the sand in 2 minutes, no taxi, no road to cross. Finished in late 2026, it has a large air-conditioned bedroom with two double beds, a big lounge with a sectional sofa and smart TV, a full kitchen with breakfast bar, a shower room, a separate toilet and a private balcony overlooking the compound pool. Beachfront location, brand-new finish and room for up to 6 guests are what the rate reflects.',
+      'The closest stay to the ocean in Angie\'s selection: a spacious one-bedroom in a newly built building on the quiet southern stretch of Diani Beach, a short walk from Baobab Beach Resort. Walk out of the compound and you are on the sand in 2 minutes, no taxi, no road to cross. Finished in late 2026, it has a large air-conditioned bedroom with two double beds, a big lounge with a sectional sofa and smart TV, a full kitchen with breakfast bar, a shower room, a separate toilet and a private balcony overlooking the compound pool. Beachfront location, new finish and room for up to 6 guests are what the rate reflects.',
     badge: 'Beachfront · New',
-    area: 'Galu Beach, south Diani',
+    area: 'Near Baobab Beach Resort, south Diani',
     beachDistance: '2 min',
     maxGuests: 6,
     bedrooms: 1,
@@ -195,13 +195,13 @@ export const stays: StayListing[] = [
     ],
     pricing: {
       seasons: [{ label: 'Nightly Rate', period: 'All year', price: 9000, highlighted: true }],
-      note: 'From 9,000 KES per night for a beachfront, brand-new apartment for up to 6 guests. Final rate depends on dates and group size, confirmed by Angie on WhatsApp.',
+      note: 'From 9,000 KES per night for a beachfront, newly built apartment for up to 6 guests. Final rate depends on dates and group size, confirmed by Angie on WhatsApp.',
     },
-    cover: { src: '/images/stays/galu-beach-apartment/01-living-room.jpg', alt: 'Living room of the new beachfront one-bedroom apartment on Galu Beach, Diani' },
+    cover: { src: '/images/stays/galu-beach-apartment/01-living-room.jpg', alt: 'Living room of the new beachfront one-bedroom apartment on Diani Beach, near Baobab Beach Resort' },
     images: galuBeachGallery,
     booking: {},
     nearby: [
-      { name: 'Galu Beach', distance: '2 min walk' },
+      { name: 'Diani Beach', distance: '2 min walk' },
       { name: 'Baobab Beach Resort', distance: 'Short walk' },
       { name: 'Restaurants & Bars', distance: 'Short walk' },
     ],
@@ -215,7 +215,7 @@ export const stays: StayListing[] = [
     ],
     breakfastAddon: false,
     schema: {
-      streetAddress: 'Galu Beach, Diani Beach Road, Diani',
+      streetAddress: 'Near Baobab Beach Resort, Diani Beach Road, Diani',
       priceRange: 'From 9000 KES',
     },
   },
