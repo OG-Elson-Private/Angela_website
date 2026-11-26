@@ -152,7 +152,72 @@ const dianiEastGallery: StayImage[] = [
   { src: '/images/stays/diani-east-apartment/09-hallway-bathroom.jpg', alt: 'Hallway leading to the bedrooms and the shower room' },
 ]
 
+const baobabBeachGallery: StayImage[] = [
+  { src: '/images/stays/baobab-beach-apartment/01-living-room.jpg', alt: 'Spacious living room with sectional sofa, smart TV and chequered floor in the new apartment near Baobab Beach, Diani' },
+  { src: '/images/stays/baobab-beach-apartment/03-bedroom-two-beds.jpg', alt: 'Air-conditioned bedroom with two double beds and orange curtains' },
+  { src: '/images/stays/baobab-beach-apartment/04-kitchen-and-bar.jpg', alt: 'Full kitchen with breakfast bar, fridge and gas cooker' },
+  { src: '/images/stays/baobab-beach-apartment/12-balcony-pool-view.jpg', alt: 'Private balcony overlooking the compound pool and garden' },
+  { src: '/images/stays/baobab-beach-apartment/06-compound-pool.jpg', alt: 'Shared swimming pool in the compound' },
+  { src: '/images/stays/baobab-beach-apartment/11-second-bed-and-sofa.jpg', alt: 'Second sleeping area with a double bed and sofa' },
+  { src: '/images/stays/baobab-beach-apartment/02-lounge-and-tv.jpg', alt: 'Lounge with wall-mounted TV and stone feature wall' },
+  { src: '/images/stays/baobab-beach-apartment/10-kitchen-breakfast.jpg', alt: 'Breakfast set on the kitchen counter' },
+  { src: '/images/stays/baobab-beach-apartment/05-bedroom-ac.jpg', alt: 'Bedroom with air conditioning unit and ceiling fan' },
+  { src: '/images/stays/baobab-beach-apartment/07-hallway-dresser.jpg', alt: 'Hallway with dresser and mirror leading to the bedroom' },
+  { src: '/images/stays/baobab-beach-apartment/08-shower-room.jpg', alt: 'Tiled shower room with mirror and sink' },
+  { src: '/images/stays/baobab-beach-apartment/09-toilet.jpg', alt: 'Separate toilet with sink' },
+]
+
 export const stays: StayListing[] = [
+  {
+    slug: 'baobab-beach-apartment',
+    name: 'One-Bedroom Apartment near Baobab Beach',
+    type: 'One-bedroom apartment',
+    tagline: 'Brand-new, air-conditioned one-bedroom apartment for up to 6 guests, 2 minutes from the beach next to Baobab Beach Resort.',
+    description:
+      'A spacious, newly built one-bedroom apartment a 2-minute walk from the beach, next to Baobab Beach Resort. Finished in late 2026, it has a large air-conditioned bedroom with two double beds, a big lounge with a sectional sofa and smart TV, a full kitchen with breakfast bar, a shower room, a separate toilet and a private balcony overlooking the compound pool. Ideal for a family or a group of friends who want space close to the sand.',
+    badge: 'New',
+    area: 'Next to Baobab Beach Resort, Diani Beach',
+    beachDistance: '2 min',
+    maxGuests: 6,
+    bedrooms: 1,
+    highlights: ['Air conditioning', 'Full kitchen', 'Sleeps up to 6', 'Pool in the compound'],
+    amenities: [
+      { icon: '❄️', name: 'Air Conditioning', description: 'In the bedroom, plus ceiling fans' },
+      { icon: '🛏️', name: 'Two Double Beds', description: 'Large bedroom, sleeps 4 to 6 with the sofa' },
+      { icon: '🛋️', name: 'Spacious Lounge', description: 'Sectional sofa and smart TV' },
+      { icon: '🍳', name: 'Full Kitchen', description: 'Gas cooker, fridge and breakfast bar' },
+      { icon: '🏊', name: 'Swimming Pool', description: 'Shared pool in the compound' },
+      { icon: '🌿', name: 'Private Balcony', description: 'Overlooking the pool and garden' },
+      { icon: '🚿', name: 'Hot Shower', description: 'Shower room plus a separate toilet' },
+      { icon: '📶', name: 'WiFi', description: 'Router on site' },
+      { icon: '🏗️', name: 'Newly Built', description: 'Completed in late 2026' },
+    ],
+    pricing: {
+      seasons: [{ label: 'Nightly Rate', period: 'All year', price: 9000, highlighted: true }],
+      note: 'From 9,000 KES per night. Final rate depends on dates and group size, confirmed by Angie on WhatsApp.',
+    },
+    cover: { src: '/images/stays/baobab-beach-apartment/01-living-room.jpg', alt: 'Living room of the new one-bedroom apartment near Baobab Beach, Diani' },
+    images: baobabBeachGallery,
+    booking: {},
+    nearby: [
+      { name: 'Diani Beach', distance: '2 min walk' },
+      { name: 'Baobab Beach Resort', distance: 'Next door' },
+      { name: 'Restaurants & Bars', distance: 'Short walk' },
+    ],
+    houseRules: [
+      { label: 'Check-in', value: 'Arranged with Angie' },
+      { label: 'Check-out', value: 'Arranged with Angie' },
+      { label: 'Smoking', value: 'Not allowed indoors' },
+      { label: 'Pets', value: 'Not allowed' },
+      { label: 'Parties', value: 'Not allowed' },
+      { label: 'Max Guests', value: '6 guests' },
+    ],
+    breakfastAddon: false,
+    schema: {
+      streetAddress: 'Next to Baobab Beach Resort, Diani Beach',
+      priceRange: 'From 9000 KES',
+    },
+  },
   {
     slug: 'poolside-studio',
     name: 'The Poolside Studio',
@@ -267,7 +332,6 @@ export const stays: StayListing[] = [
     tagline: 'Bright one-bedroom apartment with a full kitchen and private terrace, close to Trade Winds and 4 minutes from the beach.',
     description:
       'A freshly finished one-bedroom apartment on Airport Road, Diani, close to Trade Winds. Separate living room with sofa and smart TV, a full kitchen with gas cooker, fridge and microwave, a hot shower, and two outdoor spaces: an enclosed veranda and a private terrace. The beach is 4 minutes away.',
-    badge: 'New',
     area: 'Airport Road, near Trade Winds, Diani',
     beachDistance: '4 min',
     maxGuests: 2,
