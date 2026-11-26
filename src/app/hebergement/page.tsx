@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   },
   title: 'Places to Stay in Diani Beach | Holiday Rentals Near the Beach with Breakfast',
   description:
-    "Choose your holiday rental in Diani Beach: a brand-new beachfront one-bedroom for up to 6 guests, 2 minutes on foot from the sand next to Baobab Beach Resort, an air-conditioned studio with pool from 3,500 KES/night, a fan-cooled studio in the same pool compound, a one-bedroom on Airport Road, or a two-bedroom apartment at Diani East for families. Add Chef Angie's Welcome Breakfast for a 5-star morning.",
+    "Choose your holiday rental in Diani Beach: a brand-new beachfront one-bedroom on Galu Beach for 4 to 6 guests, 2 minutes on foot from the sand, an air-conditioned studio with pool from 3,500 KES/night, a fan-cooled studio in the same pool compound, a one-bedroom on Airport Road, or a two-bedroom apartment at Diani East for families. Add Chef Angie's Welcome Breakfast for a 5-star morning.",
   openGraph: {
     title: 'Places to Stay in Diani Beach | Chef Angie',
-    description: 'Holiday rentals in Diani booked through Chef Angie — new beachfront one-bedroom near Baobab Beach, studios with pool, one-bedroom near Trade Winds, two-bedroom at Diani East. From 3,500 KES/night.',
+    description: 'Holiday rentals in Diani booked through Chef Angie — new beachfront one-bedroom on Galu Beach, studios with pool, one-bedroom near Trade Winds, two-bedroom at Diani East. From 3,500 KES/night.',
     type: 'website',
     url: 'https://www.chefangela.co.ke/hebergement',
     images: [{ url: '/api/og?page=stay', width: 1200, height: 630 }],
