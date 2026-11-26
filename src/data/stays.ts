@@ -170,17 +170,17 @@ const baobabBeachGallery: StayImage[] = [
 export const stays: StayListing[] = [
   {
     slug: 'baobab-beach-apartment',
-    name: 'One-Bedroom Apartment near Baobab Beach',
-    type: 'One-bedroom apartment',
-    tagline: 'Brand-new, air-conditioned one-bedroom apartment for up to 6 guests, 2 minutes from the beach next to Baobab Beach Resort.',
+    name: 'Beachfront One-Bedroom Apartment near Baobab Beach',
+    type: 'Beachfront one-bedroom apartment',
+    tagline: 'Beachfront living: a brand-new, air-conditioned one-bedroom for up to 6 guests, just 2 minutes on foot from the sand, next to Baobab Beach Resort.',
     description:
-      'A spacious, newly built one-bedroom apartment a 2-minute walk from the beach, next to Baobab Beach Resort. Finished in late 2026, it has a large air-conditioned bedroom with two double beds, a big lounge with a sectional sofa and smart TV, a full kitchen with breakfast bar, a shower room, a separate toilet and a private balcony overlooking the compound pool. Ideal for a family or a group of friends who want space close to the sand.',
-    badge: 'New',
+      'The closest stay to the ocean in Angie\'s selection: a spacious, newly built one-bedroom apartment right by the beach, next to Baobab Beach Resort. Walk out of the compound and you are on the sand in 2 minutes, no taxi, no road to cross. Finished in late 2026, it has a large air-conditioned bedroom with two double beds, a big lounge with a sectional sofa and smart TV, a full kitchen with breakfast bar, a shower room, a separate toilet and a private balcony overlooking the compound pool. Beachfront location, brand-new finish and room for up to 6 guests are what the rate reflects.',
+    badge: 'Beachfront · New',
     area: 'Next to Baobab Beach Resort, Diani Beach',
     beachDistance: '2 min',
     maxGuests: 6,
     bedrooms: 1,
-    highlights: ['Air conditioning', 'Full kitchen', 'Sleeps up to 6', 'Pool in the compound'],
+    highlights: ['2 min to the beach', 'Air conditioning', 'Sleeps up to 6', 'Full kitchen'],
     amenities: [
       { icon: '❄️', name: 'Air Conditioning', description: 'In the bedroom, plus ceiling fans' },
       { icon: '🛏️', name: 'Two Double Beds', description: 'Large bedroom, sleeps 4 to 6 with the sofa' },
@@ -190,13 +190,14 @@ export const stays: StayListing[] = [
       { icon: '🌿', name: 'Private Balcony', description: 'Overlooking the pool and garden' },
       { icon: '🚿', name: 'Hot Shower', description: 'Shower room plus a separate toilet' },
       { icon: '📶', name: 'WiFi', description: 'Router on site' },
+      { icon: '🏖️', name: 'Beachfront', description: '2 minutes on foot to the sand' },
       { icon: '🏗️', name: 'Newly Built', description: 'Completed in late 2026' },
     ],
     pricing: {
       seasons: [{ label: 'Nightly Rate', period: 'All year', price: 9000, highlighted: true }],
-      note: 'From 9,000 KES per night. Final rate depends on dates and group size, confirmed by Angie on WhatsApp.',
+      note: 'From 9,000 KES per night for a beachfront, brand-new apartment that sleeps up to 6. Final rate depends on dates and group size, confirmed by Angie on WhatsApp.',
     },
-    cover: { src: '/images/stays/baobab-beach-apartment/01-living-room.jpg', alt: 'Living room of the new one-bedroom apartment near Baobab Beach, Diani' },
+    cover: { src: '/images/stays/baobab-beach-apartment/01-living-room.jpg', alt: 'Living room of the new beachfront one-bedroom apartment near Baobab Beach, Diani' },
     images: baobabBeachGallery,
     booking: {},
     nearby: [

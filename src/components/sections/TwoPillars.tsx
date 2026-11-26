@@ -94,7 +94,7 @@ export function TwoPillars() {
           <PillarCard
             title="Stay"
             subtitle="Accommodation"
-            description="Holiday rentals in Diani Beach, booked through Chef Angie: a brand-new one-bedroom 2 minutes from the beach, two studios in a pool compound, a one-bedroom on Airport Road and a two-bedroom apartment for families."
+            description="Holiday rentals in Diani Beach, booked through Chef Angie: a brand-new beachfront one-bedroom 2 minutes from the sand, two studios in a pool compound, a one-bedroom on Airport Road and a two-bedroom apartment for families."
             price="From 3,500 KES"
             priceLabel="Per night, direct booking"
             image="/images/apartment/pool.jpg"
