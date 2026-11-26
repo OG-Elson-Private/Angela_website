@@ -42,9 +42,9 @@ describe('stays data', () => {
     }
   })
 
-  it('exposes the studio as the first, featured stay with published rates', () => {
-    const studio = stays[0]
-    expect(studio.slug).toBe('poolside-studio')
+  it('exposes the poolside studio with published rates', () => {
+    const studio = getStay('poolside-studio')!
+    expect(studio).toBeDefined()
     expect(lowestRate(studio)).toBe(3500)
     expect(studio.booking.bookingComUrl).toContain('booking.com')
   })
@@ -57,11 +57,12 @@ describe('stays data', () => {
     expect(apartment!.amenities.some((a) => /fan/i.test(a.name))).toBe(true)
   })
 
-  it('lists the garden studio in the same compound as the featured studio, without AC', () => {
+  it('lists the garden studio in the same compound as the poolside studio, without AC', () => {
     const garden = getStay('garden-studio')
+    const studio = getStay('poolside-studio')
     expect(garden).toBeDefined()
-    expect(garden!.area).toBe(stays[0].area)
-    expect(garden!.map?.embedUrl).toBe(stays[0].map?.embedUrl)
+    expect(garden!.area).toBe(studio!.area)
+    expect(garden!.map?.embedUrl).toBe(studio!.map?.embedUrl)
     expect(garden!.amenities.some((a) => /air conditioning/i.test(a.name))).toBe(false)
     expect(garden!.amenities.some((a) => /fan/i.test(a.name))).toBe(true)
     expect(lowestRate(garden!)).toBeNull()
